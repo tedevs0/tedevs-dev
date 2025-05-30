@@ -112,11 +112,14 @@ export default defineConfig({
   //   contentIntellisense: true
   // },
   vite: {
+    server: {
+      watch: {
+        ignored: [],
+      }
+    },
     plugins: [
-      //   visualizer({
-      //     emitFile: true,
-      //     filename: 'stats.html'
-      //   })
+      // visualizer() si quieres activarlo después
     ]
   }
+
 })
