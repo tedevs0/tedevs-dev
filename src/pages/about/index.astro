@@ -1,20 +1,22 @@
 ---
 import { Comment } from 'astro-pure/advanced'
-import { Button, Collapse, Spoiler, Timeline } from 'astro-pure/user'
+import { Button, Collapse, Spoiler } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
 
 const headings = [
+  { depth: 2, slug: 'about', text: 'About' },
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
   { depth: 2, slug: 'tools', text: 'Tools' },
   { depth: 2, slug: 'social-networks', text: 'Social Networks' },
-  { depth: 2, slug: 'gossips', text: 'Gossips' },
-  { depth: 2, slug: 'about-blog', text: 'About Blog' }
+  { depth: 2, slug: 'gossips', text: 'Gossips' }
+  // { depth: 2, slug: 'about-blog', text: 'About Blog' }
 ]
 ---
 
 <PageLayout title='About' {headings} info='/about'>
+  <h2 id='about' class=''>🖖</h2>
   <p>Developer / Designer</p>
   <blockquote>
     No soy un maestro Jedi ni el capitán de la Enterprise, pero sí alguien que insiste hasta que el
@@ -147,13 +149,56 @@ const headings = [
   {/* general-talk */}
   <h2 id='hobbies'>Hobbies</h2>
   <ul>
-    <li>Lorem ipsum dolor sit amet, vidit suscipit at mei.</li>
     <li>
-      Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod
-      voluptua ne.
+      <strong>Juegos clásicos y estrategia:</strong><br />
+      Nunca fui de RPGs ni de mundos con 800 misiones secundarias. Si un juego tiene historia larga y
+      loops infinitos... probablemente me perdieron en el tutorial. Lo mío son los clásicos 2D. Juegos
+      que no perdonaban, no explicaban mucho y aun así eran gloriosos.
+
+      <p>
+        En el celular me vas a encontrar entre partidas de Sudoku, una que otra batalla de
+        pistolitas, o tirando líneas perfectas en Tetris. Todo entre nostalgia y estrategia.
+      </p>
     </li>
-    <li>Ex dicat impedit mel, at eum oratio possit voluptatum.</li>
-    <li>Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.</li>
+    <li>
+      <strong>Música y ambiente para programar:</strong><br />
+      Y aunque nunca he codificado en una cafetería hipster con latte al lado, sí trabajo con ruido de
+      fondo. Lo mío es el synthwave retro-electro, esas transmisiones que parecen sacadas de un anime
+      del 2090. Le dan a mi entorno una vibra syntech que me encanta.
+      <br />
+      (¿Mi soundtrack favorito para codear? Algo como <a
+        href='https://www.youtube.com/watch?v=niif4go9sxE'
+        target='_blank'
+        rel='noopener noreferrer'>esto</a
+      >).
+      <p>
+        Ah, y si la música no funciona, siempre puedo contar con mis bugs para mantenerme despierto.
+      </p>
+    </li>
+    <li>
+      <strong>Disfrutar la vida a mi manera:</strong><br />
+      Maratonear series y películas es uno de mis pasatiempos favoritos, especialmente Star Wars y Star
+      Trek, que para mí son más que simples shows: son un universo entero para perderme. No necesito
+      salir a ningún lado cuando puedo hacer un viaje intergaláctico desde mi sillón.
+    </li>
+
+    <li>
+      <strong>Escribir ideas (aunque no siempre las termine):</strong><br />
+      Tengo notas por todas partes: ideas para apps, frases sueltas, nombres de proyectos, conceptos
+      random y hasta posibles nombres de funciones que me parecieron épicos a las 2 a.m. A veces es brainstorming,
+      a veces terapia, pero siempre hay algo escribiéndose en segundo plano.
+      <p>¿Publico todo? No. ¿Borro cosas? Nunca. Todo puede evolucionar... algún día.</p>
+    </li>
+    <li>
+      <strong>Curioso sin remedio:</strong><br />
+      Cada tanto caigo en un rabbit hole de investigación. Hoy aprendo sobre sistemas distribuidos, mañana
+      sobre cómo se entrenan palomas mensajeras (true story). Me encanta aprender cosas nuevas, aunque
+      no todas tengan aplicación directa.
+      <p>
+        Creo que parte de lo que me mueve es eso: entender cómo funcionan las cosas, incluso las que
+        no voy a construir yo.
+      </p>
+    </li>
   </ul>
 
   {/* tools */}
@@ -176,16 +221,16 @@ const headings = [
         icon: import('@/assets/tools/illustrator.svg?raw')
       },
       {
-        name: 'After Effects',
-        description: 'Motion Graphics',
-        href: 'https://www.adobe.com/products/aftereffects',
-        icon: import('@/assets/tools/aftereffects.svg?raw')
+        name: 'Figma',
+        description: 'UI/UX Design',
+        href: 'https://www.figma.com',
+        icon: import('@/assets/tools/figma-line.svg?raw')
       },
       {
-        name: 'Premiere Pro',
-        description: 'Video Editing',
-        href: 'https://www.adobe.com/products/premiere',
-        icon: import('@/assets/tools/premiere.svg?raw')
+        name: 'Excalidraw',
+        description: 'Sketching',
+        href: 'https://excalidraw.com/',
+        icon: import('@/assets/tools/excalidraw.svg?raw')
       }
     ]}
   />
@@ -200,22 +245,22 @@ const headings = [
         icon: import('@/assets/tools/chrome.svg?raw')
       },
       {
-        name: 'Firefox',
+        name: 'Brave',
         description: 'Broswer',
-        href: 'https://www.mozilla.org/en-US/firefox',
-        icon: import('@/assets/tools/firefox.svg?raw')
+        href: 'https://brave.com/',
+        icon: import('@/assets/tools/brave.svg?raw')
       },
+      // {
+      //   name: 'Notion',
+      //   description: 'Note Taking',
+      //   href: 'https://www.notion.so/',
+      //   icon: import('@/assets/tools/notion.svg?raw')
+      // },
       {
-        name: 'Notion',
-        description: 'Note Taking',
-        href: 'https://www.notion.so/',
-        icon: import('@/assets/tools/notion.svg?raw')
-      },
-      {
-        name: 'Typora',
-        description: 'Markdown Editor',
-        href: 'https://typora.io/',
-        icon: import('@/assets/tools/typora.svg?raw')
+        name: 'Microsoft To Do',
+        description: 'Task Management',
+        href: 'https://todo.microsoft.com/',
+        icon: import('@/assets/tools/microsoft-todo.svg?raw')
       }
     ]}
   />
@@ -228,47 +273,47 @@ const headings = [
         description: 'IDE',
         href: 'https://code.visualstudio.com/',
         icon: import('@/assets/tools/vscode.svg?raw')
-      },
-      {
-        name: 'Neovim',
-        description: 'IDE',
-        href: 'https://neovim.io/',
-        icon: import('@/assets/tools/neovim.svg?raw')
-      },
-      {
-        name: 'Sublime Text',
-        description: 'IDE',
-        href: 'https://www.sublimetext.com/',
-        icon: import('@/assets/tools/sublime.svg?raw')
       }
+      // {
+      //   name: 'Neovim',
+      //   description: 'IDE',
+      //   href: 'https://neovim.io/',
+      //   icon: import('@/assets/tools/neovim.svg?raw')
+      // },
+      // {
+      //   name: 'Sublime Text',
+      //   description: 'IDE',
+      //   href: 'https://www.sublimetext.com/',
+      //   icon: import('@/assets/tools/sublime.svg?raw')
+      // }
     ]}
   />
   <ToolSection
     class='mb-5'
     title='Environment'
     tools={[
-      {
-        name: 'Arch Linux',
-        description: 'Linux Distribution',
-        href: 'https://archlinux.org/',
-        icon: import('@/assets/tools/archlinux.svg?raw')
-      },
+      // {
+      //   name: 'Arch Linux',
+      //   description: 'Linux Distribution',
+      //   href: 'https://archlinux.org/',
+      //   icon: import('@/assets/tools/archlinux.svg?raw')
+      // },
       {
         name: 'Ubuntu 24.04 LTS',
         description: 'Linux Distribution',
         href: 'https://ubuntu.com/',
         icon: import('@/assets/tools/ubuntu.svg?raw')
       },
+      // {
+      //   name: 'MacOS Sonoma',
+      //   description: 'MacBook Air',
+      //   href: 'https://www.apple.com/macos/',
+      //   icon: import('@/assets/tools/apple.svg?raw')
+      // },
       {
-        name: 'MacOS Sonoma',
-        description: 'MacBook Air',
-        href: 'https://www.apple.com/macos/',
-        icon: import('@/assets/tools/apple.svg?raw')
-      },
-      {
-        name: 'Windows 11',
-        description: 'Rog Strix G15',
-        href: 'https://news.microsoft.com/windows11-general-availability/',
+        name: 'Windows 10',
+        description: 'Windows Distribution',
+        href: 'https://www.microsoft.com/windows',
         icon: import('@/assets/tools/windows11.svg?raw')
       }
     ]}
@@ -285,34 +330,59 @@ const headings = [
       {
         platform: 'GitHub',
         icon: 'github',
-        link: 'https://github.com/cworld1',
+        link: 'https://github.com/itsteddydev',
         text: 'followers',
-        api: 'github/cworld1'
+        api: 'github/itsteddydev'
       },
       {
-        platform: 'Telegram',
-        icon: 'telegram',
-        color: '#2ca5e0',
-        link: 'https://t.me/cworld0_cn',
+        platform: 'X',
+        icon: 'x',
+        // color: '#1da1f2',
+        link: 'https://x.com/itsteddydev',
+        text: 'followers',
+        api: 'x/itsteddydev'
+      },
+      {
+        platform: 'Instagram',
+        icon: 'instagram',
+        // color: '#2ca5e0',
+        link: 'https://instagram.com/itsteddydev',
         text: 'subscribers',
-        api: 'telegram/cworld0_cn'
+        api: 'instagram/itsteddydev'
       },
+
       {
-        platform: 'Weibo',
-        icon: 'weibo',
-        color: '#e71f19',
-        link: 'https://weibo.com/cworld0',
-        text: 'followers',
-        api: 'weibo/5501674056'
-      },
-      {
-        platform: 'Steam',
-        icon: 'steam',
-        color: '#50769d',
-        link: 'https://steamcommunity.com/id/cworld',
-        text: 'games',
-        api: 'steamgames/76561199021278120'
+        platform: 'YouTube',
+        icon: 'youtube',
+        // color: '#ff0000',
+        link: 'https://www.youtube.com/@itsteddydev',
+        text: 'subscribers',
+        api: 'youtube/itsteddydev'
       }
+      // {
+      //   platform: 'LinkedIn',
+      //   icon: 'linkedin',
+      //   // color: '#0077b5',
+      //   link: 'https://www.linkedin.com/in/cworld0/',
+      //   text: 'connections',
+      //   api: 'linkedin/itsteddydev'
+      // }
+      // {
+      //   platform: 'Weibo',
+      //   icon: 'weibo',
+      //   color: '#e71f19',
+      //   link: 'https://weibo.com/cworld0',
+      //   text: 'followers',
+      //   api: 'weibo/5501674056'
+      // },
+      // {
+      //   platform: 'Steam',
+      //   icon: 'steam',
+      //   color: '#50769d',
+      //   link: 'https://steamcommunity.com/id/cworld',
+      //   text: 'games',
+      //   api: 'steamgames/76561199021278120'
+      // }
     ]}
   />
 
@@ -325,9 +395,9 @@ const headings = [
   </Collapse>
 
   {/* about-blog */}
-  <h2 id='about-blog'>About Blog</h2>
-  <p>Website history:</p>
-  <Timeline
+  <!-- <h2 id='about-blog'>About Blog</h2> -->
+  <!-- <p>Website history:</p> -->
+  <!-- <Timeline
     events={[
       {
         date: '2024-04-29',
@@ -344,36 +414,36 @@ const headings = [
         content: 'Writed website docs'
       }
     ]}
-  />
-  <p>
+  /> -->
+  <!-- <p>
     The smooth operation and personalized customization of website also rely on the resources and
     technical support provided by the following excellent projects/service providers:
-  </p>
-  <ul>
-    <li>Domain: <a href='#' target='_blank'>Vercel</a></li>
-    <li>
+  </p> -->
+  <!-- <ul> -->
+  <!-- <li>Domain: <a href='#' target='_blank'>Vercel</a></li> -->
+  <!-- <li>
       Framework & Theme: <a href='https://astro.build/' target='_blank'>Astro</a> + <a
         href='https://github.com/cworld1/astro-theme-pure'
         target='_blank'>Astro Theme Pure</a
       >
-    </li>
-    <li>
+    </li> -->
+  <!-- <li>
       Site hosting: <a href='https://vercel.com/' target='_blank'>Vercel</a>
-    </li>
-    <li>
+    </li> -->
+  <!-- <li>
       CI/CD: <a href='https://vercel.com/workflow' target='_blank'>Vercel Workflow</a>
-    </li>
-    <!-- <li>Resources speedup: <a href='https://cdn.cbd.int/' target='_blank'>CBD CDN</a></li> -->
-    <li>Comment system: <a href='https://waline.js.org' target='_blank'>Waline</a></li>
-    <li>
+    </li> -->
+  <!-- <li>Resources speedup: <a href='https://cdn.cbd.int/' target='_blank'>CBD CDN</a></li> -->
+  <!-- <li>Comment system: <a href='https://waline.js.org' target='_blank'>Waline</a></li> -->
+  <!-- <li>
       Visits: <a href='https://supabase.com/' target='_blank'>Supabase</a> +
       <a href='https://waline.js.org/' target='_blank'>Waline</a>
-    </li>
-    <li>
+    </li> -->
+  <!-- <li>
       Other statistics: <a href='https://github.com/spencerwooo/substats' target='_blank'
         >Substats</a
       >
-    </li>
-  </ul>
+    </li> -->
+  <!-- </ul> -->
   <Comment slot='bottom' />
 </PageLayout>
