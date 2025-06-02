@@ -6,15 +6,15 @@ import { Button, Collapse, Icon } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
 import Sponsors from '@/components/projects/Sponsors.astro'
-import alipay from '@/assets/alipay-qrcode.jpg'
+import kofi from '@/assets/kofi-qrcode.png'
 // import KeyIcon from '@/assets/icons/key.svg'
-import wechat from '@/assets/wechat-qrcode.jpg'
+// import wechat from '@/assets/wechat-qrcode.jpg'
 import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'theme', text: 'Theme' },
   { depth: 2, slug: 'programs', text: 'Programs' },
-  { depth: 2, slug: 'learnings', text: 'Learnings' },
+  // { depth: 2, slug: 'learnings', text: 'Learnings' },
   { depth: 2, slug: 'others', text: 'Others' },
   // { depth: 2, slug: 'gpg-signature', text: 'GPG Signature' },
   { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
@@ -304,7 +304,7 @@ const headings = [
     />
   </Collapse>
 
-  <h2 id='learnings'>Learnings</h2>
+  <!-- <h2 id='learnings'>Learnings</h2>
   <ProjectSection
     class='my-2'
     project={[
@@ -324,20 +324,20 @@ const headings = [
         ]
       }
     ]}
-  />
+  /> -->
 
   <h2 id='others'>Others</h2>
   <ProjectSection
     project={[
       {
-        name: 'CWorld',
-        description: "CWorld's Github",
-        links: [{ type: 'github', href: 'https://github.com/cworld1' }]
+        name: 'Justcoddev',
+        description: "Justcoddev's Github",
+        links: [{ type: 'github', href: 'https://github.com/justcoddev' }]
       },
       {
-        name: 'Arthals',
-        description: 'Arthals Github',
-        links: [{ type: 'github', href: 'https://github.com/zhuozhiyongde' }]
+        name: 'Teddy',
+        description: 'Teddy Github',
+        links: [{ type: 'github', href: 'https://github.com/itsteddydev' }]
       }
     ]}
   />
@@ -352,14 +352,14 @@ const headings = [
     <KeyIcon class='size-5' slot='before' />
   </Button> -->
 
-  <!-- sponsorship -->
+  sponsorship
   <h2 id='sponsorship'>Sponsorship</h2>
   <p>Please leave a message or contact me proactively after sponsorship.</p>
   <div class='flex flex-col justify-center gap-4 sm:flex-row'>
     {
       [
-        { name: 'WeChat', icon: 'wechat-pay', image: wechat },
-        { name: 'Alipay', icon: 'alipay', image: alipay }
+        // { name: 'WeChat', icon: 'wechat-pay', image: wechat },
+        { name: 'KoFi', icon: 'kofi', image: kofi }
       ].map((item) => (
         <div class='group relative justify-center overflow-hidden rounded-xl border bg-white'>
           <div class='absolute bottom-0 end-0 start-0 top-0 flex items-center justify-center transition-opacity group-hover:opacity-0'>
@@ -378,7 +378,7 @@ const headings = [
   <p>Thanks to the following sponsors:</p>
   <Sponsors
     sponsors={[
-      { name: 'C*a（酷安@暴走の蜗牛）', amount: '2.00', date: '2019-07-02' },
+      { name: 'yaninedesign', amount: '100.00', date: '2024-07-02' },
       { name: '华雄(QQ：1300****71)', amount: '5.00', date: '2019-12-30' },
       { name: '◌(QQ：1934****45)', amount: '3.00', date: '2019-12-30' },
       { name: 'Anonymous', amount: '20.00', date: '2022-04-06' }
