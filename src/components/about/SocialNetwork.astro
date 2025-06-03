@@ -1,0 +1,46 @@
+---
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
+
+// SocialNetwork.astro
+
+interface SocialItem {
+  platform: string
+  icon: AstroComponentFactory
+  color?: string
+  link?: string
+  text?: string
+  count?: number
+}
+
+type Props = {
+  stats: SocialItem[]
+}
+
+const { stats } = Astro.props as Props
+---
+
+<div class='grid grid-cols-1 gap-3 rounded-xl border p-2 sm:grid-cols-2 sm:p-3'>
+  {
+    stats.map(({ link, platform, icon: Icon, color, count, text }) => (
+      <a
+        class='group text-muted-foreground no-underline'
+        href={link}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <div class='flex items-center gap-3 rounded-lg border border-transparent px-3 py-2 transition-all hover:border-border hover:bg-muted'>
+          {Icon && <Icon style={`color: ${color}`} />}
+          <div class='flex-1 text-foreground transition-colors group-hover:text-primary'>
+            {platform}
+          </div>
+          {typeof count === 'number' ? (
+            <div class='flex items-center gap-1.5'>
+              <samp>{count}</samp>
+              {text && <span class='text-sm font-normal'>{text}</span>}
+            </div>
+          ) : null}
+        </div>
+      </a>
+    ))
+  }
+</div>
