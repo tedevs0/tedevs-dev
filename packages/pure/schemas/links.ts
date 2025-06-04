@@ -19,10 +19,10 @@ export const FriendLinksSchema = () =>
     .default({
       logbook: [],
       applyTip: [
-        { name: 'Name', val: 'Astro Pure' },
+        { name: 'Name', val: 'Tedevs' },
         { name: 'Desc', val: 'Null' },
-        { name: 'Link', val: 'https://astro-pure.js.org/' },
-        { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+        { name: 'Link', val: 'https://tedevs.vercel.app/' },
+        { name: 'Avatar', val: 'https://tedevs.vercel.app/favicon/favicon.ico' }
       ]
     })
     .describe('Friend links for your website.')
