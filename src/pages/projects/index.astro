@@ -1,23 +1,20 @@
 ---
 import { Image } from 'astro:assets'
 
-import type { iconsType } from 'astro-pure/types'
 import { Button, Collapse, Icon } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
-import Sponsors from '@/components/projects/Sponsors.astro'
-import kofi from '@/assets/kofi-qrcode.png'
 // import KeyIcon from '@/assets/icons/key.svg'
-// import wechat from '@/assets/wechat-qrcode.jpg'
+
 import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'theme', text: 'Theme' },
   { depth: 2, slug: 'programs', text: 'Programs' },
   // { depth: 2, slug: 'learnings', text: 'Learnings' },
-  { depth: 2, slug: 'others', text: 'Others' },
+  { depth: 2, slug: 'others', text: 'Others' }
   // { depth: 2, slug: 'gpg-signature', text: 'GPG Signature' },
-  { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
+  // { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
 ]
 ---
 
@@ -47,7 +44,7 @@ const headings = [
         description: 'A modern customizable template for your links and projects.',
         image: 'personal_hub.jpg',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/hub-itsteddydev' },
+          { type: 'github', href: 'https://github.com/tedevs/hub-itsteddydev' },
           { type: 'site', href: 'https://hub-itsteddydev.vercel.app/' },
           {
             type: 'doc',
@@ -78,11 +75,11 @@ const headings = [
         description: 'A web application for taking notes with an archiving option.',
         image: 'notepad_01.webp',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/notepad' },
+          { type: 'github', href: 'https://github.com/tedevs/notepad' },
           { type: 'site', href: 'https://my-notepad-t7re.onrender.com/' },
           {
             type: 'doc',
-            href: 'https://github.com/itsteddydev/notepad/blob/main/README.md'
+            href: 'https://github.com/tedevs/notepad/blob/main/README.md'
           }
         ]
       },
@@ -91,7 +88,7 @@ const headings = [
         description: 'Inspired by traditional Japanese aesthetics.',
         image: 'neko_inn_01.webp',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/neko-inn' },
+          { type: 'github', href: 'https://github.com/tedevs/neko-inn' },
           { type: 'site', href: 'https://neko-inn.vercel.app/' }
         ]
       },
@@ -100,14 +97,14 @@ const headings = [
         description:
           'Developing a Linktree clone from scratch with Next.js, React, Tailwind CSS, ShadCN, Prisma and ClerkJS and backend',
         image: 'just-me.png',
-        links: [{ type: 'github', href: 'https://github.com/itsteddydev/just-me' }]
+        links: [{ type: 'github', href: 'https://github.com/tedevs/just-me' }]
       },
       {
         name: '🍭 Valora Prime',
         description: 'Compare prices and find the best deals.',
         image: 'valoraprime.png',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/valoraprime' },
+          { type: 'github', href: 'https://github.com/tedevs/valoraprime' },
           { type: 'site', href: 'https://valoraprime.vercel.app/' }
         ]
       },
@@ -117,7 +114,7 @@ const headings = [
           'This design has some nice layout challenges in it. A perfect training ground to practice your Flexbox and/or Grid skills.',
         image: 'lp-fylo-dark-theme.png',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/lp-fylo-dark-theme' },
+          { type: 'github', href: 'https://github.com/tedevs/lp-fylo-dark-theme' },
           { type: 'site', href: 'https://lp-fylo-dark-theme.vercel.app/' }
         ]
       },
@@ -127,7 +124,7 @@ const headings = [
           'This project is great if you are starting to get confident with slightly more complex layouts. The second section with the testimonial area will provide a nice challenge.',
         image: 'lp-with-two-column-layout.jpg',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/lp-with-two-column-layout' },
+          { type: 'github', href: 'https://github.com/tedevs/lp-with-two-column-layout' },
           { type: 'site', href: 'https://lp-with-two-column-layout.netlify.app/' }
         ]
       },
@@ -137,7 +134,7 @@ const headings = [
           'Practice using pseudo-elements for styling extras and the CSS position property for the sections with curved edges.',
         image: 'lp-with-curved-sections.png',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/lp-with-curved-sections' },
+          { type: 'github', href: 'https://github.com/tedevs/lp-with-curved-sections' },
           { type: 'site', href: 'https://lp-with-curved-sections.netlify.app/' }
         ]
       },
@@ -147,7 +144,7 @@ const headings = [
           'This challenge will be a great test for your responsive skills. There are lots of small details and slight content shifts for different screen sizes.',
         image: 'lp-manage.jpg',
         links: [
-          { type: 'github', href: 'https://github.com/itsteddydev/lp-manage' },
+          { type: 'github', href: 'https://github.com/tedevs/lp-manage' },
           { type: 'site', href: 'https://lp-manage.netlify.app/' }
         ]
       },
@@ -159,7 +156,7 @@ const headings = [
         links: [
           {
             type: 'github',
-            href: 'https://github.com/itsteddydev/lp-with-single-introductory-section'
+            href: 'https://github.com/tedevs/lp-with-single-introductory-section'
           },
           { type: 'site', href: 'https://main--visionary-daffodil-2266fa.netlify.app/' }
         ]
@@ -194,7 +191,7 @@ const headings = [
           description:
             'A simple microfrontend application that demonstrates the use of microfrontends withshell & products.',
           image: 'cae_01.jpeg',
-          links: [{ type: 'github', href: 'https://github.com/itsteddydev/pooldys' }]
+          links: [{ type: 'github', href: 'https://github.com/tedevs/pooldys' }]
         },
         {
           name: '🍭 Results summary component',
@@ -202,7 +199,7 @@ const headings = [
             "This challenge has something for everyone. It's a HTML and CSS only project, but we've also provided a JSON file of the test results for anyone wanting to practice JS.",
           image: 'LCC-1-card.jpg',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/LCC-1-card' },
+            { type: 'github', href: 'https://github.com/tedevs/LCC-1-card' },
             { type: 'site', href: 'https://justcoddev-card-mobile.netlify.app/' }
           ]
         },
@@ -211,7 +208,7 @@ const headings = [
           description: 'A simple page for a restaurant using HTML and CSS.',
           image: 'asaderos-rocky.jpg',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/page-asaderos-rocky' },
+            { type: 'github', href: 'https://github.com/tedevs/page-asaderos-rocky' },
             { type: 'site', href: 'https://asaderos-rocky.netlify.app/' }
           ]
         },
@@ -220,7 +217,7 @@ const headings = [
           description: 'A simple Angular application with @input and @output decorators.',
           image: 'citas.png',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/citas' },
+            { type: 'github', href: 'https://github.com/tedevs/citas' },
             { type: 'site', href: 'https://justcoddev-ng-citas.netlify.app/' }
           ]
         },
@@ -229,7 +226,7 @@ const headings = [
           description: 'A implementation of a BMI calculator using Angular.',
           image: 'bmi-calculator.png',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/bmi_calculator' },
+            { type: 'github', href: 'https://github.com/tedevs/bmi_calculator' },
             { type: 'site', href: 'https://justcoddev-ng-bmi-calculator.netlify.app/' }
           ]
         },
@@ -238,7 +235,7 @@ const headings = [
           description: 'A simple Angular application that demonstrates ngFor and ngIf directives.',
           image: 'currency-converter.png',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/convertidor_monedas' },
+            { type: 'github', href: 'https://github.com/tedevs/convertidor_monedas' },
             { type: 'site', href: 'https://justcoddev-ng-convertidor-monedas.netlify.app/' }
           ]
         },
@@ -247,7 +244,7 @@ const headings = [
           description: 'Application that demonstrates data binding and two-way data binding.',
           image: 'task-ng.png',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/tareas' },
+            { type: 'github', href: 'https://github.com/tedevs/tareas' },
             { type: 'site', href: 'https://justcoddev-ng-tareas.netlify.app/' }
           ]
         },
@@ -257,7 +254,7 @@ const headings = [
             'A simple Angular application that demonstrates data binding and component interaction.',
           image: 'databinding.png',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/databinding' },
+            { type: 'github', href: 'https://github.com/tedevs/databinding' },
             { type: 'site', href: 'https://databinding-one.vercel.app/' }
           ]
         },
@@ -267,7 +264,7 @@ const headings = [
             'A simple Ionic application that demonstrates the use of Ionic components and navigation.',
           image: 'ionicproject.png',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/ionicproject' },
+            { type: 'github', href: 'https://github.com/tedevs/ionicproject' },
             { type: 'site', href: 'https://ionicproject-gray.vercel.app/places' }
           ]
         },
@@ -277,7 +274,7 @@ const headings = [
             'HttpClient for consuming the PokeAPI, a RESTful API that provides data about Pokémon.',
           image: 'pokeapi-ng.png',
           links: [
-            { type: 'github', href: 'https://github.com/itsteddydev/pokeapi' },
+            { type: 'github', href: 'https://github.com/tedevs/pokeapi' },
             { type: 'site', href: 'https://justcoddev-ng-pokeapi.netlify.app/home' }
           ]
         },
@@ -285,20 +282,20 @@ const headings = [
           name: '🍭 Clone de Spotify NG',
           description: 'A simple Spotify clone using Angular.',
           image: 'clone-spotify.png',
-          links: [{ type: 'github', href: 'https://github.com/itsteddydev/spotify-uy' }]
+          links: [{ type: 'github', href: 'https://github.com/tedevs/spotify-uy' }]
         },
         {
           name: '🍭 LearningZone App - Android',
           description:
             'Mobile application created with Android. Onboarding screen (meow bottom navigation).',
           image: 'learning-zone.png',
-          links: [{ type: 'github', href: 'https://github.com/itsteddydev/LearningZone' }]
+          links: [{ type: 'github', href: 'https://github.com/tedevs/LearningZone' }]
         },
         {
           name: '🍭 Hello World',
           description: 'Say Hello World',
           image: '',
-          links: [{ type: 'github', href: 'https://github.com/itsteddydev/hello-world' }]
+          links: [{ type: 'github', href: 'https://github.com/tedevs/hello-world' }]
         }
       ]}
     />
@@ -339,7 +336,7 @@ const headings = [
         name: 'Teddy',
         image: 'tedevs.png',
         description: 'Teddy Github',
-        links: [{ type: 'github', href: 'https://github.com/itsteddydev' }]
+        links: [{ type: 'github', href: 'https://github.com/tedevs' }]
       }
     ]}
   />
@@ -353,37 +350,6 @@ const headings = [
   <Button href='https://keys.openpgp.org/search?q=APTX4869' title='Checkout my key' target='_blank'>
     <KeyIcon class='size-5' slot='before' />
   </Button> -->
-
-  sponsorship
-  <h2 id='sponsorship'>Sponsorship</h2>
-  <p>Please leave a message or contact me proactively after sponsorship.</p>
-  <div class='flex flex-col justify-center gap-4 sm:flex-row'>
-    {
-      [
-        // { name: 'WeChat', icon: 'wechat-pay', image: wechat },
-        { name: 'KoFi', icon: 'kofi', image: kofi }
-      ].map((item) => (
-        <div class='group relative justify-center overflow-hidden rounded-xl border bg-white'>
-          <div class='absolute bottom-0 end-0 start-0 top-0 flex items-center justify-center transition-opacity group-hover:opacity-0'>
-            <Icon class='size-20' name={item.icon as iconsType} />
-          </div>
-          <Image
-            class='mx-auto my-0 max-w-60 opacity-30 blur-sm transition-opacity group-hover:opacity-100 group-hover:blur-none'
-            src={item.image}
-            alt={item.name}
-            loading='lazy'
-          />
-        </div>
-      ))
-    }
-  </div>
-  <p>Thanks to the following sponsors:</p>
-  <Sponsors
-    sponsors={[
-      { name: 'yaninedesign', amount: '100.00', date: '2024-07-02' },
-      { name: 'Anonymous', amount: '20.00', date: '2022-04-06' }
-    ]}
-  />
 </PageLayout>
 
 <script

@@ -12,9 +12,32 @@ import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/my-avatar.png'
 import config from '@/site-config'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const languages = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Java', 'Python', 'C#', 'VB', 'PHP']
+const frameworks = ['React.js', 'Next.js', 'Angular', 'Node.js', 'Astro', 'Nest.js']
+const ormAndDB = ['Prisma', 'MySQL', 'MongoDB']
+const tools = [
+  'Vite',
+  'Webpack',
+  'Tailwind CSS',
+  'Git',
+  'GitHub',
+  'Microfrontends',
+  'Figma',
+  'Photoshop',
+  'Illustrator',
+  'Microsoft Office'
+]
+// const platforms = ['Vercel', 'Waline']
+const softSkills = [
+  'Teamwork',
+  'Problem Solving',
+  'Adaptability',
+  'Communication',
+  'Time Management',
+  'Critical Thinking'
+]
+
+const languagesSpoken = ['Spanish (Native)', 'English - B2']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -37,7 +60,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           <Label title='Ecuador'>
             <Icon name='location' class='size-5' slot='icon' />
           </Label>
-          <Label title='Github' as='a' href='https://github.com/itsteddydev' target='_blank'>
+          <Label title='Github' as='a' href='https://github.com/tedevs' target='_blank'>
             <Icon name='github' class='size-5' slot='icon' />
           </Label>
         </div>
@@ -45,7 +68,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
       {/* Get template */}
       <a
-        href='https://github.com/itsteddydev'
+        href='https://github.com/tedevs'
         target='_blank'
         class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
       >
@@ -63,9 +86,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       <Section title='About'>
         <p class='text-muted-foreground'>Developer / Designer</p>
         <p class='text-muted-foreground'>
-          Desarrollador web especializado en crear experiencias digitales intuitivas y funcionales.
-          Combino diseño limpio con código eficiente para entregar soluciones que realmente
-          resuelven problemas. Siempre buscando aprender, mejorar y construir con propósito.
+          <strong>Turning ideas into code with clarity and intention.</strong><br />
+          I build clean, functional interfaces and enjoy solving problems with a sense of humor. I’m
+          not trying to reinvent the galaxy—just making sure things work well and look good along the
+          way.
         </p>
         <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
       </Section>
@@ -116,10 +140,12 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       <Section title='Education'>
         <Card
           as='a'
-          heading='Ingeniería en Tecnologías de la Información'
-          subheading='Universidad Técnica de Machala'
+          heading='Information Technology Engineering'
+          subheading='Technical University of Machala'
           date='March 2018 - March 2024'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+          href='https://www.utmachala.edu.ec/portalwp/'
+          target='_blank'
+          rel='noopener noreferrer'
         >
           {
             /* <ul class='ms-4 list-disc text-muted-foreground'>
@@ -148,7 +174,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             imagePath='/src/assets/projects/personal_hub.jpg'
           />
           <ProjectCard
-            href='https://github.com/itsteddydev/neko-inn'
+            href='https://github.com/tedevs/neko-inn'
             heading='Neko Inn'
             subheading='Inspired by traditional Japanese aesthetics'
             imagePath='/src/assets/projects/neko_inn_01.webp'
@@ -174,8 +200,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
       <Section title='Skills'>
         <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
+        <SkillLayout title='Frameworks' skills={frameworks} />
+        <!-- <SkillLayout title='Frontend' skills={frontend} /> -->
+        <!-- <SkillLayout title='Backend' skills={backend} /> -->
+        <SkillLayout title='ORM & Databases' skills={ormAndDB} />
+        <SkillLayout title='Tools & Technologies' skills={tools} />
+        <!-- <SkillLayout title='Platforms' skills={platforms} /> -->
+        <SkillLayout title='Soft Skills' skills={softSkills} />
+        <SkillLayout title='Languages Spoken' skills={languagesSpoken} />
       </Section>
     </div>
     <!-- <Quote class='mt-12' /> -->

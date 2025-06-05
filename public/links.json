@@ -22,9 +22,9 @@
       "desc": "Other special links",
       "link_list": [
         {
-          "name": "Trekddycore",
+          "name": "Core Tedevs",
           "intro": "Personal command center, from where he manages my digital universe.",
-          "link": "https://trekddycore.vercel.app/",
+          "link": "https://core-tedevs.vercel.app/",
           "avatar": "https://i.imgur.com/4ryRopQ.png"
         }
       ]

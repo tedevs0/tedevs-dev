@@ -1,17 +1,22 @@
 ---
+import { Image } from 'astro:assets'
 import links from 'public/links.json'
 import config from 'virtual:config'
 
 import { Comment } from 'astro-pure/advanced'
-import { Collapse } from 'astro-pure/user'
+import type { iconsType } from 'astro-pure/types'
+import { Collapse, Icon } from 'astro-pure/user'
 // import { Timeline  } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import FriendList from '@/components/links/FriendList.astro'
+import Sponsors from '@/components/projects/Sponsors.astro'
+import kofi from '@/assets/kofi-qrcode.png'
 
 const headings = [
   { depth: 2, slug: 'common-links', text: 'Common Links' },
   { depth: 2, slug: 'special-links', text: 'Special Links' },
-  { depth: 2, slug: 'apply-links', text: 'Apply Links' }
+  { depth: 2, slug: 'apply-links', text: 'Apply Links' },
+  { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
 ]
 
 const { friends } = links
@@ -57,7 +62,46 @@ const linksConf = config.integ.links
   <ul>
     <li>Add our site to your friend links.</li>
     <li>Please ensure that your site is active.</li>
-    <li>Contact me via my <a href='mailto:ecruzsma@outlook.com' target='_blank'>email</a>.</li>
+    <li>Contact me via my <a href='mailto:teddysummers24@gmail.com' target='_blank'>email</a>.</li>
   </ul>
+
+  <!-- sponsorship -->
+  <h2 id='sponsorship'>Sponsorship</h2>
+  <p>
+    Please leave a message or contact me proactively via my <a
+      href='mailto:teddysummers24@gmail.com'
+      target='_blank'>email</a
+    > after sponsorship.
+  </p>
+  <Collapse title='Scan to Donate'>
+    <div class='flex flex-col justify-center gap-4 sm:flex-row'>
+      {
+        [
+          // { name: 'WeChat', icon: 'wechat-pay', image: wechat },
+          { name: 'KoFi', icon: 'kofi', image: kofi }
+        ].map((item) => (
+          <div class='group relative justify-center overflow-hidden rounded-xl border bg-white'>
+            <div class='absolute bottom-0 end-0 start-0 top-0 flex items-center justify-center transition-opacity group-hover:opacity-0'>
+              <Icon class='size-20' name={item.icon as iconsType} />
+            </div>
+            <Image
+              class='mx-auto my-0 max-w-60 opacity-30 blur-sm transition-opacity group-hover:opacity-100 group-hover:blur-none'
+              src={item.image}
+              alt={item.name}
+              loading='lazy'
+            />
+          </div>
+        ))
+      }
+    </div>
+  </Collapse>
+
+  <p>Thanks to the following sponsors:</p>
+  <Sponsors
+    sponsors={[
+      { name: 'yaninedesign', amount: '100.00', date: '2024-07-02' },
+      { name: 'Anonymous', amount: '20.00', date: '2022-04-06' }
+    ]}
+  />
   <Comment slot='bottom' />
 </PageLayout>

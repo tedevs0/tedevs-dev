@@ -1,6 +1,7 @@
 ---
 import { Comment } from 'astro-pure/advanced'
-import { Button, Collapse, Spoiler } from 'astro-pure/user'
+import { Button, Spoiler } from 'astro-pure/user'
+// import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import SocialNetwork from '@/components/about/SocialNetwork.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
@@ -15,8 +16,8 @@ const headings = [
   { depth: 2, slug: 'about', text: 'About' },
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
   { depth: 2, slug: 'tools', text: 'Tools' },
-  { depth: 2, slug: 'social-networks', text: 'Social Networks' },
-  { depth: 2, slug: 'gossips', text: 'Gossips' }
+  { depth: 2, slug: 'social-networks', text: 'Social Networks' }
+  // { depth: 2, slug: 'gossips', text: 'Gossips' }
   // { depth: 2, slug: 'about-blog', text: 'About Blog' }
 ]
 const stats = [
@@ -24,7 +25,7 @@ const stats = [
     platform: 'GitHub',
     icon: Github,
     // color: '#1DA1F2',
-    link: 'https://github.com/itsteddydev',
+    link: 'https://github.com/tedevs',
     count: 61,
     text: 'followers'
   },
@@ -32,7 +33,7 @@ const stats = [
     platform: 'LinkedIn',
     icon: Linkedin,
     color: '#0077b5',
-    link: 'https://www.linkedin.com/in/itsteddydev/',
+    link: 'https://www.linkedin.com/in/tedevs/',
     count: 678,
     text: 'followers'
   },
@@ -40,7 +41,7 @@ const stats = [
     platform: 'Instagram',
     icon: Instagram,
     color: '#E1306C',
-    link: 'https://instagram.com/itsteddydev',
+    link: 'https://instagram.com/tedevs',
     count: 807,
     text: 'followers'
   },
@@ -48,7 +49,7 @@ const stats = [
     platform: 'Twitter',
     icon: x,
     color: '#1DA1F2',
-    link: 'https://twitter.com/itsteddydev',
+    link: 'https://twitter.com/tedevs',
     count: 145,
     text: 'followers'
   },
@@ -57,7 +58,7 @@ const stats = [
     platform: 'YouTube',
     icon: Youtube,
     color: '#ff0000',
-    link: 'https://www.youtube.com/@itsteddydev',
+    link: 'https://www.youtube.com/@tedevs',
     count: 9,
     text: 'followers'
   },
@@ -76,30 +77,31 @@ const stats = [
   <h2 id='about' class=''>🖖 — ⚔️ — 🕵️‍♂️</h2>
   <p>Developer / Designer</p>
   <blockquote>
-    No soy un maestro Jedi ni el capitán de la Enterprise, pero sí alguien que insiste hasta que el
-    código deje de romperse... otra vez. No tengo gorra de detective, pero si hay un bug suelto, lo
-    deduzco. Trabajo con humor, porque si no, ¿cómo sobrevivir a tantas horas pegado a la pantalla
-    en esta galaxia muy, muy lejana?
+    I'm not a Jedi Master or the captain of the Enterprise, but I *am* someone who keeps going until
+    the code finally stops breaking... again. I don't wear a detective hat, but if there's a bug on
+    the loose, I'll find it. I work with humor—because really, how else do you survive endless hours
+    staring at a screen in a galaxy far, far away?
     <Spoiler>
-      Y sí, me río de mis bugs… especialmente cuando me recuerdan que soy humano, aunque a veces
-      parezca un droide. O un sociópata altamente funcional, según el debugger.
+      And yes, I laugh at my own bugs... especially when they remind me I'm human—even if I
+      sometimes come off as a droid. Or a highly functional sociopath, according to the debugger.
     </Spoiler>
   </blockquote>
 
   <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' style='ahead' />
-  <h3>🧭 Identidad y forma de trabajar</h3>
+  <h3>🧭 Identity and Work Style</h3>
 
   <p>
-    Desarrollo experiencias digitales centradas en el usuario, con una inclinación natural por lo
-    funcional, lo claro y lo bien hecho. No programo por programar: me interesa que lo que creo
-    tenga sentido, se use bien y se vea bien. Busco equilibrio entre funcionalidad y estética.
-    Siempre.
+    I build user-centered digital experiences with a natural leaning toward the functional, the
+    clear, and the well-crafted. I don’t code just for the sake of it—I care about creating things
+    that make sense, work well, and look good. I always aim for balance between functionality and
+    aesthetics.
   </p>
   <p>
-    Creo aplicaciones que priorizan la experiencia completa. Cuando diseño una interfaz, pienso en
-    cómo se siente usarla. Y cuando escribo una función, también pienso en quién va a leer ese
-    código después. A veces soy yo mismo… y lo agradezco.
+    I create applications that prioritize the full experience. When I design an interface, I think
+    about how it *feels* to use it. And when I write a function, I also think about who’s going to
+    read that code later. Sometimes it’s me—and I’m grateful.
   </p>
+
   <!-- <div class='border-l-4 border-[#FBAB01] pl-4'>
     Desarrollador web con enfoque en experiencia de usuario y diseño limpio. Me especializo en
     construir interfaces funcionales, mantenibles y modernas.
@@ -129,60 +131,61 @@ const stats = [
     probablemente estoy en medio de un refactor... o es lunes.
   </p> -->
 
-  <h3>🧠 Mentalidad y enfoque</h3>
+  <h3>🧠 Mindset and Approach</h3>
   <p>
-    Soy detallista, pero no me pierdo en perfeccionismos innecesarios. Si algo está roto, lo
-    arreglo. Si no lo está, sigo adelante. Prefiero lo simple, pero no le rehúyo a la complejidad
-    cuando vale la pena. Lo funcional, lo bello y lo claro no están peleados.
+    I’m detail-oriented, but I don’t get lost in unnecessary perfectionism. If something’s broken, I
+    fix it. If it’s not, I move on. I prefer simplicity, but I don’t shy away from complexity when
+    it’s worth it. Functional, beautiful, and clear don’t have to be at odds.
   </p>
   <div class='border-l-4 border-[#FBAB01] pl-4'>
-    Apasionado por el desarrollo frontend, disfruto convertir ideas en interfaces eficientes.
-    Trabajo con tecnologías modernas y una mentalidad constante de mejora.
+    Passionate about frontend development, I enjoy turning ideas into efficient interfaces. I work
+    with modern technologies and a mindset of continuous improvement.
   </div>
   <p>
-    He aprendido que no siempre se empieza desde la base. Algunas veces me lancé directo a
-    frameworks como React o Astro sin repasar todo JavaScript puro, pero lo hice con conciencia. Y
-    cuando toca, retrocedo, repaso, y vuelvo más fuerte.
+    I’ve learned that you don’t always start from scratch. Sometimes I jumped straight into
+    frameworks like React or Astro without covering all the vanilla JavaScript first—but I did it
+    consciously. And when needed, I go back, review, and come back stronger.
   </p>
   <p>
-    También me gusta pensar en el producto como un todo. No solo en el código. Por eso he construido
-    desde interfaces con filtros dinámicos hasta pequeños dashboards para gestionar reseñas de
-    portafolio. Todo útil, todo con intención.
+    I also like to think about the product as a whole—not just the code. That’s why I’ve built
+    everything from interfaces with dynamic filters to small dashboards for managing portfolio
+    reviews. All useful, all intentional.
   </p>
-  <p>Y por cierto… sí, debuggeo existencialmente de vez en cuando. No todo es código.</p>
+  <p>And by the way… yes, I debug existentially from time to time. It’s not all code.</p>
 
-  <h3>🚀 Proyectos personales y visión</h3>
+  <h3>🚀 Personal Projects and Vision</h3>
   <p>
-    Mi marca principal es tedevs.dev, donde presento mi perfil profesional. Pero también me gusta
-    compartir lo que aprendo y quizá crear comunidad.
+    My main brand is <strong>tedevs</strong>, where I showcase my professional profile. But I also
+    enjoy sharing what I learn—and maybe building a community around it.
   </p>
   <p>
-    Justcoddev es un proyecto que he ido madurando con los años. Aunque comenzó como una idea, ahora
-    es cuando le estoy dando forma para compartir conocimiento y recursos con la comunidad. También
-    estoy trabajando en OpenTrek, una iniciativa de colaboración abierta para proyectos que puedan
-    crecer con más manos y menos ego.
+    <strong>Justcoddev</strong> is a project I’ve been shaping over the years. It started as an idea,
+    but now I’m giving it form to share knowledge and resources with the community. I’m also working
+    on <strong>OpenTrek</strong>, an open collaboration initiative for projects that grow better
+    with more hands and less ego.
   </p>
 
-  <p>No quiero solo escribir buen código. Quiero dejar algo que sirva.</p>
+  <p>I don’t just want to write good code—I want to leave something that’s actually useful.</p>
 
-  <h3>👥 Personalidad en el trabajo</h3>
+  <h3>👥 Personality at Work</h3>
   <p>
-    Me tomo el trabajo en serio, pero no me tomo a mí demasiado en serio. Me gusta que las cosas
-    estén bien hechas. Y si no lo están, no me molesta rehacer. De hecho, lo disfruto.
+    I take work seriously, but I don’t take myself too seriously. I like things to be well done—and
+    if they’re not, I don’t mind redoing them. In fact, I enjoy it.
   </p>
   <p>
-    Tengo esa mezcla rara de ser relajado pero responsable. Puedo bromear mientras deployo algo
-    importante, pero también sé cuándo no es momento para memes.
+    I’ve got that rare mix of being laid-back but responsible. I can crack a joke while deploying
+    something important, but I also know when it’s not the time for memes.
   </p>
   <div class='border-l-4 border-[#FBAB01] pl-4'>
-    Programo como vivo: simple, claro y con intención.
+    I code the way I live: simple, clear, and intentional.
   </div>
+  <div class='border-l-4 border-[#FBAB01] pl-4'>
+    If the bug persists, at least let its error be semantically consistent.
+  </div>
+
   <!-- <div class='border-l-4 border-[#FBAB01] pl-4'>
     Me gusta que las cosas funcionen, pero más aún que se vean bien haciéndolo.
   </div> -->
-  <div class='border-l-4 border-[#FBAB01] pl-4'>
-    Si el bug persiste, al menos que su error sea semánticamente consistente.
-  </div>
 
   <!-- <blockquote>
     <h3><Spoiler>Spoiler (roast suave)</Spoiler></h3>
@@ -209,59 +212,57 @@ const stats = [
   <h2 id='hobbies'>Hobbies</h2>
   <ul>
     <li>
-      <strong>Juegos clásicos y estrategia:</strong><br />
-      Nunca fui de RPGs ni de mundos con 800 misiones secundarias. Si un juego tiene historia larga y
-      loops infinitos... probablemente me perdieron en el tutorial. Lo mío son los clásicos 2D. Juegos
-      que no perdonaban, no explicaban mucho y aun así eran gloriosos.
+      <strong>Classic games and strategy:</strong><br />
+      I was never into RPGs or worlds with 800 side quests. If a game has a long storyline and infinite
+      loops… they probably lost me in the tutorial. I’m all about the classic 2D games—the unforgiving
+      ones, with barely any instructions, yet totally glorious.
 
       <p>
-        En el celular me vas a encontrar entre partidas de Sudoku, una que otra batalla de
-        pistolitas, o tirando líneas perfectas en Tetris. Todo entre nostalgia y estrategia.
+        On my phone, you’ll find me switching between rounds of Sudoku, the occasional shooting
+        match, or lining up perfect Tetris blocks. All somewhere between nostalgia and strategy.
       </p>
     </li>
     <li>
-      <strong>Música y ambiente para programar:</strong><br />
-      Y aunque nunca he codificado en una cafetería hipster con latte al lado, sí trabajo con ruido de
-      fondo. Lo mío es el synthwave retro-electro, esas transmisiones que parecen sacadas de un anime
-      del 2090. Le dan a mi entorno una vibra syntech que me encanta.
+      <strong>Music and coding atmosphere:</strong><br />
+      I’ve never coded in a hipster café with a latte by my side, but I do work best with background
+      noise. My vibe is retro-electro synthwave—those livestreams that sound like they came straight
+      out of a 2090 anime. They give my space that “syntech” energy I love.
       <br />
-      (¿Mi soundtrack favorito para codear? Algo como <a
+      (My favorite coding soundtrack? Something like <a
         href='https://www.youtube.com/watch?v=niif4go9sxE'
         target='_blank'
-        rel='noopener noreferrer'>esto</a
+        rel='noopener noreferrer'>this</a
       >).
-      <p>
-        Ah, y si la música no funciona, siempre puedo contar con mis bugs para mantenerme despierto.
-      </p>
+      <p>And if music doesn’t do the trick, I can always count on my bugs to keep me awake.</p>
     </li>
     <li>
-      <strong>Disfrutar la vida a mi manera:</strong><br />
-      Maratonear series y películas es uno de mis pasatiempos favoritos, especialmente Star Wars y Star
-      Trek, que para mí son más que simples shows: son un universo entero para perderme. No necesito
-      salir a ningún lado cuando puedo hacer un viaje intergaláctico desde mi sillón.
+      <strong>Enjoying life, my way:</strong><br />
+      Binge-watching series and movies is one of my favorite pastimes—especially Star Wars and Star Trek.
+      To me, they’re more than just shows; they’re entire universes to get lost in. Who needs to go out
+      when you can go on an intergalactic trip from your couch?
     </li>
 
     <li>
-      <strong>Escribir ideas (aunque no siempre las termine):</strong><br />
-      Tengo notas por todas partes: ideas para apps, frases sueltas, nombres de proyectos, conceptos
-      random y hasta posibles nombres de funciones que me parecieron épicos a las 2 a.m. A veces es brainstorming,
-      a veces terapia, pero siempre hay algo escribiéndose en segundo plano.
-      <p>¿Publico todo? No. ¿Borro cosas? Nunca. Todo puede evolucionar... algún día.</p>
+      <strong>Writing ideas (even if I don’t always finish them):</strong><br />
+      I have notes everywhere—ideas for apps, random thoughts, project names, loose phrases, and even
+      epic function names that seemed brilliant at 2 a.m. Sometimes it’s brainstorming, sometimes it’s
+      therapy, but there’s always something being written in the background.
+      <p>Do I publish everything? Nope. Do I delete stuff? Never. Anything can evolve… someday.</p>
     </li>
     <li>
-      <strong>Curioso sin remedio:</strong><br />
-      De vez en cuando me encuentro atrapado en un ciclo de investigación interminable. Un día analizo
-      cómo hacer un script bash o zsh para que mi app arranque con un solo comando sin dramas, y al siguiente
-      estoy buscando si Sherlock realmente dijo "It is what it is" en algún episodio. Me encanta aprender
-      cosas nuevas, incluso si no tienen un propósito inmediato.
+      <strong>Hopelessly curious:</strong><br />
+      Every now and then, I get caught in a never-ending research spiral. One day I’m figuring out how
+      to write a bash or zsh script to launch my app with a single, drama-free command, and the next
+      I’m wondering if Sherlock ever actually said “It is what it is” in any episode. I love learning
+      new things—even if they serve no immediate purpose.
       <p>
-        Y cuando algo me intriga de verdad, entro en modo <em>Sherlock</em>: observo, conecto,
-        deduzco... hasta entender qué lo hace funcionar. No siempre hay un misterio que resolver,
-        pero mi cabeza lo busca igual.
+        And when something truly grabs my attention, I go full <em>Sherlock</em> mode: observe, connect,
+        deduce… until I figure out what makes it tick. There’s not always a mystery to solve, but my
+        brain’s looking for one anyway.
       </p>
       <p>
-        Creo que parte de lo que me mueve es eso: entender cómo funcionan las cosas, incluso las que
-        no voy a construir yo.
+        I think that’s part of what drives me: understanding how things work—even the ones I won’t
+        build myself.
       </p>
     </li>
   </ul>
