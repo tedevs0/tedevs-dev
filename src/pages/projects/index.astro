@@ -1,12 +1,14 @@
 ---
 import { Image } from 'astro:assets'
 
+import { Comment } from 'astro-pure/advanced'
 import { Button, Collapse, Icon } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
+
 // import KeyIcon from '@/assets/icons/key.svg'
 
-import config from '@/site-config'
+// import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'theme', text: 'Theme' },
@@ -350,9 +352,11 @@ const headings = [
   <Button href='https://keys.openpgp.org/search?q=APTX4869' title='Checkout my key' target='_blank'>
     <KeyIcon class='size-5' slot='before' />
   </Button> -->
+
+  <Comment slot='bottom' />
 </PageLayout>
 
-<script
+<!-- <script
   is:inline
   type='module'
   data-astro-rerun
@@ -367,4 +371,4 @@ const headings = [
   }
 
   await loadPageviewCount()
-</script>
+</script> -->
