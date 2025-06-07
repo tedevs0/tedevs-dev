@@ -10,7 +10,7 @@ import { Collapse, Icon } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import FriendList from '@/components/links/FriendList.astro'
 import Sponsors from '@/components/projects/Sponsors.astro'
-import kofi from '@/assets/kofi-qrcode.png'
+import kofi from '@/assets/qr_con_logo.png'
 
 const headings = [
   { depth: 2, slug: 'common-links', text: 'Common Links' },
@@ -39,14 +39,14 @@ const linksConf = config.integ.links
   <!-- apply-links -->
   <h2 id='apply-links'>Apply for A Friend Links</h2>
   <p>The information on this site is as follows (click to copy quickly):</p>
-  <blockquote class='not-prose grid grid-cols-[auto_1fr] gap-x-2 break-words border-s-4 ps-4'>
+  <blockquote class='not-prose grid grid-cols-[auto_1fr] gap-x-2 border-s-4 ps-4 min-w-0'>
     {
       linksConf.applyTip.map(({ name, val }) => {
         const script = `navigator.clipboard.writeText('${val}');document.dispatchEvent(new CustomEvent('toast',{detail:{message:'Copied "${val}" to clipboard!'}}))`
         return (
           <>
-            <span class='text-end'>{name}:</span>
-            <samp class='cursor-pointer' onclick={script}>
+            <span class='text-end break-words'>{name}:</span>
+            <samp class='cursor-pointer break-all truncate' onclick={script}>
               {val}
             </samp>
           </>
