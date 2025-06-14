@@ -91,7 +91,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           id='toggle-name'
           class='text-xs px-3 rounded-full border border-dashed border-gray-400 hover:bg-muted transition-all'
         >
-          Activa la revelación 🎭
+          Reveal identity 🎭
         </button>
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
           <Label title='Ecuador'>
@@ -287,13 +287,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
     const newName = showingRealName ? 'Edison Cruz' : 'Teddy Summers'
 
-    const newBtnText = showingRealName
-      ? 'Predecible, pero aceptable. ✔️'
-      : 'Activa la revelación 🎭'
+    const newBtnText = showingRealName ? 'Predictable, but acceptable. ✔️' : 'Reveal identity 🎭'
 
     const newTitle = showingRealName
-      ? 'Watson, el reclutador ha seguido el rastro hasta el final. 🧠'
-      : 'Un paso más, reclutador... y estarás donde quería. 🕶️'
+      ? 'Watson, the game is over... the recruiter knows my real name. 🧠'
+      : 'One more step, recruiter... and you’ll be where I wanted. 🕶️'
 
     deleteEffect(author, () => {
       typeEffect(author, newName)
@@ -302,4 +300,17 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
     btn.textContent = newBtnText
     btn.title = newTitle
   })
+
+  // Escribe automáticamente "Teddy Summers" al cargar
+  window.addEventListener('DOMContentLoaded', () => {
+    typeEffect(author, 'Teddy Summers')
+  })
 </script>
+
+<!-- // const newBtnText = showingRealName
+      //   ? 'Predecible, pero aceptable. ✔️'
+      //   : 'Exponer identidad 🎭'
+  
+      // const newTitle = showingRealName
+      //   ? 'Watson, el juego ha terminado... el reclutador sabe mi verdadero nombre. 🧠'
+      //   : 'Un paso más, reclutador... y estarás donde quería. 🕶️' -->
