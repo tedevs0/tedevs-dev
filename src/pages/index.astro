@@ -10,7 +10,8 @@ import ProjectCard from '@/components/home/ProjectCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/my-avatar.png'
-import config from '@/site-config'
+
+// import config from '@/site-config'
 
 const languages = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Java', 'Python', 'C#', 'VB', 'PHP']
 const frameworks = ['React.js', 'Next.js', 'Angular', 'Node.js', 'Astro', 'Nest.js']
@@ -44,6 +45,34 @@ const allPosts = await getBlogCollection()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
+<style is:global>
+  #author-name {
+    min-height: 1em;
+    display: inline-block;
+    position: relative;
+  }
+
+  #author-name::after {
+    content: '|';
+    animation: blink 1s infinite;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    color: #666;
+    font-weight: normal;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+
 <PageLayout meta={{ title: 'Home' }} highlightColor='#659EB9'>
   <main class='flex w-full flex-col items-center'>
     <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
@@ -55,7 +84,15 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       />
 
       <div class='flex flex-col items-center gap-y-4'>
-        <h1 class='text-3xl font-bold'>{config.author}</h1>
+        <!-- <h1 class='text-3xl font-bold'>{config.author}</h1> -->
+        <h1 class='text-3xl font-bold' id='author-name'>Teddy Summers</h1>
+        <button
+          title='Un paso más, reclutador... y estarás donde quería. 🕶️'
+          id='toggle-name'
+          class='text-xs px-3 rounded-full border border-dashed border-gray-400 hover:bg-muted transition-all'
+        >
+          Reveal identity 🎭
+        </button>
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
           <Label title='Ecuador'>
             <Icon name='location' class='size-5' slot='icon' />
@@ -213,3 +250,67 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
     <!-- <Quote class='mt-12' /> -->
   </main>
 </PageLayout>
+
+<script is:inline>
+  const btn = document.getElementById('toggle-name')
+  const author = document.getElementById('author-name')
+
+  let showingRealName = false
+
+  const typeEffect = (el, text, callback) => {
+    let i = 0
+    el.textContent = '\u00A0' // espacio no separable para evitar salto
+    const interval = setInterval(() => {
+      el.textContent = text.slice(0, i + 1) || '\u00A0'
+      i++
+      if (i === text.length) {
+        clearInterval(interval)
+        if (callback) callback()
+      }
+    }, 80)
+  }
+
+  const deleteEffect = (el, callback) => {
+    let text = el.textContent
+    const interval = setInterval(() => {
+      text = text.slice(0, -1)
+      el.textContent = text || '\u00A0' // mantener espacio si se borra todo
+      if (text.length === 0) {
+        clearInterval(interval)
+        if (callback) callback()
+      }
+    }, 40)
+  }
+
+  btn.addEventListener('click', () => {
+    showingRealName = !showingRealName
+
+    const newName = showingRealName ? 'Edison Cruz' : 'Teddy Summers'
+
+    const newBtnText = showingRealName ? 'Predictable, but acceptable. ✔️' : 'Reveal identity 🎭'
+
+    const newTitle = showingRealName
+      ? 'Watson, the game is over... the recruiter knows my real name. 🧠'
+      : 'One more step, recruiter... and you’ll be where I wanted. 🕶️'
+
+    deleteEffect(author, () => {
+      typeEffect(author, newName)
+    })
+
+    btn.textContent = newBtnText
+    btn.title = newTitle
+  })
+
+  // Escribe automáticamente "Teddy Summers" al cargar
+  window.addEventListener('DOMContentLoaded', () => {
+    typeEffect(author, 'Teddy Summers')
+  })
+</script>
+
+<!-- // const newBtnText = showingRealName
+      //   ? 'Predecible, pero aceptable. ✔️'
+      //   : 'Exponer identidad 🎭'
+  
+      // const newTitle = showingRealName
+      //   ? 'Watson, el juego ha terminado... el reclutador sabe mi verdadero nombre. 🧠'
+      //   : 'Un paso más, reclutador... y estarás donde quería. 🕶️' -->
