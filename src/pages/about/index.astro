@@ -26,7 +26,7 @@ const stats = [
     icon: Github,
     // color: '#1DA1F2',
     link: 'https://github.com/tedevs0',
-    count: 61,
+    count: 63,
     text: 'followers'
   },
   {
@@ -161,8 +161,12 @@ const stats = [
   <p>
     <strong>Justcoddev</strong> is a project I’ve been shaping over the years. It started as an idea,
     but now I’m giving it form to share knowledge and resources with the community. I’m also working
-    on <strong>OpenTrek</strong>, an open collaboration initiative for projects that grow better
-    with more hands and less ego.
+    on <a
+      style='text-decoration: none'
+      href='https://github.com/tedevian'
+      target='_blank'
+      rel='noopener noreferrer'>Tedevian</a
+    >, an open collaboration initiative for projects that grow better with more hands and less ego.
   </p>
 
   <p>I don’t just want to write good code—I want to leave something that’s actually useful.</p>
@@ -229,7 +233,7 @@ const stats = [
       out of a 2090 anime. They give my space that “syntech” energy I love.
       <br />
       (My favorite coding soundtrack? Something like <a
-        href='https://www.youtube.com/watch?v=niif4go9sxE'
+        href='https://www.youtube.com/@ThePrimeThanatos/streams'
         target='_blank'
         rel='noopener noreferrer'>this</a
       >).
@@ -316,12 +320,12 @@ const stats = [
         href: 'https://brave.com/',
         icon: import('@/assets/tools/brave.svg?raw')
       },
-      // {
-      //   name: 'Notion',
-      //   description: 'Note Taking',
-      //   href: 'https://www.notion.so/',
-      //   icon: import('@/assets/tools/notion.svg?raw')
-      // },
+      {
+        name: 'Notion',
+        description: 'Note Taking',
+        href: 'https://www.notion.so/',
+        icon: import('@/assets/tools/notion.svg?raw')
+      },
       {
         name: 'Microsoft To Do',
         description: 'Task Management',
@@ -387,10 +391,10 @@ const stats = [
 
   {/* social-networks */}
   <h2 id='social-networks'>Social Networks</h2>
-  <p>
+  <!-- <p>
     Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
     dissentiunt, cu meliore fuisset mei, vel quod voluptua ne.
-  </p>
+  </p> -->
   <SocialNetwork stats={stats} />
 
   {/* gossips */}
