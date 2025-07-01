@@ -3,7 +3,7 @@ import config from 'virtual:config'
 
 import { Icon } from '../user'
 
-const year = new Date().getFullYear()
+// const year = new Date().getFullYear()
 const footerConf = config.footer
 let social = footerConf.social || {}
 
@@ -33,10 +33,7 @@ social.rss = {
             </a>
           )
         }
-        <span>
-          © {year}
-          {config.author}
-        </span>
+        <span> © 2025 Teddy Summers </span>
         <!-- <a href='/terms/list'>Site policy</a> -->
         <!-- {
           footerConf.credits && (
