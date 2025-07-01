@@ -59,10 +59,10 @@ export const theme: ThemeUserConfig = {
   /** Configure the footer of your site. */
   footer: {
     // Registration information for ICP (optional)
-    registration: {
-      url: 'https://icp.gov.moe/?keyword=APTX4869',
-      text: ''
-    },
+    // registration: {
+    //   url: 'https://icp.gov.moe/?keyword=APTX4869',
+    //   text: ''
+    // },
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     // credits: false,
     /** Optional details about the social media accounts for this site. */
