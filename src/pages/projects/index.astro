@@ -11,7 +11,7 @@ import ProjectSection from '@/components/projects/ProjectSection.astro'
 // import config from '@/site-config'
 
 const headings = [
-  { depth: 2, slug: 'theme', text: 'Theme' },
+  { depth: 2, slug: 'template', text: 'Template' },
   { depth: 2, slug: 'programs', text: 'Programs' },
   // { depth: 2, slug: 'learnings', text: 'Learnings' },
   { depth: 2, slug: 'others', text: 'Others' }
@@ -38,7 +38,7 @@ const headings = [
     <Icon class='size-5' name='receive-money' slot='before' />
   </Button>
 
-  <h2 id='theme'>Theme</h2>
+  <h2 id='template'>Template</h2>
   <ProjectSection
     project={[
       {
@@ -57,12 +57,24 @@ const headings = [
       {
         name: '🍭 Bento Grid Portfolio',
         description: 'Showcase their skills and projects in a sleek, bento-style layout.',
-        image: 'bento-portfolio.jpeg',
+        image: 'cover-bentofolio.png',
         links: [
           { type: 'site', href: 'https://bento-grid-portfolio-beige.vercel.app/' },
           {
             type: 'doc',
             href: 'https://astro.build/themes/details/bento-grid-portfolio/'
+          }
+        ]
+      },
+      {
+        name: '🐈 Neko Inn',
+        description: 'Inspired by traditional Japanese aesthetics.',
+        image: 'cover-nekoInn.png',
+        links: [
+          { type: 'site', href: 'https://neko-inn.vercel.app/' },
+          {
+            type: 'doc',
+            href: 'https://astro.build/themes/details/neko-inn-landing-page-template/'
           }
         ]
       }
@@ -85,15 +97,7 @@ const headings = [
           }
         ]
       },
-      {
-        name: '🐈 Neko Inn',
-        description: 'Inspired by traditional Japanese aesthetics.',
-        image: 'neko_inn_01.webp',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/neko-inn' },
-          { type: 'site', href: 'https://neko-inn.vercel.app/' }
-        ]
-      },
+
       {
         name: '🍭 Clon de Linktree Fullstack',
         description:
@@ -328,12 +332,12 @@ const headings = [
   <h2 id='others'>Others</h2>
   <ProjectSection
     project={[
-      {
-        name: 'Justcoddev',
-        // image: '',
-        description: "Justcoddev's Github",
-        links: [{ type: 'github', href: 'https://github.com/justcoddev' }]
-      },
+      // {
+      //   name: 'Justcoddev',
+      //   // image: '',
+      //   description: "Justcoddev's Github",
+      //   links: [{ type: 'github', href: 'https://github.com/justcoddev' }]
+      // },
       {
         name: 'Tedevian',
         // image: 'tedevs.png',
