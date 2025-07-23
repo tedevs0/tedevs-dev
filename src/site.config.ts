@@ -1,4 +1,5 @@
 import type { Config, IntegrationUserConfig, ThemeUserConfig } from 'astro-pure/types'
+// import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } from 'astro-pure/types'
 
 export const theme: ThemeUserConfig = {
   // === Basic configuration ===
