@@ -1,4 +1,4 @@
-import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } from 'astro-pure/types'
+import type { Config, IntegrationUserConfig, ThemeUserConfig } from 'astro-pure/types'
 
 export const theme: ThemeUserConfig = {
   // === Basic configuration ===
@@ -58,10 +58,10 @@ export const theme: ThemeUserConfig = {
   /** Configure the footer of your site. */
   footer: {
     // Registration information for ICP (optional)
-    registration: {
-      url: 'https://icp.gov.moe/?keyword=APTX4869',
-      text: ''
-    },
+    // registration: {
+    //   url: 'https://icp.gov.moe/?keyword=APTX4869',
+    //   text: ''
+    // },
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: false,
     /** Optional details about the social media accounts for this site. */
@@ -144,27 +144,27 @@ export const integ: IntegrationUserConfig = {
   }
 }
 
-export const terms: CardListData = {
-  title: 'Terms content',
-  list: [
-    {
-      title: 'Privacy Policy',
-      link: '/terms/privacy-policy'
-    },
-    {
-      title: 'Terms and Conditions',
-      link: '/terms/terms-and-conditions'
-    },
-    {
-      title: 'Copyright',
-      link: '/terms/copyright'
-    },
-    {
-      title: 'Disclaimer',
-      link: '/terms/disclaimer'
-    }
-  ]
-}
+// export const terms: CardListData = {
+//   title: 'Terms content',
+//   list: [
+//     {
+//       title: 'Privacy Policy',
+//       link: '/terms/privacy-policy'
+//     },
+//     {
+//       title: 'Terms and Conditions',
+//       link: '/terms/terms-and-conditions'
+//     },
+//     {
+//       title: 'Copyright',
+//       link: '/terms/copyright'
+//     },
+//     {
+//       title: 'Disclaimer',
+//       link: '/terms/disclaimer'
+//     }
+//   ]
+// }
 
 const config = { ...theme, integ } as Config
 export default config
