@@ -4,9 +4,9 @@ import { render, type CollectionEntry } from 'astro:content'
 import { MediumZoom } from 'astro-pure/advanced'
 import { TOC } from 'astro-pure/components/pages'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
-import { CardList } from 'astro-pure/user'
+// import { CardList } from 'astro-pure/user'
 import PageLayout from '@/layouts/ContentLayout.astro'
-import { docs } from '@/pages/docs/docsContents'
+// import { docs } from '@/pages/docs/docsContents'
 
 import DocsContent from './DocsContent.astro'
 
@@ -49,12 +49,12 @@ const { description, title } = post.data
         )
       }
     </div>
-    <CardList {...docs} collapse class='md:hidden' />
+    <!-- <CardList {...docs} collapse class='md:hidden' /> -->
   </Fragment>
 
   <Content />
 
-  <CardList {...docs} title='See more docs' class='mt-5' slot='bottom' />
+  <!-- <CardList {...docs} title='See more docs' class='mt-5' slot='bottom' /> -->
 </PageLayout>
 <MediumZoom />
 
