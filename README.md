@@ -1,5 +1,7 @@
 # Astro Theme Pure
 
+<!-- update -->
+
 [English](./README.md) | [简体中文](./README-zh-CN.md)
 
 A simple, fast and powerful blog theme built by Astro.
