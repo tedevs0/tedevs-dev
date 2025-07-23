@@ -1,11 +1,11 @@
 ---
 import Analytics from '@vercel/analytics/astro'
 
-import { Footer, Header, ThemeProvider } from 'astro-pure/components/basic'
 import type { SiteMeta } from 'astro-pure/types'
 import BaseHead from '@/components/BaseHead.astro'
 import config from '@/site-config'
 
+import { Footer, Header, ThemeProvider } from '../../packages/pure/components/basic'
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseLayout /> component.
 import '@/assets/styles/app.css'
