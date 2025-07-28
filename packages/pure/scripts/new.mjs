@@ -53,6 +53,7 @@ Example:
   astro-pure new -l zh "你好，世界"
 `
 const TARGET_DIR = 'src/content/blog/'
+const TARGET_DIR = 'src/content/twicedevs/'
 
 export default function main(args) {
   const parsedArgs = minimist(args, {
