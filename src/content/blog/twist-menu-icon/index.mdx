@@ -1,0 +1,158 @@
+---
+title: 'Twist Menu Icon'
+publishDate: 'Aug 1, 2025'
+description: 'Animación de menú hamburguesa con SCSS y JavaScript, usando transiciones suaves y efectos modernos para mejorar la experiencia de usuario.'
+
+tags:
+  - SCSS
+  - JavaScript
+  - Animation
+  - UI
+language: 'Spanish'
+heroImage: { src: './thumbnail.jpg', color: '#fa5e9d' }
+---
+ 
+import TwistMenuIcon from 'src/components/twicedevs/TwistMenuIcon.astro'
+
+
+En las interfaces modernas, el ícono de menú hamburguesa es mucho más que un simple botón: es una oportunidad para aportar dinamismo y personalidad al diseño. Mediante animaciones sutiles y transiciones elegantes, este elemento puede transformar la experiencia del usuario, haciendo que la interacción sea más atractiva y memorable. En este ejemplo, exploramos cómo animar el ícono con SCSS y JavaScript para lograr un efecto visual distintivo y contemporáneo.
+
+## Demo
+
+
+<TwistMenuIcon />
+
+
+
+## 🧱 HTML Base
+
+La estructura es mínima pero efectiva:
+
+```html
+<div class="frame">
+  <div class="center">
+    <div class="menu-icon" id="twistIcon">
+      <div class="line top"></div>
+      <div class="line middle"></div>
+      <div class="line bottom"></div>
+    </div>
+  </div>
+</div>
+```
+
+**Puntos clave:**
+
+- `.frame` define un área fija (400x400px), útil para visualizaciones centradas tipo demo.
+- `.center` posiciona el ícono en el medio usando `transform: translate(-50%, -50%)`.
+- `.menu-icon` contiene las tres líneas que forman el menú.
+
+## 🎨 Estilos CSS
+
+```css
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+  background: #fa5e9d;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-icon {
+  width: 80px;
+  height: 64px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.line {
+  height: 8px;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.6s ease;
+  transform-origin: center;
+}
+```
+
+### 💡 ¿Por qué estas propiedades?
+
+- `display: flex` en `.menu-icon` facilita la distribución equitativa de las tres líneas.
+- `transform-origin: center` permite rotar las líneas desde su centro, logrando un giro más suave.
+- `transition: all 0.6s ease` aplica animaciones suaves a todas las transformaciones.
+- `border-radius: 4px` suaviza los bordes, lo que mejora el diseño visual en pantallas modernas.
+
+## 🔄 Estado activo del ícono
+
+```css
+.menu-icon.active .top {
+  transform: rotate(360deg) translateY(18px) scaleX(0.8);
+  background-color: #f1f1f1;
+}
+
+.menu-icon.active .middle {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.menu-icon.active .bottom {
+  transform: rotate(-360deg) translateY(-18px) scaleX(0.8);
+  background-color: #f1f1f1;
+}
+```
+
+### ✨ Explicación técnica
+
+- Las líneas `.top` y `.bottom` giran en sentidos opuestos con `rotate()`, simulando una torsión.
+- `scaleX(0.8)` reduce el ancho para dar un efecto de compresión dinámica.
+- La línea del medio se oculta con `scaleX(0)` y `opacity: 0`, típico del menú cruzado.
+- Se usan diferentes colores (`#F1F1F1`) para dar contraste al cambiar de estado.
+
+## ⚙️ Interacción con JavaScript
+
+```js
+const menu = document.getElementById('twistIcon')
+menu.addEventListener('click', () => {
+  menu.classList.toggle('active')
+})
+```
+
+Una sola función para alternar la clase `.active`. Esto permite:
+
+- Agregar o quitar el estado visual activo.
+- Sin dependencias externas.
+- Código minimalista y directo.
+
+## ✅ Buenas prácticas aplicadas
+
+- **Separación de capas:** HTML (estructura), SCSS (estilos), JS (comportamiento).
+- **Animaciones con `transform`:** más eficientes que usar `top`, `left` o `width`.
+- **Flexbox para alineación vertical:** evita márgenes innecesarios y es más flexible.
+- **Transiciones suaves:** mejoran la percepción de calidad del componente.
+
+## 🧩 Ideas de mejora
+
+- Incluir atributos como `aria-label` o `aria-expanded` para accesibilidad.
+- Aplicar una animación reversa cuando se cierre (actualmente es instantánea).
+- Convertir este menú en un componente reutilizable para React o Vue.
+- Añadir un `:focus` visual para mejorar la navegación con teclado.
+
+## 🎬 Resultado visual
+
+Al hacer clic en el ícono, el menú se transforma con un efecto “twist” giratorio.
+Es un detalle sutil, pero que puede marcar la diferencia en la experiencia de usuario.
+
+Inspirado en el Day [#2](https://100dayscss.com/days/2/) de 100DaysCSS
