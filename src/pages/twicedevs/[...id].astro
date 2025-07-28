@@ -1,13 +1,13 @@
 ---
 import { render, type CollectionEntry } from 'astro:content'
-import { getBlogCollection, sortMDByDate } from 'packages/pure/utils/server'
+import { getTwicedevsCollection, sortMDByDate } from 'packages/pure/utils/server'
 
-import PostLayout from '@/layouts/BlogPost.astro'
+import PostLayout from '@/layouts/TwicedevsPost.astro'
 
 export const prerender = true
 
 export async function getStaticPaths() {
-  const posts = sortMDByDate(await getBlogCollection())
+  const posts = sortMDByDate(await getTwicedevsCollection())
   return posts.map((post) => ({
     params: { id: post.id },
     props: { post, posts }
@@ -15,8 +15,8 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-  post: CollectionEntry<'blog'>
-  posts: CollectionEntry<'blog'>[]
+  post: CollectionEntry<'twicedevs'>
+  posts: CollectionEntry<'twicedevs'>[]
 }
 
 const { post, posts } = Astro.props

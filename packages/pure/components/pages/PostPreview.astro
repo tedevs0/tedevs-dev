@@ -10,9 +10,10 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
   post: CollectionEntry<CollectionKey>
   detailed?: boolean
   class?: string
+  basePath?: string // 👈 nuevo
 }
 
-const { as: Tag = 'div', post, detailed = false, class: className } = Astro.props
+const { as: Tag = 'div', post, detailed = false, class: className, basePath = 'blog' } = Astro.props
 
 const { id, data } = post
 
@@ -37,7 +38,7 @@ const postDate = data.updatedDate ?? data.publishDate
       !detailed && 'sm:flex-row',
       detailed && data.heroImage && 'max-md:pt-24'
     )}
-    href={`/blog/${id}`}
+    href={`/${basePath}/${id}`}
     data-astro-prefetch
   >
     {
@@ -117,9 +118,18 @@ const postDate = data.updatedDate ?? data.publishDate
   {
     detailed && data.tags && (
       <ul class='tag-list mt-1 flex flex-wrap gap-2'>
-        {data.tags.map((tag: string) => (
+        {/* {data.tags.map((tag: string) => (
           <li>
             <Button title={tag} href={`/tags/${tag}`} style='pill' />
+          </li>
+        ))} */}
+        {data.tags.map((tag: string) => (
+          <li>
+            <Button
+              title={tag}
+              href={`/${basePath === 'twicedevs' ? 'tagsdevs' : 'tags'}/${tag}`}
+              style='pill'
+            />
           </li>
         ))}
       </ul>
