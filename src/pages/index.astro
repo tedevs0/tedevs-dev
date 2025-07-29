@@ -13,30 +13,67 @@ import avatar from '@/assets/my-avatar.png'
 
 // import config from '@/site-config'
 
-const languages = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Java', 'Python', 'C#', 'VB', 'PHP']
-const frameworks = ['React.js', 'Next.js', 'Angular', 'Node.js', 'Astro', 'Nest.js']
-const ormAndDB = ['Prisma', 'MySQL', 'MongoDB']
-const tools = [
-  'Vite',
-  'Webpack',
+const frontendStack = [
+  'React.js',
+  'Next.js',
+  'Angular',
+  'Astro',
+  'TypeScript',
+  'JavaScript',
+  'HTML5',
+  'CSS3',
   'Tailwind CSS',
+  'Bootstrap',
+  'PrimeNG',
+  'Zod',
+  'Zustand',
+  'React Query'
+]
+
+const backendStack = ['Java', 'Python']
+
+const databases = ['MySQL', 'MongoDB']
+
+const devOpsAndTools = [
   'Git',
   'GitHub',
-  'Microfrontends',
+  'GitHub Pages',
+  'Netlify',
+  'Vercel',
+  'Visual Studio Code',
+  'Vite',
+  'ESLint',
+  'PWA',
+  'Lighthouse',
   'Figma',
   'Photoshop',
   'Illustrator',
   'Microsoft Office'
 ]
-// const platforms = ['Vercel', 'Waline']
+
+const managementTools = ['Trello', 'Taiga', 'GitHub Projects']
+const agilePractices = [
+  'Scrum',
+  'Kanban',
+  'Mobile First',
+  'Responsive Design',
+  'Modular development',
+  'Microfrontends',
+  'UI/UX best practices'
+]
+
 const softSkills = [
   'Teamwork',
-  'Problem Solving',
+  'Problem solving',
   'Adaptability',
-  'Communication',
-  'Time Management',
-  'Critical Thinking'
+  'Effective communication',
+  'Time management',
+  'Critical thinking',
+  'Proactivity',
+  'Self-learning'
 ]
+
+// const platforms = ['Vercel', 'Waline']
 
 const languagesSpoken = ['Spanish (Native)', 'English - B2']
 
@@ -236,13 +273,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       </Section> -->
 
       <Section title='Skills'>
-        <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frameworks' skills={frameworks} />
-        <!-- <SkillLayout title='Frontend' skills={frontend} /> -->
-        <!-- <SkillLayout title='Backend' skills={backend} /> -->
-        <SkillLayout title='ORM & Databases' skills={ormAndDB} />
-        <SkillLayout title='Tools & Technologies' skills={tools} />
-        <!-- <SkillLayout title='Platforms' skills={platforms} /> -->
+        <!-- <SkillLayout title='Languages' skills={frontendStack} /> -->
+        <!-- <SkillLayout title='Frameworks' skills={frameworks} /> -->
+        <SkillLayout title='Frontend Stack' skills={frontendStack} />
+        <SkillLayout title='Backend Stack' skills={backendStack} />
+        <SkillLayout title='Databases' skills={databases} />
+        <SkillLayout title='DevOps & Tools' skills={devOpsAndTools} />
+        <SkillLayout title='Management Tools' skills={managementTools} />
+        <SkillLayout title='Agile Practices' skills={agilePractices} />
         <SkillLayout title='Soft Skills' skills={softSkills} />
         <SkillLayout title='Languages Spoken' skills={languagesSpoken} />
       </Section>
