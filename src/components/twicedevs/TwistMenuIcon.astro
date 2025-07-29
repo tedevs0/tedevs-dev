@@ -26,11 +26,10 @@
 
 <style>
   .frame {
-    /* Usamos position: relative para que se renderice en el flujo del artículo */
     position: relative;
     width: auto;
     height: 400px;
-    margin: 2rem auto; /* lo centra visualmente */
+    margin: 2rem auto;
     border-radius: 2px;
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
     background: #fa5e9d;
@@ -56,14 +55,14 @@
   .line {
     height: 8px;
     border-radius: 4px;
-    background-color: white;
+    background-color: #ffffff;
     transition: all 0.6s ease;
     transform-origin: center;
   }
 
   .menu-icon.active .top {
     transform: rotate(360deg) translateY(18px) scaleX(0.8);
-    background-color: #f1f1f1;
+    background-color: #ffd6ec;
   }
 
   .menu-icon.active .middle {
@@ -73,6 +72,6 @@
 
   .menu-icon.active .bottom {
     transform: rotate(-360deg) translateY(-18px) scaleX(0.8);
-    background-color: #f1f1f1;
+    background-color: #ffd6ec;
   }
 </style>
