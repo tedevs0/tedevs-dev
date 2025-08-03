@@ -49,7 +49,7 @@ export const theme: ThemeUserConfig = {
   header: {
     menu: [
       { title: 'Blog', link: '/blog' },
-      { title: 'Twicedevs', link: '/twicedevs' },
+      // { title: 'Twicedevs', link: '/twicedevs' },
       // { title: 'Docs', link: '/docs' },
       { title: 'Projects', link: '/projects' },
       // { title: 'Links', link: '/links' },
