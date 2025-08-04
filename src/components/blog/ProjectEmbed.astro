@@ -1,0 +1,65 @@
+---
+// ProjectEmbed.astro
+const { url, title } = Astro.props
+const iframeWidth = 1200
+const iframeHeight = 600
+---
+
+<section class='project-frame'>
+  <h2>{title}</h2>
+  <div
+    class='iframe-outer'
+    style={`--iframe-width: ${iframeWidth}px; --iframe-height: ${iframeHeight}px;`}
+  >
+    <div class='iframe-scaler'>
+      <iframe
+        src={url}
+        loading='lazy'
+        width={iframeWidth}
+        height={iframeHeight}
+        style='border: 1px solid #ccc; border-radius: 8px;'></iframe>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const iframeWidth = 1200
+    const iframeHeight = 600
+
+    function updateAllScales() {
+      const allOuters = document.querySelectorAll('.iframe-outer')
+
+      allOuters.forEach((outer) => {
+        if (!(outer instanceof HTMLElement)) return
+
+        const scaler = outer.querySelector('.iframe-scaler')
+        if (!(scaler instanceof HTMLElement)) return
+
+        const containerWidth = outer.clientWidth
+        const scale = containerWidth / iframeWidth
+        scaler.style.transform = `scale(${scale})`
+        outer.style.height = `${iframeHeight * scale}px`
+      })
+    }
+
+    updateAllScales()
+    window.addEventListener('resize', updateAllScales)
+  })
+</script>
+
+<style>
+  .iframe-outer {
+    width: 100%;
+    overflow: hidden;
+    --iframe-width: 1200px;
+    --iframe-height: 600px;
+    height: calc(var(--iframe-height) * 0.63); /* fallback */
+  }
+
+  .iframe-scaler {
+    transform-origin: top left;
+    width: fit-content;
+    /* margin-top: 10px; */
+  }
+</style>
