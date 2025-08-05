@@ -1,13 +1,14 @@
 ---
-import Analytics from '@vercel/analytics/astro'
+// import Analytics from '@vercel/analytics/astro'
 
 import type { SiteMeta } from 'astro-pure/types'
 import BaseHead from '@/components/BaseHead.astro'
-import config from '@/site-config'
 
 import { Footer, Header, ThemeProvider } from '../../packages/pure/components/basic'
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseLayout /> component.
+// import config from '@/site-config'
+import configEn from '../site.config'
+import configEs from '../site.config.es'
+
 import '@/assets/styles/app.css'
 
 interface Props {
@@ -15,16 +16,18 @@ interface Props {
   highlightColor?: string
 }
 
+const locale = Astro.url.pathname.startsWith('/es') ? 'es' : 'en'
+const config = locale === 'es' ? configEs : configEn
 const {
   meta: { articleDate, description = config.description, ogImage, title },
   highlightColor
 } = Astro.props
 ---
 
-<html lang={config.locale.lang}>
+<html lang={locale}>
   <head>
     <BaseHead {articleDate} {description} {ogImage} {title} />
-    <Analytics />
+    <!-- <Analytics /> -->
     <ThemeProvider />
   </head>
 
@@ -39,7 +42,8 @@ const {
       )
     }
     <div class='w-full max-w-[70rem] px-4 sm:px-7 lg:px-10'>
-      <Header />
+      <Header locale={Astro.url.pathname.startsWith('/es') ? 'es' : 'en'} />
+
       <slot />
       <Footer />
     </div>

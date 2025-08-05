@@ -28,6 +28,10 @@ import config from './src/site.config.ts'
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: "en",
+    locales: ["es", "en"],
+  },
   // Top-Level Options
   site: 'https://tedevs.vercel.app',
   // base: '/docs',

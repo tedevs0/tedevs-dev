@@ -1,0 +1,347 @@
+---
+import { Image } from 'astro:assets'
+
+// import { Quote } from 'astro-pure/advanced'
+import { PostPreview } from 'astro-pure/components/pages'
+import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
+import { Button, Card, Icon, Label } from 'astro-pure/user'
+import PageLayout from '@/layouts/BaseLayout.astro'
+import ProjectCard from '@/components/home/ProjectCard.astro'
+import Section from '@/components/home/Section.astro'
+import SkillLayout from '@/components/home/SkillLayout.astro'
+import avatar from '@/assets/my-avatar.png'
+
+// import config from '@/site-config'
+
+const frontendStack = [
+  'React.js',
+  'Next.js',
+  'Angular',
+  'Astro',
+  'TypeScript',
+  'JavaScript',
+  'PHP',
+  'HTML5',
+  'CSS3',
+  'Tailwind CSS',
+  'Bootstrap',
+  'PrimeNG',
+  'Zod',
+  'Zustand',
+  'React Query'
+]
+
+const backendStack = ['Java', 'Python', 'Laravel']
+
+const databases = ['MySQL', 'MongoDB']
+
+const devOpsAndTools = [
+  'Git',
+  'GitHub',
+  'GitHub Pages',
+  'Netlify',
+  'Vercel',
+  'Visual Studio Code',
+  'Vite',
+  'ESLint',
+  'PWA',
+  'Lighthouse',
+  'Figma',
+  'Photoshop',
+  'Illustrator',
+  'Microsoft Office'
+]
+
+const managementTools = ['Trello', 'Taiga', 'GitHub Projects']
+const agilePractices = [
+  'Scrum',
+  'Kanban',
+  'Mobile First',
+  'Responsive Design',
+  'Modular development',
+  'Microfrontends',
+  'UI/UX best practices'
+]
+
+const softSkills = [
+  'Teamwork',
+  'Problem solving',
+  'Adaptability',
+  'Effective communication',
+  'Time management',
+  'Critical thinking',
+  'Proactivity',
+  'Self-learning'
+]
+
+// const platforms = ['Vercel', 'Waline']
+
+const languagesSpoken = ['Spanish (Native)', 'English - B2']
+
+const MAX_POSTS = 10
+const allPosts = await getBlogCollection()
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+---
+
+<style is:global>
+  #author-name {
+    min-height: 1em;
+    display: inline-block;
+    position: relative;
+  }
+
+  #author-name::after {
+    content: '|';
+    animation: blink 1s infinite;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    color: #666;
+    font-weight: normal;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<PageLayout meta={{ title: 'Inicio' }} highlightColor='#659EB9'>
+  <main class='flex w-full flex-col items-center'>
+    <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
+      <Image
+        src={avatar}
+        alt='profile'
+        class='h-28 w-auto rounded-full border p-1'
+        loading='eager'
+      />
+
+      <div class='flex flex-col items-center gap-y-4'>
+        <!-- <h1 class='text-3xl font-bold'>{config.author}</h1> -->
+        <h1 class='text-3xl font-bold' id='author-name'>Teddy Summers</h1>
+        <button
+          title='One more step, recruiter... and you’ll be where I wanted. 🕶️'
+          id='toggle-name'
+          class='text-xs px-3 rounded-full border border-dashed border-gray-400 hover:bg-muted transition-all'
+        >
+          Reveal identity 🎭
+        </button>
+        <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
+          <Label title='Ecuador'>
+            <Icon name='location' class='size-5' slot='icon' />
+          </Label>
+          <Label title='Github' as='a' href='https://github.com/tedevs0' target='_blank'>
+            <Icon name='github' class='size-5' slot='icon' />
+          </Label>
+        </div>
+      </div>
+
+      {/* Get template */}
+      <a
+        href='https://www.linkedin.com/in/tedevs0'
+        target='_blank'
+        class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
+      >
+        <span class='relative flex items-center justify-center'>
+          <span
+            class='absolute size-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
+          ></span>
+          <span class='size-2 rounded-full bg-green-400'></span>
+        </span>
+        <p class='font-medium text-muted-foreground'>Available</p>
+      </a>
+    </section>
+
+    <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
+      <Section title='About'>
+        <p class='text-muted-foreground'>Developer / Designer</p>
+        <p class='text-muted-foreground'>
+          <strong>Turning ideas into code with clarity and intention.</strong><br />
+          I build clean, functional interfaces and enjoy solving problems with a sense of humor. I’m
+          not trying to reinvent the galaxy—just making sure things work well and look good along the
+          way.
+        </p>
+        <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
+      </Section>
+      {
+        allPostsByDate.length > 0 && (
+          <Section title='Posts'>
+            <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
+              {allPostsByDate.map((p) => (
+                <li class='flex flex-col gap-x-2 sm:flex-row'>
+                  <PostPreview post={p} />
+                </li>
+              ))}
+            </ul>
+            <Button title='More posts' class='w-fit self-end' href='/blog' style='ahead' />
+          </Section>
+        )
+      }
+
+      {
+        /* <Section title='Experience'>
+      <Card
+        heading='Lorem Ipsum'
+        subheading='Sit amet consectetur'
+        date='Dec 2022 - Nov 2023'
+        imagePath='/src/assets/about-astro.png'
+        altText='Lorem, ipsum dolor sit'
+        imageClass='h-12 w-auto md:-start-16'
+      >
+        <ul class='ms-4 list-disc text-muted-foreground'>
+          <li>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
+            molestiae laboriosam pariatur!
+
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+          </li>
+        </ul>
+      </Card>
+      <Card
+        heading='Lorem Ipsum'
+        subheading='Sit amet consectetur'
+        date='Dec 2022 - Nov 2023'
+        imagePath='/src/assets/about-astro.png'
+        altText='Lorem, ipsum dolor sit'
+        imageClass='h-12 w-auto md:-start-16'
+      />
+    </Section> */
+      }
+      <Section title='Education'>
+        <Card
+          as='a'
+          heading='Information Technology Engineering'
+          subheading='Technical University of Machala'
+          date='March 2018 - March 2024'
+          href='https://www.utmachala.edu.ec/portalwp/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          {
+            /* <ul class='ms-4 list-disc text-muted-foreground'>
+          <li>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
+            molestiae laboriosam pariatur!
+          </li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+        </ul> */
+          }
+        </Card>
+      </Section>
+
+      <Section title='Website List'>
+        <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
+          <ProjectCard
+            href='https://astro.build/themes/details/personal-hub-a-customizable-personal-link/'
+            heading='Personal Hub'
+            subheading='A modern customizable template for your links and projects'
+            imagePath='/src/assets/projects/personal_hub.jpg'
+          />
+          <ProjectCard
+            href='https://astro.build/themes/details/bento-grid-portfolio/'
+            heading='Bento Grid Portfolio'
+            subheading='Showcase their skills and projects in a sleek, bento-style layout'
+            imagePath='/src/assets/projects/cover-bentofolio.png'
+          />
+          <ProjectCard
+            href='https://astro.build/themes/details/neko-inn-landing-page-template/'
+            heading='Neko Inn'
+            subheading='Inspired by traditional Japanese aesthetics'
+            imagePath='/src/assets/projects/cover-nekoInn.png'
+          />
+          <ProjectCard
+            href='/projects'
+            heading='More projects'
+            subheading='Check out more projects'
+            imagePath='/src/assets/projects/Screenshot_7.png'
+          />
+        </div>
+      </Section>
+
+      <!-- <Section title='Certifications'>
+        <Card
+          as='a'
+          heading='Lorem ipsum'
+          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio possit voluptatum. Dicat ceteros cu vim. Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.'
+          date='July 2024'
+          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        />
+      </Section> -->
+
+      <Section title='Skills'>
+        <!-- <SkillLayout title='Languages' skills={frontendStack} /> -->
+        <!-- <SkillLayout title='Frameworks' skills={frameworks} /> -->
+        <SkillLayout title='Frontend Stack' skills={frontendStack} />
+        <SkillLayout title='Backend Stack' skills={backendStack} />
+        <SkillLayout title='Databases' skills={databases} />
+        <SkillLayout title='DevOps & Tools' skills={devOpsAndTools} />
+        <SkillLayout title='Management Tools' skills={managementTools} />
+        <SkillLayout title='Agile Practices' skills={agilePractices} />
+        <SkillLayout title='Soft Skills' skills={softSkills} />
+        <SkillLayout title='Languages Spoken' skills={languagesSpoken} />
+      </Section>
+    </div>
+    <!-- <Quote class='mt-12' /> -->
+  </main>
+</PageLayout>
+
+<script is:inline>
+  const btn = document.getElementById('toggle-name')
+  const author = document.getElementById('author-name')
+
+  let showingRealName = false
+
+  const typeEffect = (el, text, callback) => {
+    let i = 0
+    el.textContent = '\u00A0' // espacio no separable para evitar salto
+    const interval = setInterval(() => {
+      el.textContent = text.slice(0, i + 1) || '\u00A0'
+      i++
+      if (i === text.length) {
+        clearInterval(interval)
+        if (callback) callback()
+      }
+    }, 80)
+  }
+
+  const deleteEffect = (el, callback) => {
+    let text = el.textContent
+    const interval = setInterval(() => {
+      text = text.slice(0, -1)
+      el.textContent = text || '\u00A0' // mantener espacio si se borra todo
+      if (text.length === 0) {
+        clearInterval(interval)
+        if (callback) callback()
+      }
+    }, 40)
+  }
+
+  btn.addEventListener('click', () => {
+    showingRealName = !showingRealName
+
+    const newName = showingRealName ? 'Edison Cruz' : 'Teddy Summers'
+
+    const newBtnText = showingRealName ? 'Predictable, but acceptable. ✔️' : 'Reveal identity 🎭'
+
+    const newTitle = showingRealName
+      ? 'Watson, the game is over... the recruiter knows my real name. 🧠'
+      : 'One more step, recruiter... and you’ll be where I wanted. 🕶️'
+
+    deleteEffect(author, () => {
+      typeEffect(author, newName)
+    })
+
+    btn.textContent = newBtnText
+    btn.title = newTitle
+  })
+
+  // Escribe automáticamente "Teddy Summers" al cargar
+  window.addEventListener('DOMContentLoaded', () => {
+    typeEffect(author, 'Teddy Summers')
+  })
+</script>

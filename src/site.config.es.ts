@@ -13,10 +13,10 @@ export const theme: ThemeUserConfig = {
   favicon: '/favicon/favicon.ico',
   /** Specify the default language for this site. */
   locale: {
-    lang: 'en',
-    attrs: 'en',
+    lang: 'es',
+    attrs: 'es',
     // Date locale
-    dateLocale: 'en',
+    dateLocale: 'es',
     dateOptions: {
       day: 'numeric',
       month: 'short',
@@ -48,12 +48,12 @@ export const theme: ThemeUserConfig = {
   /** Configure the header of your site. */
   header: {
     menu: [
-      { title: 'Blog', link: '/blog' },
+      { title: 'Blog', link: '/es/blog' },
       // { title: 'Twicedevs', link: '/twicedevs' },
       // { title: 'Docs', link: '/docs' },
-      { title: 'Projects', link: '/projects' },
+      { title: 'Projectos', link: '/es/projectos' },
       // { title: 'Links', link: '/links' },
-      { title: 'About', link: '/about' }
+      { title: 'Acerca de', link: '/es/acerca-de' }
     ]
   },
 
