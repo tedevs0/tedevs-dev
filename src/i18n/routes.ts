@@ -1,7 +1,7 @@
 export const routeTranslations = {
   about: {
     en: '/about',
-    es: '/acerca-de',
+    es: '/sobre-mi',
   },
   blog: {
     en: '/blog',

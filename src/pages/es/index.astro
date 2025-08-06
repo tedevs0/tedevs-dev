@@ -76,7 +76,7 @@ const softSkills = [
 
 // const platforms = ['Vercel', 'Waline']
 
-const languagesSpoken = ['Spanish (Native)', 'English - B2']
+const languagesSpoken = ['Spanish (Native)', 'English - A2']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -116,7 +116,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
     <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
       <Image
         src={avatar}
-        alt='profile'
+        alt='perfil'
         class='h-28 w-auto rounded-full border p-1'
         loading='eager'
       />
@@ -125,11 +125,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <!-- <h1 class='text-3xl font-bold'>{config.author}</h1> -->
         <h1 class='text-3xl font-bold' id='author-name'>Teddy Summers</h1>
         <button
-          title='One more step, recruiter... and you’ll be where I wanted. 🕶️'
+          title='Un paso más, reclutador ... y estarás donde quería. 🕶️'
           id='toggle-name'
           class='text-xs px-3 rounded-full border border-dashed border-gray-400 hover:bg-muted transition-all'
         >
-          Reveal identity 🎭
+          Revelar identidad 🎭
         </button>
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
           <Label title='Ecuador'>
@@ -153,24 +153,24 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           ></span>
           <span class='size-2 rounded-full bg-green-400'></span>
         </span>
-        <p class='font-medium text-muted-foreground'>Available</p>
+        <p class='font-medium text-muted-foreground'>Disponible</p>
       </a>
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
-      <Section title='About'>
-        <p class='text-muted-foreground'>Developer / Designer</p>
+      <Section title='Sobre mí'>
+        <p class='text-muted-foreground'>Desarrollador / Diseñador</p>
         <p class='text-muted-foreground'>
-          <strong>Turning ideas into code with clarity and intention.</strong><br />
-          I build clean, functional interfaces and enjoy solving problems with a sense of humor. I’m
-          not trying to reinvent the galaxy—just making sure things work well and look good along the
-          way.
+          <strong>Transformo ideas en código con claridad e intención.</strong><br />
+          Construyo interfaces limpias y funcionales, y disfruto resolver problemas con sentido del humor.
+          No intento reinventar la galaxia… solo asegurarme de que todo funcione bien y se vea mejor
+          en el camino.
         </p>
-        <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
+        <Button title='Más sobre mi' class='w-fit self-end' href='/es/sobre-mi' style='ahead' />
       </Section>
       {
         allPostsByDate.length > 0 && (
-          <Section title='Posts'>
+          <Section title='Artículos'>
             <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
               {allPostsByDate.map((p) => (
                 <li class='flex flex-col gap-x-2 sm:flex-row'>
@@ -178,7 +178,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
                 </li>
               ))}
             </ul>
-            <Button title='More posts' class='w-fit self-end' href='/blog' style='ahead' />
+            <Button title='Más artículos' class='w-fit self-end' href='/es/blog' style='ahead' />
           </Section>
         )
       }
@@ -212,16 +212,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       />
     </Section> */
       }
-      <Section title='Education'>
+      <Section title='Educación'>
         <Card
           as='a'
-          heading='Information Technology Engineering'
-          subheading='Technical University of Machala'
-          date='March 2018 - March 2024'
+          heading='Ingeniería de Tecnología de la Información'
+          subheading='Universidad Técnica de Machala'
           href='https://www.utmachala.edu.ec/portalwp/'
           target='_blank'
           rel='noopener noreferrer'
         >
+          <!-- date='Marzo 2018 - Marzo 2024' -->
           {
             /* <ul class='ms-4 list-disc text-muted-foreground'>
           <li>
@@ -234,31 +234,32 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         </Card>
       </Section>
 
-      <Section title='Website List'>
+      <Section title='Sitios web'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
             href='https://astro.build/themes/details/personal-hub-a-customizable-personal-link/'
             heading='Personal Hub'
-            subheading='A modern customizable template for your links and projects'
+            subheading='Plantilla personalizable moderna para sus enlaces y proyectos'
             imagePath='/src/assets/projects/personal_hub.jpg'
           />
           <ProjectCard
             href='https://astro.build/themes/details/bento-grid-portfolio/'
             heading='Bento Grid Portfolio'
-            subheading='Showcase their skills and projects in a sleek, bento-style layout'
+            subheading='Muestra sus habilidades y proyectos en un elegante diseño de estilo bento'
             imagePath='/src/assets/projects/cover-bentofolio.png'
           />
           <ProjectCard
             href='https://astro.build/themes/details/neko-inn-landing-page-template/'
             heading='Neko Inn'
-            subheading='Inspired by traditional Japanese aesthetics'
+            subheading='Inspirado en la estética japonesa tradicional'
             imagePath='/src/assets/projects/cover-nekoInn.png'
           />
           <ProjectCard
-            href='/projects'
-            heading='More projects'
-            subheading='Check out more projects'
+            href='/es/projectos'
+            heading='Más projects'
+            subheading='Mira más proyectos'
             imagePath='/src/assets/projects/Screenshot_7.png'
+            target='_self'
           />
         </div>
       </Section>
@@ -273,17 +274,17 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         />
       </Section> -->
 
-      <Section title='Skills'>
+      <Section title='Habilidades'>
         <!-- <SkillLayout title='Languages' skills={frontendStack} /> -->
         <!-- <SkillLayout title='Frameworks' skills={frameworks} /> -->
         <SkillLayout title='Frontend Stack' skills={frontendStack} />
         <SkillLayout title='Backend Stack' skills={backendStack} />
-        <SkillLayout title='Databases' skills={databases} />
+        <SkillLayout title='Bases de datos' skills={databases} />
         <SkillLayout title='DevOps & Tools' skills={devOpsAndTools} />
         <SkillLayout title='Management Tools' skills={managementTools} />
         <SkillLayout title='Agile Practices' skills={agilePractices} />
         <SkillLayout title='Soft Skills' skills={softSkills} />
-        <SkillLayout title='Languages Spoken' skills={languagesSpoken} />
+        <SkillLayout title='Idiomas' skills={languagesSpoken} />
       </Section>
     </div>
     <!-- <Quote class='mt-12' /> -->
@@ -326,11 +327,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
     const newName = showingRealName ? 'Edison Cruz' : 'Teddy Summers'
 
-    const newBtnText = showingRealName ? 'Predictable, but acceptable. ✔️' : 'Reveal identity 🎭'
+    const newBtnText = showingRealName ? 'Predecible, pero aceptable. ✔️' : 'Revelar identidad 🎭'
 
     const newTitle = showingRealName
-      ? 'Watson, the game is over... the recruiter knows my real name. 🧠'
-      : 'One more step, recruiter... and you’ll be where I wanted. 🕶️'
+      ? 'Watson, el juego ha terminado ... El reclutador sabe mi nombre real. 🧠'
+      : 'Un paso más, reclutador ... y estarás donde quería. 🕶️'
 
     deleteEffect(author, () => {
       typeEffect(author, newName)
