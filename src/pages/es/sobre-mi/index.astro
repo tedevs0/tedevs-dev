@@ -1,0 +1,466 @@
+---
+import { Comment } from 'astro-pure/advanced'
+import { Button, Spoiler } from 'astro-pure/user'
+// import { Collapse } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import SocialNetwork from '@/components/about/SocialNetwork.astro'
+import ToolSection from '@/components/about/ToolSection.astro'
+import Github from '@/assets/icons/github.svg'
+import Instagram from '@/assets/icons/instagram.svg'
+import Linkedin from '@/assets/icons/linkedin.svg'
+import Spotify from '@/assets/icons/spotify.svg'
+import x from '@/assets/icons/x.svg'
+import Youtube from '@/assets/icons/youtube.svg'
+
+const headings = [
+  { depth: 2, slug: 'sobre-mi', text: 'Sobre mí' },
+  { depth: 2, slug: 'pasatiempos', text: 'Pasatiempos' },
+  { depth: 2, slug: 'herramientas', text: 'Herramientas' },
+  { depth: 2, slug: 'redes-sociales', text: 'Redes Sociales' }
+  // { depth: 2, slug: 'gossips', text: 'Gossips' }
+  // { depth: 2, slug: 'about-blog', text: 'About Blog' }
+]
+const stats = [
+  {
+    platform: 'GitHub',
+    icon: Github,
+    // color: '#1DA1F2',
+    link: 'https://github.com/tedevs0',
+    count: 63,
+    text: 'followers'
+  },
+  {
+    platform: 'LinkedIn',
+    icon: Linkedin,
+    color: '#0077b5',
+    link: 'https://www.linkedin.com/in/tedevs0/',
+    count: 678,
+    text: 'followers'
+  },
+  {
+    platform: 'Instagram',
+    icon: Instagram,
+    color: '#E1306C',
+    link: 'https://instagram.com/tedevs_',
+    count: 807,
+    text: 'followers'
+  },
+  {
+    platform: 'Twitter',
+    icon: x,
+    color: '#1DA1F2',
+    link: 'https://twitter.com/tedevs_',
+    count: 145,
+    text: 'followers'
+  },
+
+  {
+    platform: 'YouTube',
+    icon: Youtube,
+    color: '#ff0000',
+    link: 'https://www.youtube.com/@tedevs0',
+    count: 9,
+    text: 'followers'
+  },
+  {
+    platform: 'Spotify',
+    icon: Spotify,
+    color: '#1DB954',
+    link: 'https://open.spotify.com/user/exclnv0nsn0rk5i6fckuvjqkf',
+    count: 7,
+    text: 'followers'
+  }
+]
+---
+
+<PageLayout title='Sobre mí' {headings} info='/sobre-mi'>
+  <h2 id='sobre-mi' class=''>🖖 — ⚔️ — 🕵️‍♂️</h2>
+  <p>Desarrollador / Diseñador</p>
+  <blockquote>
+    No soy un maestro Jedi ni el capitán de la Enterprise, pero sí alguien que insiste hasta que el
+    código deje de romperse... otra vez. No tengo gorra de detective, pero si hay un bug suelto, lo
+    deduzco. Trabajo con humor, porque si no, ¿cómo sobrevivir a tantas horas pegado a la pantalla
+    en esta galaxia muy, muy lejana?
+    <Spoiler>
+      Y sí, me río de mis bugs… especialmente cuando me recuerdan que soy humano, aunque a veces
+      parezca un droide. O un sociópata altamente funcional, según el debugger.
+    </Spoiler>
+  </blockquote>
+
+  <Button title='Sponsor Me' class='w-fit' href='/es/projectos#sponsorship' style='ahead' />
+  <h3>🧭 Identidad y forma de trabajar</h3>
+
+  <p>
+    Desarrollo experiencias digitales centradas en el usuario, con una inclinación natural por lo
+    funcional, lo claro y lo bien hecho. No programo por programar: me interesa que lo que creo
+    tenga sentido, se use bien y se vea bien. Busco equilibrio entre funcionalidad y estética.
+    Siempre.
+  </p>
+  <p>
+    Creo aplicaciones que priorizan la experiencia completa. Cuando diseño una interfaz, pienso en
+    cómo se siente usarla. Y cuando escribo una función, también pienso en quién va a leer ese
+    código después. A veces soy yo mismo… y lo agradezco.
+  </p>
+
+  <!-- <div class='border-l-4 border-[#FBAB01] pl-4'>
+    Desarrollador web con enfoque en experiencia de usuario y diseño limpio. Me especializo en
+    construir interfaces funcionales, mantenibles y modernas.
+  </div> -->
+  <!-- <h3>🛠️ Tecnologías y cómo las uso</h3>
+
+  <p>
+    Mi stack habla por mí: uso Astro para sitios rápidos y limpios, Tailwind CSS porque tiene
+    sentido estético y práctico, y combino React con Vite para aplicaciones interactivas. Me gusta
+    montar proyectos desde cero y llevarlos a producción con intención.
+  </p>
+  <p>
+    En el backend, me apoyo en NestJS y Prisma ORM conectados a PostgreSQL, y cuando el proyecto lo
+    permite, añado funciones serverless para mantenerlo ligero y flexible.
+  </p>
+  <p>
+    He trabajado con la API de Spotify, diferenciando usuarios premium de los que no lo son,
+    implementando tanto el Web Playback SDK como embeds según el caso. Me importa que las cosas
+    funcionen para todos, no solo para el caso ideal.
+  </p>
+  <div class='border-l-4 border-[#FBAB01] pl-4'>
+    Creo aplicaciones centradas en el usuario, combinando diseño intuitivo con código claro.
+  </div>
+
+  <p>
+    Y sí, a veces programo como vivo: simple, claro y con intención. Si el código no tiene sentido,
+    probablemente estoy en medio de un refactor... o es lunes.
+  </p> -->
+
+  <h3>🧠 Mentalidad y enfoque</h3>
+  <p>
+    Soy detallista, pero no me pierdo en perfeccionismos innecesarios. Si algo está roto, lo
+    arreglo. Si no lo está, sigo adelante. Prefiero lo simple, pero no le rehúyo a la complejidad
+    cuando vale la pena. Lo funcional, lo bello y lo claro no están peleados.
+  </p>
+
+  <div class='border-l-4 border-[#FBAB01] pl-4'>
+    Apasionado por el desarrollo frontend, disfruto convertir ideas en interfaces eficientes.
+    Trabajo con tecnologías modernas y una mentalidad constante de mejora.
+  </div>
+  <p>
+    He aprendido que no siempre se empieza desde la base. Algunas veces me lancé directo a
+    frameworks como React o Astro sin repasar todo JavaScript puro, pero lo hice con conciencia. Y
+    cuando toca, retrocedo, repaso, y vuelvo más fuerte.
+  </p>
+
+  <p>
+    También me gusta pensar en el producto como un todo. No solo en el código. Por eso he construido
+    desde interfaces con filtros dinámicos hasta pequeños dashboards para gestionar reseñas de
+    portafolio. Todo útil, todo con intención.
+  </p>
+  <p>Y por cierto… sí, debuggeo existencialmente de vez en cuando. No todo es código.</p>
+
+  <h3>🚀 Proyectos personales y visión</h3>
+  <p>
+    Mi marca principal es <strong>tedevs</strong>, donde muestro mi perfil profesional. Pero también
+    disfruto compartir lo que aprendo y quizás construir una comunidad en torno a ello.
+  </p>
+  <p>
+    <strong>Justcoddev</strong> es un proyecto que he estado dando forma a lo largo de los años. Empezó
+    como una idea, pero ahora le estoy dando forma para compartir conocimientos y recursos con la comunidad.
+    También estoy trabajando en <a
+      style='text-decoration: none'
+      href='https://github.com/tedevian'
+      target='_blank'
+      rel='noopener noreferrer'>Tedevian</a
+    >, una iniciativa de colaboración abierta para proyectos que puedan crecer con más manos y menos
+    ego.
+  </p>
+
+  <p>No solo quiero escribir un buen código, quiero dejar algo que sea realmente útil.</p>
+
+  <h3>👥 Personalidad en el trabajo</h3>
+  <p>
+    Me tomo el trabajo en serio, pero no me tomo a mí demasiado en serio. Me gusta que las cosas
+    estén bien hechas. Y si no lo están, no me molesta rehacer. De hecho, lo disfruto.
+  </p>
+  <p>
+    Tengo esa mezcla rara de ser relajado pero responsable. Puedo bromear mientras deployo algo
+    importante, pero también sé cuándo no es momento para memes.
+  </p>
+  <div class='border-l-4 border-[#FBAB01] pl-4'>
+    Programo como vivo: simple, claro y con intención.
+  </div>
+  <div class='border-l-4 border-[#FBAB01] pl-4'>
+    Me gusta que las cosas funcionen, pero más aún que se vean bien haciéndolo.
+  </div>
+
+  <!-- <div class='border-l-4 border-[#FBAB01] pl-4'>
+    Me gusta que las cosas funcionen, pero más aún que se vean bien haciéndolo.
+  </div> -->
+
+  <!-- <blockquote>
+    <h3><Spoiler>Spoiler (roast suave)</Spoiler></h3>
+    <p>
+      <Spoiler>
+        Escribo código que funciona (la mayoría del tiempo) y diseño interfaces tan limpias que
+        hasta el linternista del frontend estaría orgulloso. Si algo puede mejorarse, probablemente
+        ya lo estoy rediseñando en mi cabeza.</Spoiler
+      >
+    </p>
+    <p>
+      <Spoiler>
+        Me obsesiona que las cosas se vean bien, funcionen bien… y no rompan producción. Otra vez.
+      </Spoiler>
+    </p>
+  </blockquote> -->
+  <!-- <p>
+    My motto: Neither good nor bad — it is what it is. <Spoiler
+      >No todo necesita mil dependencias, a veces solo buena intención y buen café.</Spoiler
+    >
+  </p> -->
+
+  {/* general-talk */}
+  <h2 id='pasatiempos'>Pasatiempos</h2>
+  <ul>
+    <li>
+      <strong>Juegos clásicos y estrategia:</strong><br />
+      Nunca fui de RPGs ni de mundos con 800 misiones secundarias. Si un juego tiene historia larga y
+      loops infinitos... probablemente me perdieron en el tutorial. Lo mío son los clásicos 2D. Juegos
+      que no perdonaban, no explicaban mucho y aun así eran gloriosos.
+      <p>
+        En el celular me vas a encontrar entre partidas de Sudoku, una que otra batalla de
+        pistolitas, o tirando líneas perfectas en Tetris. Todo entre nostalgia y estrategia.
+      </p>
+    </li>
+    <li>
+      <strong>Música y ambiente para programar:</strong><br />
+      Y aunque nunca he codificado en una cafetería hipster con latte al lado, sí trabajo con ruido de
+      fondo. Lo mío es el synthwave retro-electro, esas transmisiones que parecen sacadas de un anime
+      del 2090. Le dan a mi entorno una vibra syntech que me encanta.
+      <br />
+      (¿Mi soundtrack favorito para codear? Algo como <a
+        href='https://www.youtube.com/@ThePrimeThanatos/streams'
+        target='_blank'
+        rel='noopener noreferrer'>esto</a
+      >).
+      <p>
+        Ah, y si la música no funciona, siempre puedo contar con mis bugs para mantenerme despierto.
+      </p>
+    </li>
+    <li>
+      <strong>Disfrutar la vida a mi manera:</strong><br />
+      Maratonear series y películas es uno de mis pasatiempos favoritos, especialmente Star Wars y Star
+      Trek, que para mí son más que simples shows: son un universo entero para perderme. No necesito
+      salir a ningún lado cuando puedo hacer un viaje intergaláctico desde mi sillón.
+    </li>
+
+    <li>
+      <strong>Escribir ideas (aunque no siempre las termine):</strong><br />
+      Tengo notas por todas partes: ideas para apps, frases sueltas, nombres de proyectos, conceptos
+      random y hasta posibles nombres de funciones que me parecieron épicos a las 2 a.m. A veces es brainstorming,
+      a veces terapia, pero siempre hay algo escribiéndose en segundo plano.
+
+      <p>¿Publico todo? No. ¿Borro cosas? Nunca. Todo puede evolucionar... algún día.</p>
+    </li>
+    <li>
+      <strong>Curioso sin remedio:</strong><br />
+      De vez en cuando me encuentro atrapado en un ciclo de investigación interminable. Un día analizo
+      cómo hacer un script bash o zsh para que mi app arranque con un solo comando sin dramas, y al siguiente
+      estoy buscando si Sherlock realmente dijo "It is what it is" en algún episodio. Me encanta aprender
+      cosas nuevas, incluso si no tienen un propósito inmediato.
+
+      <p>
+        Y cuando algo me intriga de verdad, entro en modo <em>Sherlock</em>: observo, conecto,
+        deduzco... hasta entender qué lo hace funcionar. No siempre hay un misterio que resolver,
+        pero mi cabeza lo busca igual.
+      </p>
+      <p>
+        Creo que parte de lo que me mueve es eso: entender cómo funcionan las cosas, incluso las que
+        no voy a construir yo.
+      </p>
+    </li>
+  </ul>
+
+  {/* tools */}
+  <h2 id='herramientas'>Herramientas</h2>
+  <p>Las herramientas de soporte actuales son las siguientes:</p>
+  <ToolSection
+    class='mb-5'
+    title='Diseño'
+    tools={[
+      {
+        name: 'Photoshop',
+        description: 'Picture Editing',
+        href: 'https://www.adobe.com/products/photoshop',
+        icon: import('@/assets/tools/photoshop.svg?raw')
+      },
+      {
+        name: 'Illustrator',
+        description: 'Vector Drawing',
+        href: 'https://www.adobe.com/products/illustrator',
+        icon: import('@/assets/tools/illustrator.svg?raw')
+      },
+      {
+        name: 'Figma',
+        description: 'UI/UX Design',
+        href: 'https://www.figma.com',
+        icon: import('@/assets/tools/figma-line.svg?raw')
+      },
+      {
+        name: 'Excalidraw',
+        description: 'Sketching',
+        href: 'https://excalidraw.com/',
+        icon: import('@/assets/tools/excalidraw.svg?raw')
+      }
+    ]}
+  />
+  <ToolSection
+    class='mb-5'
+    title='Productividad'
+    tools={[
+      {
+        name: 'Chrome',
+        description: 'Broswer',
+        href: 'https://www.google.com/chrome/',
+        icon: import('@/assets/tools/chrome.svg?raw')
+      },
+      {
+        name: 'Brave',
+        description: 'Broswer',
+        href: 'https://brave.com/',
+        icon: import('@/assets/tools/brave.svg?raw')
+      },
+      {
+        name: 'Notion',
+        description: 'Note Taking',
+        href: 'https://www.notion.so/',
+        icon: import('@/assets/tools/notion.svg?raw')
+      },
+      {
+        name: 'Microsoft To Do',
+        description: 'Task Management',
+        href: 'https://todo.microsoft.com/',
+        icon: import('@/assets/tools/microsoft-todo.svg?raw')
+      }
+    ]}
+  />
+  <ToolSection
+    class='mb-5'
+    title='Desarrollo'
+    tools={[
+      {
+        name: 'VS Code',
+        description: 'IDE',
+        href: 'https://code.visualstudio.com/',
+        icon: import('@/assets/tools/vscode.svg?raw')
+      }
+      // {
+      //   name: 'Neovim',
+      //   description: 'IDE',
+      //   href: 'https://neovim.io/',
+      //   icon: import('@/assets/tools/neovim.svg?raw')
+      // },
+      // {
+      //   name: 'Sublime Text',
+      //   description: 'IDE',
+      //   href: 'https://www.sublimetext.com/',
+      //   icon: import('@/assets/tools/sublime.svg?raw')
+      // }
+    ]}
+  />
+  <ToolSection
+    class='mb-5'
+    title='Entorno'
+    tools={[
+      // {
+      //   name: 'Arch Linux',
+      //   description: 'Linux Distribution',
+      //   href: 'https://archlinux.org/',
+      //   icon: import('@/assets/tools/archlinux.svg?raw')
+      // },
+      {
+        name: 'Ubuntu 24.04 LTS',
+        description: 'Linux Distribution',
+        href: 'https://ubuntu.com/',
+        icon: import('@/assets/tools/ubuntu.svg?raw')
+      },
+      // {
+      //   name: 'MacOS Sonoma',
+      //   description: 'MacBook Air',
+      //   href: 'https://www.apple.com/macos/',
+      //   icon: import('@/assets/tools/apple.svg?raw')
+      // },
+      {
+        name: 'Windows 10',
+        description: 'Windows Distribution',
+        href: 'https://www.microsoft.com/windows',
+        icon: import('@/assets/tools/windows11.svg?raw')
+      }
+    ]}
+  />
+
+  {/* social-networks */}
+  <h2 id='redes-sociales'>Redes Sociales</h2>
+  <!-- <p>
+    Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
+    dissentiunt, cu meliore fuisset mei, vel quod voluptua ne.
+  </p> -->
+  <SocialNetwork stats={stats} />
+
+  {/* gossips */}
+  <!-- <h2 id='gossips'>Gossips</h2>
+  <Collapse title='Lorem ipsum'>
+    Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
+    dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio
+    possit voluptatum.
+  </Collapse> -->
+
+  {/* about-blog */}
+  <!-- <h2 id='about-blog'>About Blog</h2> -->
+  <!-- <p>Website history:</p> -->
+  <!-- <Timeline
+    events={[
+      {
+        date: '2024-04-29',
+        content:
+          'Website refectered using <a href="https://astro.build/" target="_blank">Astro</a> and <a href="https://github.com/srleom/astro-theme-resume" target="_blank">Astro Theme Resume</a>'
+      },
+      {
+        date: '2024-07-26',
+        content:
+          'Website abstracted as a theme and published on <a href="https://github.com/cworld1/astro-theme-pure"target="_blank">Github</a>'
+      },
+      {
+        date: '2024-07-27',
+        content: 'Writed website docs'
+      }
+    ]}
+  /> -->
+  <!-- <p>
+    The smooth operation and personalized customization of website also rely on the resources and
+    technical support provided by the following excellent projects/service providers:
+  </p> -->
+  <!-- <ul> -->
+  <!-- <li>Domain: <a href='#' target='_blank'>Vercel</a></li> -->
+  <!-- <li>
+      Framework & Theme: <a href='https://astro.build/' target='_blank'>Astro</a> + <a
+        href='https://github.com/cworld1/astro-theme-pure'
+        target='_blank'>Astro Theme Pure</a
+      >
+    </li> -->
+  <!-- <li>
+      Site hosting: <a href='https://vercel.com/' target='_blank'>Vercel</a>
+    </li> -->
+  <!-- <li>
+      CI/CD: <a href='https://vercel.com/workflow' target='_blank'>Vercel Workflow</a>
+    </li> -->
+  <!-- <li>Resources speedup: <a href='https://cdn.cbd.int/' target='_blank'>CBD CDN</a></li> -->
+  <!-- <li>Comment system: <a href='https://waline.js.org' target='_blank'>Waline</a></li> -->
+  <!-- <li>
+      Visits: <a href='https://supabase.com/' target='_blank'>Supabase</a> +
+      <a href='https://waline.js.org/' target='_blank'>Waline</a>
+    </li> -->
+  <!-- <li>
+      Other statistics: <a href='https://github.com/spencerwooo/substats' target='_blank'
+        >Substats</a
+      >
+    </li> -->
+  <!-- </ul> -->
+  <Comment slot='bottom' />
+</PageLayout>
