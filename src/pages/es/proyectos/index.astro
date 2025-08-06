@@ -1,0 +1,455 @@
+---
+import { Image } from 'astro:assets'
+
+import { Comment } from 'astro-pure/advanced'
+import type { iconsType } from 'astro-pure/types'
+import { Button, Collapse, Icon } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import ProjectSection from '@/components/projects/ProjectSection.astro'
+import Sponsors from '@/components/projects/Sponsors.astro'
+import kofi from '@/assets/qr_con_logo.png'
+
+// import KeyIcon from '@/assets/icons/key.svg'
+
+// import config from '@/site-config'
+
+const headings = [
+  { depth: 2, slug: 'plantillas', text: 'Plantillas' },
+  { depth: 2, slug: 'Programas', text: 'Programas' },
+  // { depth: 2, slug: 'learnings', text: 'Learnings' },
+  { depth: 2, slug: 'otros', text: 'Otros' },
+  { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
+  // { depth: 2, slug: 'gpg-signature', text: 'GPG Signature' },
+]
+---
+
+<PageLayout title='Proyectos' {headings} info={{ slug: '/es/proyectos', hideComment: true }}>
+  <p>Actividades de Github:</p>
+  <p>
+    <Image
+      src='https://ghchart.rshah.org/EA00FF/tedevs0'
+      alt='actividades de Github'
+      inferSize
+      loading='lazy'
+    />
+  </p>
+  <p>
+    Si crees que sería útil o interesante colaborar en un proyecto, puedes hacer una donación para
+    apoyar mi trabajo o ponerte en contacto conmigo para hablar sobre un proyecto.
+  </p>
+  <Button title='Checkout sponsorship' class='w-fit' href='#sponsorship'>
+    <Icon class='size-5' name='receive-money' slot='before' />
+  </Button>
+
+  <h2 id='plantillas'>Plantillas</h2>
+  <ProjectSection
+    project={[
+      {
+        name: '🍭 Personal Hub',
+        description: 'Plantilla personalizable moderna para sus enlaces y proyectos',
+        image: 'personal_hub.jpg',
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/hub-itsteddydev' },
+          { type: 'site', href: 'https://hub-itsteddydev.vercel.app/' },
+          {
+            type: 'doc',
+            href: 'https://astro.build/themes/details/personal-hub-a-customizable-personal-link/'
+          }
+        ],
+        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      },
+      {
+        name: '🍭 Bento Grid Portfolio',
+        description: 'Muestra sus habilidades y proyectos en un elegante diseño de estilo bento',
+        image: 'cover-bentofolio.png',
+        links: [
+          { type: 'site', href: 'https://bento-grid-portfolio-beige.vercel.app/' },
+          {
+            type: 'doc',
+            href: 'https://astro.build/themes/details/bento-grid-portfolio/'
+          }
+        ],
+        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      },
+      {
+        name: '🐈 Neko Inn',
+        description: 'Inspirado en la estética japonesa tradicional',
+        image: 'cover-nekoInn.png',
+        links: [
+          { type: 'site', href: 'https://neko-inn.vercel.app/' },
+          {
+            type: 'doc',
+            href: 'https://astro.build/themes/details/neko-inn-landing-page-template/'
+          }
+        ],
+        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      }
+    ]}
+  />
+
+  <h2 id='Programas'>Programas</h2>
+  <ProjectSection
+    project={[
+      {
+        name: '🍭 Notepad App',
+        description: 'Una aplicación web para tomar notas con opción de archivado.',
+        image: 'notepad_01.webp',
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/notepad' },
+          { type: 'site', href: 'https://my-notepad-t7re.onrender.com/' },
+          {
+            type: 'doc',
+            href: 'https://github.com/tedevs0/notepad/blob/main/README.md'
+          }
+        ],
+        skills: ['React', 'Vite', 'Tailwind', 'Zustand', 'Zod', 'React-Query', 'Prisma', 'Neon']
+      },
+      {
+        name: '🍭 Clon de Linktree Fullstack',
+        description:
+          'Desarrollo de un clon de Linktree desde cero con Next.js, React, Tailwind CSS, ShadCN, Prisma y ClerkJS y backend.',
+        image: 'just-me.png',
+        links: [{ type: 'github', href: 'https://github.com/tedevs0/just-me' }],
+        skills: ['Next', 'React', 'Tailwind', 'ShadCN', 'Prisma', 'ClerkJS']
+      },
+      {
+        name: '🍭 Valora Prime',
+        description: 'Compare prices and find the best deals.',
+        image: 'valoraprime.png',
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/valoraprime' },
+          { type: 'site', href: 'https://valoraprime.vercel.app/' }
+        ],
+        skills: ['React', 'Vite', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      },
+      {
+        name: '🍭 Fylo dark theme landing page',
+        description:
+          'This design has some nice layout challenges in it. A perfect training ground to practice your Flexbox and/or Grid skills.',
+        image: 'lp-fylo-dark-theme.png',
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/lp-fylo-dark-theme' },
+          { type: 'site', href: 'https://lp-fylo-dark-theme.vercel.app/' }
+        ],
+        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      },
+      {
+        name: '🍭 Fylo landing page with two column layout',
+        description:
+          'This project is great if you are starting to get confident with slightly more complex layouts. The second section with the testimonial area will provide a nice challenge.',
+        image: 'lp-with-two-column-layout.jpg',
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/lp-with-two-column-layout' },
+          { type: 'site', href: 'https://lp-with-two-column-layout.netlify.app/' }
+        ],
+        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      },
+      {
+        name: '🍭 Huddle landing page with curved sections',
+        description:
+          'Practice using pseudo-elements for styling extras and the CSS position property for the sections with curved edges.',
+        image: 'lp-with-curved-sections.png',
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/lp-with-curved-sections' },
+          { type: 'site', href: 'https://lp-with-curved-sections.netlify.app/' }
+        ],
+        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      },
+      {
+        name: '🍭 Manage landing page',
+        description:
+          'This challenge will be a great test for your responsive skills. There are lots of small details and slight content shifts for different screen sizes.',
+        image: 'lp-manage.jpg',
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/lp-manage' },
+          { type: 'site', href: 'https://lp-manage.netlify.app/' }
+        ],
+        skills: ['Css', 'Html', 'TypeScript']
+      },
+      {
+        name: '🍭 Huddle landing page with a single introductory section',
+        description:
+          'A perfect challenge for beginners, this project will get you working with a two column layout.',
+        image: 'lp-with-single-introductory-section.png',
+        links: [
+          {
+            type: 'github',
+            href: 'https://github.com/tedevs0/lp-with-single-introductory-section'
+          },
+          { type: 'site', href: 'https://main--visionary-daffodil-2266fa.netlify.app/' }
+        ],
+        skills: ['Css', 'Html']
+      },
+      {
+        name: '🍭 Lytasoft',
+        description: 'Development of a corporate website using Angular for the company Lytasoft.',
+        image: 'lytasoft_01.webp',
+        links: [
+          {
+            type: 'deprecated',
+            href: ''
+          }
+        ],
+        skills: ['Angular16', 'PrimeNG', 'bootstrap ', 'Css', 'Html', 'TypeScript']
+      },
+      {
+        name: '🍭 Reservation Management',
+        description:
+          'Designed with a focus on scalability and flexibility through microfrontend architecture and optimizing the user experience.',
+        image: 'cae_01.jpeg',
+        links: [{ type: 'deprecated', href: '' }],
+        skills: [
+          'Angular16',
+          'AngularMaterial',
+          'CKEditor5',
+          'RxJS',
+          'Module-Federation',
+          'Css',
+          'Html',
+          'TypeScript',
+          'JavaScript'
+        ]
+      }
+    ]}
+  />
+  <Collapse title='Algunos proyectos antiguos'>
+    <ProjectSection
+      project={[
+        {
+          name: '🍭 Test microfrontend',
+          description:
+            'A simple microfrontend application that demonstrates the use of microfrontends withshell & products.',
+          image: 'cae_01.jpeg',
+          links: [{ type: 'github', href: 'https://github.com/tedevs0/pooldys' }],
+          skills: ['Angular16', 'Module-Federation', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Results summary component',
+          description:
+            "This challenge has something for everyone. It's a HTML and CSS only project, but we've also provided a JSON file of the test results for anyone wanting to practice JS.",
+          image: 'LCC-1-card.jpg',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/LCC-1-card' },
+            { type: 'site', href: 'https://justcoddev-card-mobile.netlify.app/' }
+          ],
+          skills: ['Css', 'Html']
+        },
+        {
+          name: '🍭 Rocky Asaderos',
+          description: 'A simple page for a restaurant using HTML and CSS.',
+          image: 'asaderos-rocky.jpg',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/page-asaderos-rocky' },
+            { type: 'site', href: 'https://asaderos-rocky.netlify.app/' }
+          ],
+          skills: ['Css', 'Html']
+        },
+        {
+          name: '🍭 Citas App NG',
+          description: 'A simple Angular application with @input and @output decorators.',
+          image: 'citas.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/citas' },
+            { type: 'site', href: 'https://justcoddev-ng-citas.netlify.app/' }
+          ],
+          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 BMI Calculator NG',
+          description: 'A implementation of a BMI calculator using Angular.',
+          image: 'bmi-calculator.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/bmi_calculator' },
+            { type: 'site', href: 'https://justcoddev-ng-bmi-calculator.netlify.app/' }
+          ],
+          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Currency Converter NG',
+          description: 'A simple Angular application that demonstrates ngFor and ngIf directives.',
+          image: 'currency-converter.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/convertidor_monedas' },
+            { type: 'site', href: 'https://justcoddev-ng-convertidor-monedas.netlify.app/' }
+          ],
+          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Task NG',
+          description: 'Application that demonstrates data binding and two-way data binding.',
+          image: 'task-ng.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/tareas' },
+            { type: 'site', href: 'https://justcoddev-ng-tareas.netlify.app/' }
+          ],
+          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Databinding NG',
+          description:
+            'A simple Angular application that demonstrates data binding and component interaction.',
+          image: 'databinding.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/databinding' },
+            { type: 'site', href: 'https://databinding-one.vercel.app/' }
+          ],
+          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Ionic Project',
+          description:
+            'A simple Ionic application that demonstrates the use of Ionic components and navigation.',
+          image: 'ionicproject.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/ionicproject' },
+            { type: 'site', href: 'https://ionicproject-gray.vercel.app/places' }
+          ],
+          skills: ['Angular14', 'Scss', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Pokeapi NG',
+          description:
+            'HttpClient for consuming the PokeAPI, a RESTful API that provides data about Pokémon.',
+          image: 'pokeapi-ng.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/pokeapi' },
+            { type: 'site', href: 'https://justcoddev-ng-pokeapi.netlify.app/' }
+          ],
+          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Clone de Spotify NG',
+          description: 'A simple Spotify clone using Angular.',
+          image: 'clone-spotify.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/spotify-uy' },
+            { type: 'deprecated', href: '' }
+          ],
+          skills: ['Angular13', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 LearningZone App - Android',
+          description:
+            'Mobile application created with Android. Onboarding screen (meow bottom navigation).',
+          image: 'learning-zone.png',
+          links: [{ type: 'github', href: 'https://github.com/tedevs0/LearningZone' }],
+          skills: ['Android', 'Java']
+        },
+        {
+          name: '🍭 Hello World',
+          description: 'Say Hello World',
+          image: '',
+          links: [{ type: 'github', href: 'https://github.com/tedevs0/hello-world' }]
+        }
+      ]}
+    />
+  </Collapse>
+
+  <!-- <h2 id='learnings'>Learnings</h2>
+  <ProjectSection
+    class='my-2'
+    project={[
+      {
+        name: 'Rust Learning',
+        description: 'Some notes and code about CWorld learning Rust',
+        links: [{ type: 'github', href: 'https://github.com/cworld1/rust-learning' }]
+      },
+      {
+        name: 'CS 213 Learning',
+        description: 'Notes, code and experiences for Introduction to Computer Systems course',
+        links: [
+          {
+            type: 'github',
+            href: 'https://github.com/zhuozhiyongde/Introduction-To-Computer-System-2023Fall-PKU'
+          }
+        ]
+      }
+    ]}
+  /> -->
+
+  <h2 id='otros'>Otros</h2>
+  <ProjectSection
+    project={[
+      // {
+      //   name: 'Justcoddev',
+      //   // image: '',
+      //   description: "Justcoddev's Github",
+      //   links: [{ type: 'github', href: 'https://github.com/justcoddev' }]
+      // },
+      {
+        name: 'Tedevian',
+        // image: 'tedevs.png',
+        description: 'Repositorio colaborativo de la comunidad',
+        links: [{ type: 'github', href: 'https://github.com/tedevian' }]
+      }
+    ]}
+  />
+
+  <!-- gpg signature -->
+  <!-- <h2 id='gpg-signature'>GPG Signature</h2>
+  <p>
+    You can verify the authenticity of the files I signed by checking the GPG signature. My GPG key
+    is <code>APTX4869</code>, and you can find it on the opengpg key servers or download from it.
+  </p>
+  <Button href='https://keys.openpgp.org/search?q=APTX4869' title='Checkout my key' target='_blank'>
+    <KeyIcon class='size-5' slot='before' />
+  </Button> -->
+
+  <!-- sponsorship -->
+  <h2 id='sponsorship'>Sponsorship</h2>
+  <p>
+    Por favor, deje un mensaje o póngase en contacto conmigo de forma proactiva a través de mi <a
+      href='mailto:ecruzsma@gmail.com'
+      target='_blank'>email</a
+    > después del sponsorship.
+  </p>
+  <Collapse title='Escanea para donar'>
+    <div class='flex flex-col justify-center gap-4 sm:flex-row'>
+      {
+        [
+          // { name: 'WeChat', icon: 'wechat-pay', image: wechat },
+          { name: 'KoFi', icon: 'kofi', image: kofi }
+        ].map((item) => (
+          <div class='group relative justify-center overflow-hidden rounded-xl border bg-white'>
+            <div class='absolute bottom-0 end-0 start-0 top-0 flex items-center justify-center transition-opacity group-hover:opacity-0'>
+              <Icon class='size-20' name={item.icon as iconsType} />
+            </div>
+            <Image
+              class='mx-auto my-0 max-w-60 opacity-30 blur-sm transition-opacity group-hover:opacity-100 group-hover:blur-none'
+              src={item.image}
+              alt={item.name}
+              loading='lazy'
+            />
+          </div>
+        ))
+      }
+    </div>
+  </Collapse>
+
+  <p>Gracias a los siguientes patrocinadores:</p>
+  <Sponsors
+    sponsors={[
+      { name: 'yaninedesign', amount: '100.00', date: '2024-07-02' },
+      { name: 'Anonymous', amount: '20.00', date: '2024-04-06' }
+    ]}
+  />
+
+  <Comment slot='bottom' />
+</PageLayout>
+
+<!-- <script
+  is:inline
+  type='module'
+  data-astro-rerun
+  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
+>
+  const loadPageviewCount = async () => {
+    const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
+    pageview.pageviewCount({
+      serverURL: walineServer,
+      path: window.location.pathname
+    })
+  }
+
+  await loadPageviewCount()
+</script> -->

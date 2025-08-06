@@ -51,7 +51,7 @@ export const theme: ThemeUserConfig = {
       { title: 'Blog', link: '/es/blog' },
       // { title: 'Twicedevs', link: '/twicedevs' },
       // { title: 'Docs', link: '/docs' },
-      { title: 'Projectos', link: '/es/projectos' },
+      { title: 'Proyectos', link: '/es/proyectos' },
       // { title: 'Links', link: '/links' },
       { title: 'Sobre mí', link: '/es/sobre-mi' }
     ]

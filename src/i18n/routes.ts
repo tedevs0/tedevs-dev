@@ -9,6 +9,6 @@ export const routeTranslations = {
   },
   projectos: {
     en: '/projects',
-    es: '/projectos',
+    es: '/proyectos',
   },
 }
