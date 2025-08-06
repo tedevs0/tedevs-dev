@@ -25,3 +25,8 @@ export function getAlternatePath(pathname: string, currentLocale: 'en' | 'es'): 
   // 🔹 4. Fallback general
   return (isEs ? pathname.replace(/^\/es/, '') : '/es' + pathname).replace(/\/$/, '')
 }
+
+
+export function getLocaleFromPath(pathname: string): 'en' | 'es' {
+  return pathname.startsWith('/es') ? 'es' : 'en'
+}
