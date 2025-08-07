@@ -15,6 +15,10 @@ export const routeTranslations = {
     en: '/tags',
     es: '/etiquetas',
   },
+  archivos: {
+    en: '/archives',
+    es: '/archivos',
+  },
   // 🔽 AÑADIR TRADUCCIONES DE SLUGS DINÁMICOS AQUÍ
   'my-site-not-from-scratch': {
     en: '/blog/my-site-not-from-scratch',
