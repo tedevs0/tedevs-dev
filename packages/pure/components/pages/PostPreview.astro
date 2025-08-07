@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 import { render, type CollectionEntry, type CollectionKey } from 'astro:content'
 import type { HTMLTag, Polymorphic } from 'astro/types'
+import { getLocaleFromPath } from 'src/i18n/utils'
 
 import { cn } from '../../utils'
 import { Button, FormattedDate, Icon } from '../user'
@@ -10,10 +11,13 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
   post: CollectionEntry<CollectionKey>
   detailed?: boolean
   class?: string
-  basePath?: string // 👈 nuevo
+  // basePath?: string // 👈 nuevo
 }
+const locale = getLocaleFromPath(Astro.url.pathname)
 
-const { as: Tag = 'div', post, detailed = false, class: className, basePath = 'blog' } = Astro.props
+const path = locale === 'es' ? 'es/blog' : 'blog'
+
+const { as: Tag = 'div', post, detailed = false, class: className } = Astro.props
 
 const { id, data } = post
 
@@ -38,7 +42,7 @@ const postDate = data.updatedDate ?? data.publishDate
       !detailed && 'sm:flex-row',
       detailed && data.heroImage && 'max-md:pt-24'
     )}
-    href={`/${basePath}/${id}`}
+    href={`/${path}/${id}`}
     data-astro-prefetch
   >
     {
@@ -118,12 +122,12 @@ const postDate = data.updatedDate ?? data.publishDate
   {
     detailed && data.tags && (
       <ul class='tag-list mt-1 flex flex-wrap gap-2'>
-        {/* {data.tags.map((tag: string) => (
+        {data.tags.map((tag: string) => (
           <li>
             <Button title={tag} href={`/tags/${tag}`} style='pill' />
           </li>
-        ))} */}
-        {data.tags.map((tag: string) => (
+        ))}
+        {/* {data.tags.map((tag: string) => (
           <li>
             <Button
               title={tag}
@@ -131,7 +135,7 @@ const postDate = data.updatedDate ?? data.publishDate
               style='pill'
             />
           </li>
-        ))}
+        ))} */}
       </ul>
     )
   }

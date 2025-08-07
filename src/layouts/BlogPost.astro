@@ -5,14 +5,21 @@ import type { CollectionEntry } from 'astro:content'
 // Plugin styles
 import 'katex/dist/katex.min.css'
 
+import { getLocaleFromPath } from 'src/i18n/utils'
+
 import { Comment, MediumZoom } from 'astro-pure/advanced'
-import { ArticleBottom, Copyright, Hero, TOC } from 'astro-pure/components/pages'
+import { ArticleBottom, Copyright } from 'astro-pure/components/pages'
 import PageLayout from '@/layouts/ContentLayout.astro'
 import { integ } from '@/site-config'
 
+import Hero from '../components/Hero.astro'
+import TOC from '../components/TOC.astro'
+
 interface Props {
-  post: CollectionEntry<'blog'>
-  posts: CollectionEntry<'blog'>[]
+  // post: CollectionEntry<'blog'>
+  // posts: CollectionEntry<'blog'>[]
+  post: CollectionEntry<'blog'> | CollectionEntry<'blog.es'>
+  posts: (CollectionEntry<'blog'> | CollectionEntry<'blog.es'>)[]
   headings: MarkdownHeading[]
   remarkPluginFrontmatter: Record<string, unknown>
 }
@@ -41,16 +48,20 @@ const socialImage = heroImage
   : '/images/social-card.png'
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString()
 const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-text-opacity))'
+
+const locale = getLocaleFromPath(Astro.url.pathname)
+
+const back = locale === 'es' ? '/es/blog' : '/blog'
 ---
 
 <PageLayout
   meta={{ articleDate, description, ogImage: socialImage, title }}
   highlightColor={primaryColor}
-  back='/blog'
+  back={back}
 >
   {!!headings.length && <TOC {headings} slot='sidebar' />}
 
-  <Hero {data} {remarkPluginFrontmatter} slot='header' />
+  <Hero {data} {remarkPluginFrontmatter} locale={locale} slot='header' />
 
   <slot />
 
