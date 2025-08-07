@@ -124,9 +124,14 @@ const postDate = data.updatedDate ?? data.publishDate
       <ul class='tag-list mt-1 flex flex-wrap gap-2'>
         {data.tags.map((tag: string) => (
           <li>
-            <Button title={tag} href={`/tags/${tag}`} style='pill' />
+            <Button
+              title={tag}
+              href={`/${locale === 'es' ? 'es/etiquetas' : 'tags'}/${tag}`}
+              style='pill'
+            />
           </li>
         ))}
+
         {/* {data.tags.map((tag: string) => (
           <li>
             <Button

@@ -11,7 +11,7 @@ interface Props {
   basePath?: string
   locale: string
 }
-const { basePath = 'blog' } = Astro.props
+// const { basePath = 'blog' } = Astro.props
 
 const {
   locale,
@@ -114,7 +114,6 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
     }
 
     {
-      // Tags
       !!tags?.length && (
         <span class='flex items-center gap-1'>
           <Icon name='hashtag' class='size-5' />
@@ -124,7 +123,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
                 aria-label={`View more blogs with the tag ${tag}`}
                 class='hover:underline hover:underline-offset-4'
                 data-pagefind-filter='tag'
-                href={`/${basePath === 'twicedevs' ? 'tagsdevs' : 'tags'}/${tag}`}
+                href={`/${locale === 'es' ? 'es/etiquetas' : 'tags'}/${tag}`}
               >
                 {tag}
               </a>

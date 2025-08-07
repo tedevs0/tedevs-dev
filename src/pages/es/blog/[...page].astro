@@ -32,20 +32,20 @@ interface Props {
 const { page, uniqueTags, collectionsCount } = Astro.props
 
 const meta = {
-  description: 'Some posts or archieves of my blog',
+  description: 'Algunas publicaciones o archivos de mi blog',
   title: 'Blog'
 }
 
 const paginationProps = {
   ...(page.url.prev && {
     prevUrl: {
-      text: `← Previous Posts`,
+      text: `← Publicaciones anteriores`,
       url: page.url.prev
     }
   }),
   ...(page.url.next && {
     nextUrl: {
-      text: `Next Posts →`,
+      text: `Siguientes publicaciones →`,
       url: page.url.next
     }
   })
@@ -53,7 +53,7 @@ const paginationProps = {
 ---
 
 <PageLayout {meta}>
-  <Button title='Back' href='/es' style='back' />
+  <Button title='Volver' href='/es' style='back' />
   <main class='mt-6 lg:mt-10'>
     <div id='content-header' class='animate'>
       <h1 class='mb-6 mt-6 text-3xl font-medium sm:mt-10'>Blog</h1>
@@ -69,8 +69,12 @@ const paginationProps = {
               <span class='text-muted-foreground'>
                 Page {page.currentPage} - Showing {page.data.length} of {collectionsCount} posts
               </span>
-              <a aria-label='View all blog by years' href='/archives' data-astro-prefetch>
-                View all posts by years →
+              <a
+                aria-label='er todas los artículos por años'
+                href='/es/archives'
+                data-astro-prefetch
+              >
+                Ver todas los artículos por años →
               </a>
             </div>
             {/* posts */}
@@ -92,12 +96,12 @@ const paginationProps = {
               <ul class='text-bgColor flex flex-wrap gap-2'>
                 {uniqueTags.map((tag) => (
                   <li>
-                    <Button title={tag} href={`/es/tags/${tag}`} style='pill' />
+                    <Button title={tag} href={`/es/etiquetas/${tag}`} style='pill' />
                   </li>
                 ))}
               </ul>
               <span class='mt-4 block sm:text-end'>
-                <a aria-label='View all blog categories' href='/es/tags' data-astro-prefetch>
+                <a aria-label='Ver todas las categorías' href='/es/etiquetas' data-astro-prefetch>
                   Ver todo →
                 </a>
               </span>

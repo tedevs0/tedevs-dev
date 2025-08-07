@@ -23,7 +23,7 @@ const locale = getLocaleFromPath(Astro.url.pathname)
 const { title, headings, info, ...props } = Astro.props
 ---
 
-<PageLayout meta={{ title }} back={locale === 'es' ? '/es' : '/'} {...props}>
+<PageLayout locale={locale} meta={{ title }} back={locale === 'es' ? '/es' : '/'} {...props}>
   {headings?.length && <TOC headings={headings} locale={locale} slot='sidebar' />}
 
   <Fragment slot='header'>

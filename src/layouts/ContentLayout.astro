@@ -10,13 +10,15 @@ interface Props {
   meta: SiteMeta
   highlightColor?: string
   back?: string
+  locale: string
 }
 
-const { meta, highlightColor, back, ...props } = Astro.props
+const { meta, highlightColor, back, locale, ...props } = Astro.props
 ---
 
 <PageLayout {meta} {highlightColor} {...props}>
-  <Button title='Back' href={back} style='back' />
+  <Button title={locale === 'es' ? 'Volver' : 'Back'} href={back} style='back' />
+
   <main class='mt-6 items-start gap-x-10 md:flex'>
     {/* Sidebar */}
     <aside

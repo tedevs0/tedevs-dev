@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content'
+import { getLocaleFromPath } from 'src/i18n/utils'
+
+import { getUniqueTagsWithCount } from 'astro-pure/server'
+import { Button } from 'astro-pure/user'
+import { cn } from 'astro-pure/utils'
+import PageLayout from '@/layouts/BaseLayout.astro'
+
+const allPosts = await getCollection('blog.es')
+const allTags = getUniqueTagsWithCount(allPosts)
+
+const meta = {
+  description: 'Una lista de todos los temas sobre los que he escrito en mis publicaciones.',
+  title: 'Todas las etiquetas'
+}
+// const locale = getLocaleFromPath(Astro.url.pathname)
+
+// const back = locale === 'es' ? '/es/blog' : '/blog'
+---
+
+<PageLayout {meta}>
+  <Button title='Volver' href='/es/blog' style='back' />
+  <main class='mt-6 lg:mt-10'>
+    <div id='content-header' class='animate'>
+      <h1 class='mb-6 text-3xl font-medium'>Etiquetas</h1>
+    </div>
+
+    <div id='content' class='animate'>
+      {
+        allTags.length > 0 ? (
+          <ul class='flex flex-wrap gap-4'>
+            {allTags.map(([tag, val]) => (
+              <li>
+                <Button
+                  href={`/es/etiquetas/${tag}`}
+                  style='pill'
+                  class={cn(
+                    'items-start gap-x-1',
+                    val > 2 ? 'rounded-xl px-3 py-1 text-xl' : val > 1 && 'text-lg'
+                  )}
+                >
+                  {tag}
+                  <span class={val > 2 ? 'text-base' : 'text-xs'}>{val}</span>
+                </Button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Any tag yet.</p>
+        )
+      }
+    </div>
+  </main>
+</PageLayout>
