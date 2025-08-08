@@ -11,12 +11,7 @@ export async function getBlogCollection(contentType: CollectionKey = 'blog') {
     return prod ? !data.draft : true
   })
 }
-export async function getTwicedevsCollection(contentType: CollectionKey = 'twicedevs') {
-  return await getCollection(contentType, ({ data }: CollectionEntry<typeof contentType>) => {
-    // Not in production & draft is not false
-    return prod ? !data.draft : true
-  })
-}
+
 
 function getYearFromCollection<T extends CollectionKey>(
   collection: CollectionEntry<T>

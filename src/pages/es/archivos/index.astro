@@ -9,7 +9,7 @@ import { PostPreview } from '../../../../packages/pure/components/pages'
 
 export const prerender = true
 
-const allPosts = await await getCollection('blog.es')
+const allPosts = await getCollection('blog.es')
 const allPostsByDate = sortMDByDate(allPosts)
 const allPostsByYear = groupCollectionsByYear(allPostsByDate)
 

@@ -1,5 +1,6 @@
 ---
 import { render, type CollectionEntry } from 'astro:content'
+import { getLocaleFromPath } from 'src/i18n/utils'
 
 import { MediumZoom } from 'astro-pure/advanced'
 import { TOC } from 'astro-pure/components/pages'
@@ -23,13 +24,13 @@ export async function getStaticPaths() {
 type Props = {
   post: CollectionEntry<'docs'>
 }
-
+const locale = getLocaleFromPath(Astro.url.pathname)
 const { post } = Astro.props
 const { Content, headings } = await render(post)
 const { description, title } = post.data
 ---
 
-<PageLayout meta={{ description, title }} back='/docs'>
+<PageLayout locale={locale} meta={{ description, title }} back='/docs'>
   <Fragment slot='sidebar'>
     {!!headings.length && <TOC {headings} />}
     <DocsContent class='docs-toc block mt-3' />
