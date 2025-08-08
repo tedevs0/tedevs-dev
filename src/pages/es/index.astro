@@ -1,9 +1,10 @@
 ---
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
 
 // import { Quote } from 'astro-pure/advanced'
 import { PostPreview } from 'astro-pure/components/pages'
-import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
+import { sortMDByDate } from 'astro-pure/server'
 import { Button, Card, Icon, Label } from 'astro-pure/user'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import ProjectCard from '@/components/home/ProjectCard.astro'
@@ -79,7 +80,7 @@ const softSkills = [
 // const languagesSpoken = ['Spanish (Native)', 'English - A2']
 
 const MAX_POSTS = 10
-const allPosts = await getBlogCollection()
+const allPosts = await getCollection('blog.es')
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
