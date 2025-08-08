@@ -1,164 +1,162 @@
 ---
 title: "I made it my own: my site with Astro"
 publishDate: 'Aug 05, 2025'
-description: 'Te cuento cómo adapté una plantilla Astro para crear mi sitio web personal y qué aprendí en el proceso.'
+description: 'I share how I adapted an Astro template to create my personal website and what I learned along the way.'
 tags:
   - Astro
   - Portfolio
-  - Marca Personal
-  - Productividad
-  - Aprendizaje Autodidacta
+  - Personal Branding
+  - Productivity
+  - Self-Taught Learning
 language: 'English'
-# slug: 'plantilla-astro'
 translations:
   es: 'mi-sitio-no-desde-cero'
 ---
+
 import ProjectEmbed from '@/components/blog/ProjectEmbed.astro';
 
+Having a personal website is almost a “rite of passage” in any developer’s life.
 
+A place to show who you are, what you do, and how you think.  
+A space that represents you.
 
-Tener un sitio personal es casi un “ritual” en la vida de cualquier desarrollador.
-
-Un lugar para mostrar quién eres, qué haces y cómo piensas.  
-Un espacio que te represente.
-
-Pero cuando me propuse crearlo, me topé con una pregunta que nos hacemos más de lo que admitimos:  
-> ¿Está mal usar algo que ya está hecho?  
-> ¿Mi sitio vale menos si no lo construí desde cero?
+But when I set out to create mine, I ran into a question we ask ourselves more often than we admit:  
+> Is it wrong to use something that’s already made?  
+> Does my site matter less if I didn’t build it from scratch?
 
 ---
 
-## El portfolio que nunca mostré
+## The portfolio I never showed
 
-Mi primer intento serio de tener un sitio personal fue en 2022.
+My first serious attempt at having a personal website was in 2022.
 
-Tenía muchas ganas de empezar, pero también muchas dudas. Así que opté por lo que sentí más accesible en ese momento: un tutorial paso a paso. Seguí cada línea de código, cada componente, cada ajuste. Entendí lo que hacía, aprendí cosas nuevas, y llegué al final con una web funcional, limpia, que se veía bien.
+I was excited to start, but also full of doubts. So I went with what felt most accessible at the time: a step-by-step tutorial. I followed every line of code, every component, every tweak. I understood what it did, I learned new things, and I ended up with a functional, clean, good-looking website.
 
 <ProjectEmbed url="https://portafolio-flax-three-89.vercel.app/" title="" />
-Pero aún así… lo dejé guardado.
-Nunca lo publiqué. Nunca lo mostré en redes.
-Ni siquiera puse el repo en público.
 
-No porque estuviera mal hecho, sino porque me costaba llamarlo “mío”. Sentía que, como había seguido un tutorial, no era suficiente. Que si alguien lo veía iba a pensar “solo copió el código”, que no había aportado nada.
+But even so… I kept it hidden.  
+I never published it. Never shared it on social media.  
+I didn’t even make the repo public.
 
-Y ese miedo, aunque nadie me lo dijo directamente, fue suficiente para callarme. Me generaba cierta vergüenza mostrar algo que no había salido completamente de mi cabeza. Pensaba que, para que valiera la pena compartirlo, tenía que haberlo construido desde cero, sin apoyarme en nada ni nadie.
+Not because it was bad, but because I struggled to call it “mine.” I felt that since I had followed a tutorial, it wasn’t enough. That if someone saw it, they’d think “he just copied the code” and that I hadn’t contributed anything.
 
-Ahora veo que ese pensamiento me frenó más de lo que ayudó. Porque ese sitio, aunque fuera una guía, fue parte de mi aprendizaje. Fue el primer paso real. Pero en ese momento, no lo entendía así.
+And that fear, even though no one ever told me so directly, was enough to keep me silent. I was almost ashamed to show something that hadn’t come entirely from my own head. I thought that for it to be worth sharing, I had to have built it entirely from scratch, without leaning on anything or anyone.
 
+Now I see that this mindset held me back more than it helped. Because that site —even though it was from a guide— was part of my learning. It was my first real step. But back then, I didn’t see it that way.
 
 ---
 
-## El portfolio que sí mostré (pero no me representaba)
+## The portfolio I did show (but didn’t represent me)
 
-En 2024, decidí intentarlo de nuevo. Hice un segundo portfolio, también basado en un tutorial, pero esta vez me animé a modificarlo un poco más. Cambié los colores, el orden de las secciones, los textos. Le di un toque más personal.
+In 2024, I decided to try again. I made a second portfolio, also based on a tutorial, but this time I dared to modify it more. I changed the colors, the section order, the texts. I gave it a more personal touch.
 
-Lo compartí. Lo publiqué. Incluso lo usé varias veces para postularme a vacantes. Funcionó.
+I shared it. I published it. I even used it a few times when applying for jobs. It worked.
 
 <ProjectEmbed url="https://itsteddydev.vercel.app/" title="" />
-Y aunque por fuera se veía bien, por dentro algo no terminaba de cerrar. Lo sentía funcional, pero no auténtico. Había logrado que el sitio “cumpliera su propósito”, pero no me reflejaba como yo quería.
 
-Era como usar una camisa que te queda, pero no es tu estilo.
-No era feo. No estaba mal hecho. Pero tampoco hablaba de mí.
+And while it looked good on the outside, inside something still didn’t click. It felt functional, but not authentic. I had made it “fit its purpose,” but it didn’t reflect me the way I wanted.
 
-Lo usaba, sí. Pero lo hacía con cierta incomodidad. Como si estuviera presentando una versión genérica de mí mismo.
+It was like wearing a shirt that fits, but isn’t your style.  
+It wasn’t ugly. It wasn’t poorly made. But it didn’t speak about me.
 
-Y eso —en lugar de impulsarme a seguir construyendo sobre él— me frenó otra vez.
+I used it, yes. But with a certain discomfort. As if I were presenting a generic version of myself.
 
----
-
-## Encontrar un punto medio
-
-Para este sitio actual —el que estás viendo— quería hacerlo distinto.
-
-No tenía la intención de impresionar con animaciones o efectos innecesarios. Tampoco quería perderme en Figma durante días o estresarme eligiendo entre 15 estilos de tipografía.  
-Lo que quería era simple… pero no tan fácil:
-
-- Que me representara.
-- Que me motivara a escribir y compartir más.
-- Que pudiera mantenerlo en el tiempo, sin depender de que “me sobre tiempo”.
-
-Así que decidí empezar por lo que siempre me sirve: inspiración.  
-Pasé varias semanas explorando portfolios de otros desarrolladores. Entré en [developer-portfolios](https://github.com/emmabostian/developer-portfolios), guardé decenas de links, armé mi propia lista de favoritos [🌟Portfolios](https://github.com/stars/tedevs0/lists/portfolios) en GitHub. Algunos me gustaban por el diseño, otros por la claridad. Pero pocos me atrapaban realmente.
-
-Hasta que encontré [astro-theme-pure](https://github.com/cworld1/astro-theme-pure).  
-Minimalista. Enfocado en el contenido. Fácil de modificar.  
-Era exactamente lo que estaba buscando, aunque todavía no lo sabía.
-
-Y claro, volvió esa duda. Ese bichito en la cabeza que te dice:  
-> “¿Otra vez vas a usar una plantilla?”  
-> “¿No deberías hacerlo todo desde cero si ya sabés más?”  
-> “¿Esto cuenta como un portfolio tuyo?”
-
-Me quedé pensando. Pero esta vez, decidí responderme con honestidad:  
-**Sí, voy a usar una plantilla. Porque lo importante no es demostrar que puedo empezar desde cero, sino construir algo que sí quiero mantener.**
-
-Y con esa decisión, empecé a trabajar.
+And that —instead of motivating me to keep building on it— stopped me again.
 
 ---
 
-## No lo creé desde cero, pero lo transformé
+## Finding a middle ground
 
-Usar una plantilla no significa que no hiciste nada.  
-Significa que entendiste que el tiempo también vale. Que tus prioridades cambian. Y que a veces, avanzar con una buena base es más inteligente que frenarse por orgullo técnico.
+For this current site —the one you’re seeing— I wanted to do things differently.
 
-Así que me arremangué y me puse manos a la obra. Cambié los textos, edité los enlaces, reemplacé los posts `.md`, quité secciones que no iban conmigo. Ajusté la navegación, modifiqué metadatos e imágenes, y le sumé pequeños detalles visuales que me representan.
+I didn’t want to impress with animations or unnecessary effects. I didn’t want to lose days in Figma or stress over choosing between 15 font styles.  
+What I wanted was simple… but not easy:
 
-Al principio fue raro, lo admito. Porque una parte de mí seguía pensando:  
-> “Esto no lo hiciste vos desde cero”.
+- For it to represent me.
+- For it to motivate me to write and share more.
+- For it to be maintainable over time, without relying on “having extra time.”
 
-Pero otra parte —una parte más realista— me decía:  
-> “No se trata de empezar de cero. Se trata de que esta vez sí lo termines. Y lo compartas”.
+So I started with what always helps me: inspiration.  
+I spent weeks exploring other developers’ portfolios. I browsed [developer-portfolios](https://github.com/emmabostian/developer-portfolios), saved dozens of links, and built my own list of favorites [🌟Portfolios](https://github.com/stars/tedevs0/lists/portfolios) on GitHub. Some I liked for the design, others for their clarity. But few really grabbed me.
 
-Y eso hice. Armé un espacio al que puedo volver cuando quiera escribir algo nuevo. Uno que no me abruma mantener, ni me limita. Uno que —aunque sigue en evolución— ya tiene base, personalidad, ritmo.
+Until I found [astro-theme-pure](https://github.com/cworld1/astro-theme-pure).  
+Minimalist. Content-focused. Easy to modify.  
+It was exactly what I was looking for —even though I didn’t know it yet.
 
----
+And of course, that doubt came back. That little voice in my head saying:  
+> “Are you going to use a template again?”  
+> “Shouldn’t you do it from scratch now that you know more?”  
+> “Does this really count as *your* portfolio?”
 
-## Lo que aprendí en el proceso
+I thought about it. But this time, I decided to answer honestly:  
+**Yes, I’m going to use a template. Because what matters isn’t proving I can start from scratch, but building something I actually want to maintain.**
 
-Aprendí que construir desde cero no es el único camino.
-
-Aprendí que:
-- Adaptar no significa copiar.
-- Puedo transformar algo hecho en algo que me represente.
-- Mejoré en Astro sin necesidad de reinventar todo el proyecto.
-- Me animé a editar archivos que antes ni abría.
-- Empecé a ver el contenido como algo vivo, no como algo que solo se publica una vez.
-
-Pero sobre todo, aprendí que **crear no siempre es inventar**. A veces, es **adoptar y transformar**.
+And with that decision, I got to work.
 
 ---
 
-## ¿Vale menos por no haberlo hecho desde cero?
+## I didn’t start from scratch, but I transformed it
 
-No.
-No vale menos. Ni un poco.
+Using a template doesn’t mean you didn’t do anything.  
+It means you understood that your time is valuable. That your priorities change. And that sometimes, moving forward with a good foundation is smarter than stopping out of technical pride.
 
-Este sitio no es un examen técnico.
-No es una competencia para ver quién escribió más líneas de código.
-No es una medalla que solo puedes obtener si comenzaste con `npm init`.
+So I rolled up my sleeves and got to work. I changed the texts, edited links, replaced the `.md` posts, removed sections that didn’t fit me. I adjusted the navigation, modified metadata and images, and added small visual details that represent me.
 
-Este sitio es un espacio.
-Y como espacio, **vale por lo que te permite hacer, no por cómo lo iniciaste**.
+At first it felt strange, I admit. Because part of me still thought:  
+> “You didn’t make this from scratch.”
 
-El valor está en que lo trabajaste, lo hiciste tuyo, y lo estás utilizando.
-Que te representa, que está en producción, que está vivo.
+But another part —a more realistic one— told me:  
+> “It’s not about starting from zero. It’s about finally finishing something this time. And sharing it.”
 
-Y aunque comenzó como una plantilla, **hoy es profundamente mío**.  
-Porque lo entendí, lo modifiqué, lo adapté. 
-Porque decidí dejar de esperar el momento perfecto para “hacerlo desde cero” y simplemente... **lo hice funcionar**.
-
-Y eso —en cualquier lenguaje, framework o stack—  
-también es construir.
+And that’s what I did. I built a space I can come back to whenever I want to write something new. One that doesn’t overwhelm me to maintain or limit me. One that —even though it’s still evolving— already has a base, personality, and rhythm.
 
 ---
 
-¿Estás en esa etapa donde te gustaría tener tu sitio pero no estás seguro de si usar una plantilla es válido?
-¿Tienes miedo de que parezca poco profesional, de que alguien diga “eso ya lo vi”?
+## What I learned in the process
 
-Ojalá este post te sirva como recordatorio:
+I learned that building from scratch isn’t the only way.
 
-No importa cómo comiences.
-Importa que lo hagas tuyo.
-Que construyas algo que te permita crecer.
-Y que entiendas que en este camino, **crear también es transformar**.
+I learned that:
+- Adapting doesn’t mean copying.
+- I can transform something pre-made into something that represents me.
+- I improved in Astro without needing to reinvent the whole project.
+- I dared to edit files I wouldn’t have touched before.
+- I started seeing content as something alive, not something you publish just once.
 
+But most importantly, I learned that **creating doesn’t always mean inventing**. Sometimes, it means **adopting and transforming**.
+
+---
+
+## Does it matter less because I didn’t build it from scratch?
+
+No.  
+It doesn’t matter less. Not one bit.
+
+This site isn’t a technical exam.  
+It’s not a competition to see who wrote the most lines of code.  
+It’s not a medal you can only earn if you started with `npm init`.
+
+This site is a space.  
+And as a space, **it’s worth what it allows you to do, not how it began**.
+
+Its value lies in the fact that you worked on it, made it yours, and are using it.  
+That it represents you, is in production, and is alive.
+
+And even though it started as a template, **today it’s deeply mine**.  
+Because I understood it, modified it, adapted it.  
+Because I decided to stop waiting for the perfect moment to “do it from scratch” and simply… **made it work**.
+
+And that —in any language, framework, or stack—  
+is also building.
+
+---
+
+Are you at that stage where you’d like to have your own site but aren’t sure if using a template is “valid”?  
+Are you worried it will look unprofessional, or that someone will say “I’ve seen that before”?
+
+I hope this post serves as a reminder:
+
+It doesn’t matter how you start.  
+What matters is making it yours.  
+Building something that helps you grow.  
+And understanding that in this journey, **creating is also transforming**.

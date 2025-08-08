@@ -1,4 +1,6 @@
 ---
+import { getLocaleFromPath } from 'src/i18n/utils'
+
 import { Button } from 'astro-pure/user'
 import PageLayout from '@/layouts/BaseLayout.astro'
 
@@ -6,13 +8,24 @@ const meta = {
   description: 'Not found',
   title: '404'
 }
+const locale = getLocaleFromPath(Astro.url.pathname)
+
+const back = locale === 'es' ? '/es' : '/'
 ---
 
 <PageLayout {meta}>
   <div class='px-4 py-10 text-center sm:px-6 lg:px-8'>
     <h1 class='block text-7xl font-bold sm:text-9xl'>404</h1>
-    <p class='mt-3 text-muted-foreground'>Oops, something went wrong.</p>
-    <p class='text-lg'>Sorry, we couldn't find your page.</p>
-    <Button title='Back to home' href='/' style='ahead' class='mt-5' />
+    <p class='mt-3 text-muted-foreground'>
+      {locale === 'es' ? 'Ups, algo salió mal.' : 'Oops, something went wrong.'}
+    </p>
+    <p class='text-lg'>
+      {
+        locale === 'es'
+          ? 'Lo siento, no pudimos encontrar tu página'
+          : "Sorry, we couldn't find your page."
+      }
+    </p>
+    <Button title={locale === 'es' ? 'Volver' : 'Back'} href={back} style='ahead' class='mt-5' />
   </div>
 </PageLayout>

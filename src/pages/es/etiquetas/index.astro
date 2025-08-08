@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
-import { getLocaleFromPath } from 'src/i18n/utils'
+
+// import { getLocaleFromPath } from 'src/i18n/utils'
 
 import { getUniqueTagsWithCount } from 'astro-pure/server'
 import { Button } from 'astro-pure/user'
@@ -30,17 +31,17 @@ const meta = {
       {
         allTags.length > 0 ? (
           <ul class='flex flex-wrap gap-4'>
-            {allTags.map(([tag, val]) => (
+            {allTags.map(([etiqueta, val]) => (
               <li>
                 <Button
-                  href={`/es/etiquetas/${tag}`}
+                  href={`/es/etiquetas/${etiqueta}`}
                   style='pill'
                   class={cn(
                     'items-start gap-x-1',
                     val > 2 ? 'rounded-xl px-3 py-1 text-xl' : val > 1 && 'text-lg'
                   )}
                 >
-                  {tag}
+                  {etiqueta}
                   <span class={val > 2 ? 'text-base' : 'text-xs'}>{val}</span>
                 </Button>
               </li>
