@@ -2,12 +2,13 @@
 title: 'How to Improve Your Daily Productivity'
 publishDate: 'Jan 13, 2025'
 description: 'Simple tips to boost your productivity and make better use of your time every day.'
-
 tags:
   - Mind
   - Mood
 language: 'English'
-heroImage: { src: './thumbnail.jpg', color: '#9698C1' }
+translations:
+  es: 'como-mejorar-tu-productividad-diaria'
+# heroImage: { src: './thumbnail.jpg', color: '#9698C1' }
 ---
 
 Productivity is a skill that everyone can improve with small changes in habits and routines. It's not about working more hours, but about working smarter to achieve better results.

@@ -7,8 +7,10 @@ tags:
   - HTML
   - Frontend
   - Principiantes
-language: 'Spanish'
-heroImage: { src: './thumbnail.jpg', color: '#545454' }
+language: 'Español'
+translations:
+  en: 'avoid-nesting-divs'
+# heroImage: { src: './thumbnail.jpg', color: '#545454' }
 ---
 
 ¿Otra vez un `div` dentro de un `div`?

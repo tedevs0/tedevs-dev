@@ -2,13 +2,14 @@
 title: 'Dividir un componente sin miedo: 4 señales clave'
 publishDate: 'May 13, 2024'
 description: 'Cuándo y cómo separar un componente en React con claridad.'
-
 tags:
   - React
   - Frontend
   - Buenas prácticas
-language: 'Spanish'
-heroImage: { src: './thumbnail.jpg', color: '#2D2D2D' }
+language: 'Español'
+translations:
+  en: 'split-a-component-without-fear'
+# heroImage: { src: './thumbnail.jpg', color: '#2D2D2D' }
 ---
 
 ¿Tu componente empieza a parecer un monstruo imposible de leer?

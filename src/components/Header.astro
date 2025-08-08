@@ -80,10 +80,12 @@ const alternatePath = getAlternatePath(Astro.url.pathname, locale)
         class='rounded-md border bg-background px-2 py-1 text-sm transition-colors hover:bg-border dark:bg-muted'
       >
         <option
+          id='opt'
           value={locale === 'es' ? alternatePath : Astro.url.pathname}
           selected={locale === 'en'}>EN</option
         >
         <option
+          id='opt'
           value={locale === 'en' ? alternatePath : Astro.url.pathname}
           selected={locale === 'es'}>ES</option
         >
@@ -103,7 +105,7 @@ const alternatePath = getAlternatePath(Astro.url.pathname, locale)
         })
       </script>
     </div>
-    <p>Locale actual: {locale}</p>
+    <!-- <p>Locale actual: {locale}</p> -->
   </div>
 
   {/* Use inline to load icon quicker firstly */}
@@ -172,6 +174,14 @@ const alternatePath = getAlternatePath(Astro.url.pathname, locale)
       }
       &[data-show='false']:not(.expanded) {
         transform: translateY(-5rem);
+      }
+    }
+
+    #languageSelect {
+      background-color: transparent;
+      /* color: white; */
+      #opt {
+        color: black;
       }
     }
     @media (min-width: 800px) {
