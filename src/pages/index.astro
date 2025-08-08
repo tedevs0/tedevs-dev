@@ -76,7 +76,7 @@ const softSkills = [
 
 // const platforms = ['Vercel', 'Waline']
 
-const languagesSpoken = ['Spanish (Native)', 'English - B2']
+// const languagesSpoken = ['Spanish (Native)', 'English - B2']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -284,7 +284,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <SkillLayout title='Management Tools' skills={managementTools} />
         <SkillLayout title='Agile Practices' skills={agilePractices} />
         <SkillLayout title='Soft Skills' skills={softSkills} />
-        <SkillLayout title='Languages Spoken' skills={languagesSpoken} />
+        <!-- <SkillLayout title='Languages Spoken' skills={languagesSpoken} /> -->
       </Section>
     </div>
     <!-- <Quote class='mt-12' /> -->
