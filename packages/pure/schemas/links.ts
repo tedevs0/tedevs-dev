@@ -21,8 +21,8 @@ export const FriendLinksSchema = () =>
       applyTip: [
         { name: 'Name', val: 'Tedevs' },
         { name: 'Desc', val: 'Null' },
-        { name: 'Link', val: 'https://tedevs.dev/' },
-        { name: 'Avatar', val: 'https://tedevs.dev/favicon/favicon.ico' }
+        { name: 'Link', val: 'https://tedevs.vercel.app/' },
+        { name: 'Avatar', val: 'https://tedevs.vercel.app/favicon/favicon.ico' }
       ]
     })
     .describe('Friend links for your website.')
