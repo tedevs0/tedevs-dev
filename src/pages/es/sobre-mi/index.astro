@@ -1,5 +1,5 @@
 ---
-// import { Comment } from 'astro-pure/advanced'
+import { Comment } from 'astro-pure/advanced'
 import { Button, Spoiler } from 'astro-pure/user'
 // import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
@@ -11,7 +11,6 @@ import Linkedin from '@/assets/icons/linkedin.svg'
 import Spotify from '@/assets/icons/spotify.svg'
 import x from '@/assets/icons/x.svg'
 import Youtube from '@/assets/icons/youtube.svg'
-import config from '@/site-config'
 
 const headings = [
   { depth: 2, slug: 'sobre-mi', text: 'Sobre mí' },
@@ -74,7 +73,7 @@ const stats = [
 ]
 ---
 
-<PageLayout title='Sobre mí' {headings} info={{ slug: '/es/sobre-mi', hideComment: true }}>
+<PageLayout title='Sobre mí' {headings} info='/sobre-mi'>
   <h2 id='sobre-mi' class=''>🖖 — ⚔️ — 🕵️‍♂️</h2>
   <p>Desarrollador / Diseñador</p>
   <blockquote>
@@ -468,22 +467,5 @@ const stats = [
       >
     </li> -->
   <!-- </ul> -->
-  <!-- <Comment slot='bottom' /> -->
+  <Comment slot='bottom' />
 </PageLayout>
-
-<script
-  is:inline
-  type='module'
-  data-astro-rerun
-  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
->
-  const loadPageviewCount = async () => {
-    const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
-    pageview.pageviewCount({
-      serverURL: walineServer,
-      path: window.location.pathname
-    })
-  }
-
-  await loadPageviewCount()
-</script>
