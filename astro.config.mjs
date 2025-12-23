@@ -33,7 +33,7 @@ export default defineConfig({
     locales: ["es", "en"],
   },
   // Top-Level Options
-  site: 'https://tedevs.vercel.app',
+  site: 'https://tedevs.dev',
   // base: '/docs',
   trailingSlash: 'never',
 
