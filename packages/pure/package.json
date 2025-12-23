@@ -11,7 +11,7 @@
     "directory": "packages/pure"
   },
   "bugs": "https://github.com/cworld1/astro-theme-pure",
-  "homepage": "https://tedevs.dev/",
+  "homepage": "https://tedevs.vercel.app/",
   "keywords": [
     "Astro",
     "Theme",

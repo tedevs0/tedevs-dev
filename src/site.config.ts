@@ -93,8 +93,8 @@ export const integ: IntegrationUserConfig = {
     applyTip: [
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
-      { name: 'Link', val: 'https://tedevs.dev/' },
-      { name: 'Avatar', val: 'https://tedevs.dev/favicon/favicon.ico' }
+      { name: 'Link', val: 'https://tedevs.vercel.app/' },
+      { name: 'Avatar', val: 'https://tedevs.vercel.app/favicon/favicon.ico' }
     ]
   },
   // Enable page search function
