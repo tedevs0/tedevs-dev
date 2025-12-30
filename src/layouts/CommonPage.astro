@@ -1,7 +1,7 @@
 ---
 import type { MarkdownHeading } from 'astro'
 
-import { PageInfo } from 'astro-pure/components/pages'
+// import { PageInfo } from 'astro-pure/components/pages'
 import PageLayout from '@/layouts/ContentLayout.astro'
 
 import TOC from '../components/TOC.astro'
@@ -20,7 +20,8 @@ interface Props {
 // const locale = Astro.url.pathname.startsWith('/es') ? 'es' : 'en'
 const locale = getLocaleFromPath(Astro.url.pathname)
 
-const { title, headings, info, ...props } = Astro.props
+// const { title, headings, info, ...props } = Astro.props
+const { title, headings,...props } = Astro.props
 ---
 
 <PageLayout locale={locale} meta={{ title }} back={locale === 'es' ? '/es' : '/'} {...props}>
@@ -30,7 +31,7 @@ const { title, headings, info, ...props } = Astro.props
     <h1 class='text-2xl font-medium sm:mb-2 sm:text-3xl'>
       {title}
     </h1>
-    {
+    <!-- {
       info && (
         <PageInfo
           path={typeof info === 'string' ? info : info.slug}
@@ -38,7 +39,7 @@ const { title, headings, info, ...props } = Astro.props
           class='italic'
         />
       )
-    }
+    } -->
   </Fragment>
 
   <slot />
