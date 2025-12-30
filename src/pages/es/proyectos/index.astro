@@ -49,6 +49,7 @@ const headings = [
         name: '🍭 Personal Hub',
         description: 'Plantilla personalizable moderna para sus enlaces y proyectos',
         image: 'personal_hub.jpg',
+        status: 'completado',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/hub-itsteddydev' },
           { type: 'site', href: 'https://hub-itsteddydev.vercel.app/' },
@@ -63,6 +64,7 @@ const headings = [
         name: '🍭 Bento Grid Portfolio',
         description: 'Muestra sus habilidades y proyectos en un elegante diseño de estilo bento',
         image: 'cover-bentofolio.png',
+        status: 'completado',
         links: [
           { type: 'site', href: 'https://bento-grid-portfolio-beige.vercel.app/' },
           {
@@ -76,6 +78,7 @@ const headings = [
         name: '🐈 Neko Inn',
         description: 'Inspirado en la estética japonesa tradicional',
         image: 'cover-nekoInn.png',
+        status: 'completado',
         links: [
           { type: 'site', href: 'https://neko-inn.vercel.app/' },
           {
@@ -95,6 +98,7 @@ const headings = [
         name: '🍭 Notepad App',
         description: 'Una aplicación web para tomar notas con opción de archivado.',
         image: 'notepad_01.webp',
+        status: 'completado',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/notepad' },
           { type: 'site', href: 'https://my-notepad-t7re.onrender.com/' },
@@ -122,9 +126,10 @@ const headings = [
         description:
           'Desarrollo de un clon de Linktree desde cero con Next.js, React, Tailwind CSS, ShadCN, Prisma y ClerkJS y backend.',
         image: 'just-me.png',
+        status: 'archivado',
         links: [
-          { type: 'github', href: 'https://github.com/tedevs0/just-me' },
-          { type: 'deprecated', href: '' }
+          { type: 'github', href: 'https://github.com/tedevs0/just-me' }
+          // { type: 'deprecated', href: '' }
         ],
         skills: ['Next', 'React', 'Tailwind', 'ShadCN', 'Prisma', 'ClerkJS']
       },
@@ -132,6 +137,7 @@ const headings = [
         name: '🍭 Valora Prime',
         description: 'Compare los precios y encuentre las mejores ofertas.',
         image: 'valoraprime.png',
+        status: 'completado',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/valoraprime' },
           { type: 'site', href: 'https://valoraprime.vercel.app/' }
@@ -201,11 +207,13 @@ const headings = [
         description:
           'Desarrollo de un sitio web corporativo utilizando Angular para la empresa Lytasoft.',
         image: 'lytasoft_01.webp',
+        collaborations: true,
+        status: 'archivado',
         links: [
-          {
-            type: 'deprecated',
-            href: ''
-          }
+          // {
+          //   type: 'deprecated',
+          //   href: ''
+          // }
         ],
         skills: ['Angular16', 'PrimeNG', 'bootstrap ', 'Css', 'Html', 'TypeScript']
       },
@@ -214,18 +222,20 @@ const headings = [
         description:
           'Diseñado con un enfoque en la escalabilidad y la flexibilidad a través de la arquitectura de microfrontend y la optimización de la experiencia del usuario.',
         image: 'cae_01.jpeg',
+        collaborations: true,
+        status: 'archivado',
         links: [
           {
             type: 'github',
             href: 'https://github.com/tedevs0/cae'
-          },
-          { type: 'deprecated', href: '' }
+          }
+          // { type: 'deprecated', href: '' }
         ],
         skills: [
           'Angular16',
           'AngularMaterial',
           'CKEditor5',
-          'RxJS',
+          // 'RxJS',
           'Module-Federation',
           'Css',
           'Html',
@@ -245,6 +255,7 @@ const headings = [
           description:
             'Colección de desafíos de interfaz de usuario y experimentos de diseño de FrontendMentor.',
           image: 'lp-fylo-dark-theme.png',
+          status: 'completado',
           links: [
             { type: 'github', href: 'https://github.com/tedevs0/LCC-1-card' },
             {
@@ -263,6 +274,7 @@ const headings = [
           description:
             'Una aplicación simple de microfrontend que demuestra el uso de microfrontends con shell y productos.',
           image: 'cae_01.jpeg',
+          status: 'archivado',
           links: [{ type: 'github', href: 'https://github.com/tedevs0/pooldys' }],
           skills: ['Angular16', 'Module-Federation', 'Css', 'Html', 'TypeScript', 'JavaScript']
         },
@@ -342,6 +354,7 @@ const headings = [
           description:
             'Conjunto de proyectos de aprendizaje angular que abarcan enlaces, servicios y componentes.',
           image: 'citas.png',
+          status: 'completado',
           links: [
             { type: 'github', href: 'https://github.com/tedevs0/spotify-uy' },
             { type: 'github', href: 'https://github.com/tedevs0/pokeapi' },
@@ -358,6 +371,8 @@ const headings = [
           description:
             'Una aplicación en ionic simple que demuestra el uso de componentes iónicos y navegación.',
           image: 'ionicproject.png',
+          status: 'completado',
+
           links: [
             { type: 'github', href: 'https://github.com/tedevs0/ionicproject' },
             { type: 'site', href: 'https://ionicproject-gray.vercel.app/places' }
@@ -390,6 +405,7 @@ const headings = [
           description:
             'Aplicación móvil creada con Android. Pantalla de incorporación (meow bottom navigation).',
           image: 'learning-zone.png',
+          status: 'completado',
           links: [{ type: 'github', href: 'https://github.com/tedevs0/LearningZone' }],
           skills: ['Android', 'Java']
         },
@@ -397,6 +413,7 @@ const headings = [
           name: '🍭 Hello World',
           description: 'Hola Mundo',
           image: '',
+          status: 'completado',
           links: [{ type: 'github', href: 'https://github.com/tedevs0/hello-world' }]
         }
       ]}

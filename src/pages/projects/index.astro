@@ -49,6 +49,7 @@ const headings = [
         name: '🍭 Personal Hub',
         description: 'A modern customizable template for your links and projects.',
         image: 'personal_hub.jpg',
+        status: 'completed',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/hub-itsteddydev' },
           { type: 'site', href: 'https://hub-itsteddydev.vercel.app/' },
@@ -63,6 +64,7 @@ const headings = [
         name: '🍭 Bento Grid Portfolio',
         description: 'Showcase skills and projects in a sleek, bento-style layout.',
         image: 'cover-bentofolio.png',
+        status: 'completed',
         links: [
           { type: 'site', href: 'https://bento-grid-portfolio-beige.vercel.app/' },
           {
@@ -76,6 +78,7 @@ const headings = [
         name: '🐈 Neko Inn',
         description: 'Landing page template inspired by traditional Japanese aesthetics.',
         image: 'cover-nekoInn.png',
+        status: 'completed',
         links: [
           { type: 'site', href: 'https://neko-inn.vercel.app/' },
           {
@@ -95,6 +98,7 @@ const headings = [
         name: '🍭 Notepad App',
         description: 'Web application for taking notes with archiving and persistence.',
         image: 'notepad_01.webp',
+        status: 'completed',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/notepad' },
           { type: 'site', href: 'https://my-notepad-t7re.onrender.com/' },
@@ -121,9 +125,10 @@ const headings = [
         name: '🍭 Clon de Linktree Fullstack',
         description: 'Fullstack Linktree clone with authentication, database and UI system.',
         image: 'just-me.png',
+        status: 'archived',
         links: [
-          { type: 'github', href: 'https://github.com/tedevs0/just-me' },
-          { type: 'deprecated', href: '' }
+          { type: 'github', href: 'https://github.com/tedevs0/just-me' }
+          // { type: 'deprecated', href: '' }
         ],
         skills: ['Next', 'React', 'Tailwind', 'ShadCN', 'Prisma', 'ClerkJS']
       },
@@ -131,6 +136,7 @@ const headings = [
         name: '🍭 Valora Prime',
         description: 'Web application to compare prices and find the best deals.',
         image: 'valoraprime.png',
+        status: 'completed',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/valoraprime' },
           { type: 'site', href: 'https://valoraprime.vercel.app/' }
@@ -141,11 +147,13 @@ const headings = [
         name: '🍭 Lytasoft',
         description: 'Corporate web application built with Angular and PrimeNG.',
         image: 'lytasoft_01.webp',
+        collaborations: true,
+        status: 'archived',
         links: [
-          {
-            type: 'deprecated',
-            href: ''
-          }
+          // {
+          //   type: 'deprecated',
+          //   href: ''
+          // }
         ],
         skills: ['Angular16', 'PrimeNG', 'bootstrap ', 'Css', 'Html', 'TypeScript']
       },
@@ -153,18 +161,20 @@ const headings = [
         name: '🍭 Reservation Management',
         description: 'Scalable reservation system using microfrontend architecture.',
         image: 'cae_01.jpeg',
+        collaborations: true,
+        status: 'archived',
         links: [
           {
             type: 'github',
             href: 'https://github.com/tedevs0/cae'
-          },
-          { type: 'deprecated', href: '' }
+          }
+          // { type: 'deprecated', href: '' }
         ],
         skills: [
           'Angular16',
           'AngularMaterial',
           'CKEditor5',
-          'RxJS',
+          // 'RxJS',
           'Module-Federation',
           'Css',
           'Html',
@@ -183,6 +193,7 @@ const headings = [
           name: '🍭 Fylo / Huddle / Manage Landing Pages',
           description: 'Collection of UI challenges and layout experiments from FrontendMentor.',
           image: 'lp-fylo-dark-theme.png',
+          status: 'completed',
           links: [
             { type: 'github', href: 'https://github.com/tedevs0/LCC-1-card' },
             {
@@ -200,6 +211,7 @@ const headings = [
           name: '🍭 Test microfrontend',
           description: 'Microfrontend architecture experiment using Angular Module Federation.',
           image: 'cae_01.jpeg',
+          status: 'archived',
           links: [{ type: 'github', href: 'https://github.com/tedevs0/pooldys' }],
           skills: ['Angular16', 'Module-Federation', 'Css', 'Html', 'TypeScript', 'JavaScript']
         },
@@ -208,6 +220,7 @@ const headings = [
           description:
             'Set of Angular learning projects covering bindings, services and components.',
           image: 'citas.png',
+          status: 'completed',
           links: [
             { type: 'github', href: 'https://github.com/tedevs0/spotify-uy' },
             { type: 'github', href: 'https://github.com/tedevs0/pokeapi' },
@@ -223,6 +236,7 @@ const headings = [
           name: '🍭 Ionic Project',
           description: 'Mobile UI and navigation experiment using Ionic and Angular.',
           image: 'ionicproject.png',
+          status: 'archived',
           links: [
             { type: 'github', href: 'https://github.com/tedevs0/ionicproject' },
             { type: 'site', href: 'https://ionicproject-gray.vercel.app/places' }
@@ -233,13 +247,16 @@ const headings = [
           name: '🍭 LearningZone App - Android',
           description: 'Android learning project focused on onboarding and navigation.',
           image: 'learning-zone.png',
+          status: 'archived',
           links: [{ type: 'github', href: 'https://github.com/tedevs0/LearningZone' }],
           skills: ['Android', 'Java']
         },
         {
           name: '🍭 Hello World',
           description: 'Minimal starter project.',
+
           image: '',
+          status: 'completed',
           links: [{ type: 'github', href: 'https://github.com/tedevs0/hello-world' }]
         }
       ]}
