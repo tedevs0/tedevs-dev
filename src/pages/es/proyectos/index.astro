@@ -14,8 +14,9 @@ import kofi from '@/assets/qr_con_logo.png'
 // import config from '@/site-config'
 
 const headings = [
-  { depth: 2, slug: 'plantillas', text: 'Plantillas' },
-  { depth: 2, slug: 'Programas', text: 'Programas' },
+  { depth: 2, slug: 'productos', text: 'Productos' },
+  { depth: 2, slug: 'aplicaciones', text: 'Aplicaciones' },
+  { depth: 2, slug: 'experimentos', text: 'Experimentos & Archivo' },
   // { depth: 2, slug: 'learnings', text: 'Learnings' },
   { depth: 2, slug: 'otros', text: 'Otros' },
   { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
@@ -41,7 +42,7 @@ const headings = [
     <Icon class='size-5' name='receive-money' slot='before' />
   </Button>
 
-  <h2 id='plantillas'>Plantillas</h2>
+  <h2 id='productos'>Productos</h2>
   <ProjectSection
     project={[
       {
@@ -87,7 +88,7 @@ const headings = [
     ]}
   />
 
-  <h2 id='Programas'>Programas</h2>
+  <h2 id='aplicaciones'>Aplicaciones</h2>
   <ProjectSection
     project={[
       {
@@ -121,7 +122,10 @@ const headings = [
         description:
           'Desarrollo de un clon de Linktree desde cero con Next.js, React, Tailwind CSS, ShadCN, Prisma y ClerkJS y backend.',
         image: 'just-me.png',
-        links: [{ type: 'github', href: 'https://github.com/tedevs0/just-me' }],
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/just-me' },
+          { type: 'deprecated', href: '' }
+        ],
         skills: ['Next', 'React', 'Tailwind', 'ShadCN', 'Prisma', 'ClerkJS']
       },
       {
@@ -134,64 +138,64 @@ const headings = [
         ],
         skills: ['React', 'Vite', 'Tailwind', 'Css', 'Html', 'JavaScript']
       },
-      {
-        name: '🍭 Fylo dark theme landing page',
-        description:
-          'Este diseño tiene algunos buenos desafíos de diseño. Un campo de entrenamiento perfecto para practicar sus habilidades FlexBox y/o Grid.',
-        image: 'lp-fylo-dark-theme.png',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-fylo-dark-theme' },
-          { type: 'site', href: 'https://lp-fylo-dark-theme.vercel.app/' }
-        ],
-        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
-      },
-      {
-        name: '🍭 Fylo landing page with two column layout',
-        description:
-          'Este proyecto es excelente si está comenzando a confiar con diseños un poco más complejos. La segunda sección con el área de testimonios proporcionará un buen desafío.',
-        image: 'lp-with-two-column-layout.jpg',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-with-two-column-layout' },
-          { type: 'site', href: 'https://lp-with-two-column-layout.netlify.app/' }
-        ],
-        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
-      },
-      {
-        name: '🍭 Huddle landing page with curved sections',
-        description:
-          'Practique el uso de pseudo-elementos para el estilo extras y la propiedad de posición CSS para las secciones con bordes curvos.',
-        image: 'lp-with-curved-sections.png',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-with-curved-sections' },
-          { type: 'site', href: 'https://lp-with-curved-sections.netlify.app/' }
-        ],
-        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
-      },
-      {
-        name: '🍭 Manage landing page',
-        description:
-          'Este desafío será una gran prueba para sus habilidades receptivas. Hay muchos detalles pequeños y pequeños cambios de contenido para diferentes tamaños de pantalla.',
-        image: 'lp-manage.jpg',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-manage' },
-          { type: 'site', href: 'https://lp-manage.netlify.app/' }
-        ],
-        skills: ['Css', 'Html', 'TypeScript']
-      },
-      {
-        name: '🍭 Huddle landing page with a single introductory section',
-        description:
-          'Un desafío perfecto para principiantes, este proyecto lo hará trabajar con un diseño de dos columnas.',
-        image: 'lp-with-single-introductory-section.png',
-        links: [
-          {
-            type: 'github',
-            href: 'https://github.com/tedevs0/lp-with-single-introductory-section'
-          },
-          { type: 'site', href: 'https://main--visionary-daffodil-2266fa.netlify.app/' }
-        ],
-        skills: ['Css', 'Html']
-      },
+      // {
+      //   name: '🍭 Fylo dark theme landing page',
+      //   description:
+      //     'Este diseño tiene algunos buenos desafíos de diseño. Un campo de entrenamiento perfecto para practicar sus habilidades FlexBox y/o Grid.',
+      //   image: 'lp-fylo-dark-theme.png',
+      //   links: [
+      //     { type: 'github', href: 'https://github.com/tedevs0/lp-fylo-dark-theme' },
+      //     { type: 'site', href: 'https://lp-fylo-dark-theme.vercel.app/' }
+      //   ],
+      //   skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      // },
+      // {
+      //   name: '🍭 Fylo landing page with two column layout',
+      //   description:
+      //     'Este proyecto es excelente si está comenzando a confiar con diseños un poco más complejos. La segunda sección con el área de testimonios proporcionará un buen desafío.',
+      //   image: 'lp-with-two-column-layout.jpg',
+      //   links: [
+      //     { type: 'github', href: 'https://github.com/tedevs0/lp-with-two-column-layout' },
+      //     { type: 'site', href: 'https://lp-with-two-column-layout.netlify.app/' }
+      //   ],
+      //   skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      // },
+      // {
+      //   name: '🍭 Huddle landing page with curved sections',
+      //   description:
+      //     'Practique el uso de pseudo-elementos para el estilo extras y la propiedad de posición CSS para las secciones con bordes curvos.',
+      //   image: 'lp-with-curved-sections.png',
+      //   links: [
+      //     { type: 'github', href: 'https://github.com/tedevs0/lp-with-curved-sections' },
+      //     { type: 'site', href: 'https://lp-with-curved-sections.netlify.app/' }
+      //   ],
+      //   skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+      // },
+      // {
+      //   name: '🍭 Manage landing page',
+      //   description:
+      //     'Este desafío será una gran prueba para sus habilidades receptivas. Hay muchos detalles pequeños y pequeños cambios de contenido para diferentes tamaños de pantalla.',
+      //   image: 'lp-manage.jpg',
+      //   links: [
+      //     { type: 'github', href: 'https://github.com/tedevs0/lp-manage' },
+      //     { type: 'site', href: 'https://lp-manage.netlify.app/' }
+      //   ],
+      //   skills: ['Css', 'Html', 'TypeScript']
+      // },
+      // {
+      //   name: '🍭 Huddle landing page with a single introductory section',
+      //   description:
+      //     'Un desafío perfecto para principiantes, este proyecto lo hará trabajar con un diseño de dos columnas.',
+      //   image: 'lp-with-single-introductory-section.png',
+      //   links: [
+      //     {
+      //       type: 'github',
+      //       href: 'https://github.com/tedevs0/lp-with-single-introductory-section'
+      //     },
+      //     { type: 'site', href: 'https://main--visionary-daffodil-2266fa.netlify.app/' }
+      //   ],
+      //   skills: ['Css', 'Html']
+      // },
       {
         name: '🍭 Lytasoft',
         description:
@@ -231,9 +235,29 @@ const headings = [
       }
     ]}
   />
-  <Collapse title='Algunos proyectos antiguos'>
+
+  <h2 id='experimentos'>Experimentos & Archivo</h2>
+  <Collapse title='Proyectos de aprendizaje, experimentos de UI y trabajo obsoleto'>
     <ProjectSection
       project={[
+        {
+          name: '🍭 Fylo / Huddle / Manage Landing Pages',
+          description:
+            'Colección de desafíos de interfaz de usuario y experimentos de diseño de FrontendMentor.',
+          image: 'lp-fylo-dark-theme.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/LCC-1-card' },
+            {
+              type: 'github',
+              href: 'https://github.com/tedevs0/lp-with-single-introductory-section'
+            },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-manage' },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-with-curved-sections' },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-with-two-column-layout' },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-fylo-dark-theme' }
+          ],
+          skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+        },
         {
           name: '🍭 Test microfrontend',
           description:
@@ -242,76 +266,92 @@ const headings = [
           links: [{ type: 'github', href: 'https://github.com/tedevs0/pooldys' }],
           skills: ['Angular16', 'Module-Federation', 'Css', 'Html', 'TypeScript', 'JavaScript']
         },
+        // {
+        //   name: '🍭 Results summary component',
+        //   description: 'Este desafío tiene algo para todos. Es un proyecto HTML y CSS',
+        //   image: 'LCC-1-card.jpg',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/LCC-1-card' },
+        //     { type: 'site', href: 'https://justcoddev-card-mobile.netlify.app/' }
+        //   ],
+        //   skills: ['Css', 'Html']
+        // },
+        // {
+        //   name: '🍭 Rocky Asaderos',
+        //   description: 'Una página simple para un restaurante con HTML y CSS.',
+        //   image: 'asaderos-rocky.jpg',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/page-asaderos-rocky' },
+        //     { type: 'site', href: 'https://asaderos-rocky.netlify.app/' }
+        //   ],
+        //   skills: ['Css', 'Html']
+        // },
+        // {
+        //   name: '🍭 Citas App NG',
+        //   description: 'Una aplicación angular simple con @input and @output decorators.',
+        //   image: 'citas.png',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/citas' },
+        //     { type: 'site', href: 'https://justcoddev-ng-citas.netlify.app/' }
+        //   ],
+        //   skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        // },
+        // {
+        //   name: '🍭 BMI Calculator NG',
+        //   description: 'Una implementación de una calculadora de IMC usando Angular.',
+        //   image: 'bmi-calculator.png',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/bmi_calculator' },
+        //     { type: 'site', href: 'https://justcoddev-ng-bmi-calculator.netlify.app/' }
+        //   ],
+        //   skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        // },
+        // {
+        //   name: '🍭 Currency Converter NG',
+        //   description: 'Una aplicación angular simple que demuestra ngFor and ngIf directives.',
+        //   image: 'currency-converter.png',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/convertidor_monedas' },
+        //     { type: 'site', href: 'https://justcoddev-ng-convertidor-monedas.netlify.app/' }
+        //   ],
+        //   skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        // },
+        // {
+        //   name: '🍭 Task NG',
+        //   description: 'Aplicación que demuestra data binding and two-way data binding.',
+        //   image: 'task-ng.png',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/tareas' },
+        //     { type: 'site', href: 'https://justcoddev-ng-tareas.netlify.app/' }
+        //   ],
+        //   skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        // },
+        // {
+        //   name: '🍭 Databinding NG',
+        //   description:
+        //     'Una aplicación angular simple que demuestra data binding and component interaction.',
+        //   image: 'databinding.png',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/databinding' },
+        //     { type: 'site', href: 'https://databinding-one.vercel.app/' }
+        //   ],
+        //   skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        // },
         {
-          name: '🍭 Results summary component',
-          description: 'Este desafío tiene algo para todos. Es un proyecto HTML y CSS',
-          image: 'LCC-1-card.jpg',
-          links: [
-            { type: 'github', href: 'https://github.com/tedevs0/LCC-1-card' },
-            { type: 'site', href: 'https://justcoddev-card-mobile.netlify.app/' }
-          ],
-          skills: ['Css', 'Html']
-        },
-        {
-          name: '🍭 Rocky Asaderos',
-          description: 'Una página simple para un restaurante con HTML y CSS.',
-          image: 'asaderos-rocky.jpg',
-          links: [
-            { type: 'github', href: 'https://github.com/tedevs0/page-asaderos-rocky' },
-            { type: 'site', href: 'https://asaderos-rocky.netlify.app/' }
-          ],
-          skills: ['Css', 'Html']
-        },
-        {
-          name: '🍭 Citas App NG',
-          description: 'Una aplicación angular simple con @input and @output decorators.',
+          name: '🍭 Angular NG Series',
+          description:
+            'Conjunto de proyectos de aprendizaje angular que abarcan enlaces, servicios y componentes.',
           image: 'citas.png',
           links: [
-            { type: 'github', href: 'https://github.com/tedevs0/citas' },
-            { type: 'site', href: 'https://justcoddev-ng-citas.netlify.app/' }
-          ],
-          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
-        },
-        {
-          name: '🍭 BMI Calculator NG',
-          description: 'Una implementación de una calculadora de IMC usando Angular.',
-          image: 'bmi-calculator.png',
-          links: [
-            { type: 'github', href: 'https://github.com/tedevs0/bmi_calculator' },
-            { type: 'site', href: 'https://justcoddev-ng-bmi-calculator.netlify.app/' }
-          ],
-          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
-        },
-        {
-          name: '🍭 Currency Converter NG',
-          description: 'Una aplicación angular simple que demuestra ngFor and ngIf directives.',
-          image: 'currency-converter.png',
-          links: [
-            { type: 'github', href: 'https://github.com/tedevs0/convertidor_monedas' },
-            { type: 'site', href: 'https://justcoddev-ng-convertidor-monedas.netlify.app/' }
-          ],
-          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
-        },
-        {
-          name: '🍭 Task NG',
-          description: 'Aplicación que demuestra data binding and two-way data binding.',
-          image: 'task-ng.png',
-          links: [
-            { type: 'github', href: 'https://github.com/tedevs0/tareas' },
-            { type: 'site', href: 'https://justcoddev-ng-tareas.netlify.app/' }
-          ],
-          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
-        },
-        {
-          name: '🍭 Databinding NG',
-          description:
-            'Una aplicación angular simple que demuestra data binding and component interaction.',
-          image: 'databinding.png',
-          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/spotify-uy' },
+            { type: 'github', href: 'https://github.com/tedevs0/pokeapi' },
             { type: 'github', href: 'https://github.com/tedevs0/databinding' },
-            { type: 'site', href: 'https://databinding-one.vercel.app/' }
+            { type: 'github', href: 'https://github.com/tedevs0/tareas' },
+            { type: 'github', href: 'https://github.com/tedevs0/convertidor_monedas' },
+            { type: 'github', href: 'https://github.com/tedevs0/bmi_calculator' },
+            { type: 'github', href: 'https://github.com/tedevs0/citas' }
           ],
-          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+          skills: ['Angular14', 'TypeScript', 'JavaScript']
         },
         {
           name: '🍭 Ionic Project',
@@ -324,27 +364,27 @@ const headings = [
           ],
           skills: ['Angular14', 'Scss', 'Html', 'TypeScript', 'JavaScript']
         },
-        {
-          name: '🍭 Pokeapi NG',
-          description:
-            'HttpClient para consumir Pokeapi, una API RESTful que proporciona datos sobre Pokémon.',
-          image: 'pokeapi-ng.png',
-          links: [
-            { type: 'github', href: 'https://github.com/tedevs0/pokeapi' },
-            { type: 'site', href: 'https://justcoddev-ng-pokeapi.netlify.app/' }
-          ],
-          skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
-        },
-        {
-          name: '🍭 Clone de Spotify NG',
-          description: 'Un clon de Spotify simple usando Angular.',
-          image: 'clone-spotify.png',
-          links: [
-            { type: 'github', href: 'https://github.com/tedevs0/spotify-uy' },
-            { type: 'deprecated', href: '' }
-          ],
-          skills: ['Angular13', 'Css', 'Html', 'TypeScript', 'JavaScript']
-        },
+        // {
+        //   name: '🍭 Pokeapi NG',
+        //   description:
+        //     'HttpClient para consumir Pokeapi, una API RESTful que proporciona datos sobre Pokémon.',
+        //   image: 'pokeapi-ng.png',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/pokeapi' },
+        //     { type: 'site', href: 'https://justcoddev-ng-pokeapi.netlify.app/' }
+        //   ],
+        //   skills: ['Angular14', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        // },
+        // {
+        //   name: '🍭 Clone de Spotify NG',
+        //   description: 'Un clon de Spotify simple usando Angular.',
+        //   image: 'clone-spotify.png',
+        //   links: [
+        //     { type: 'github', href: 'https://github.com/tedevs0/spotify-uy' },
+        //     { type: 'deprecated', href: '' }
+        //   ],
+        //   skills: ['Angular13', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        // },
         {
           name: '🍭 LearningZone App - Android',
           description:

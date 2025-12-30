@@ -14,8 +14,9 @@ import kofi from '@/assets/qr_con_logo.png'
 // import config from '@/site-config'
 
 const headings = [
-  { depth: 2, slug: 'template', text: 'Template' },
-  { depth: 2, slug: 'programs', text: 'Programs' },
+  { depth: 2, slug: 'products', text: 'Products' },
+  { depth: 2, slug: 'applications', text: 'Applications' },
+  { depth: 2, slug: 'experiments', text: 'Experiments & Archive' },
   // { depth: 2, slug: 'learnings', text: 'Learnings' },
   { depth: 2, slug: 'others', text: 'Others' },
   { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
@@ -41,7 +42,7 @@ const headings = [
     <Icon class='size-5' name='receive-money' slot='before' />
   </Button>
 
-  <h2 id='template'>Template</h2>
+  <h2 id='products'>Products</h2>
   <ProjectSection
     project={[
       {
@@ -60,7 +61,7 @@ const headings = [
       },
       {
         name: '🍭 Bento Grid Portfolio',
-        description: 'Showcase their skills and projects in a sleek, bento-style layout.',
+        description: 'Showcase skills and projects in a sleek, bento-style layout.',
         image: 'cover-bentofolio.png',
         links: [
           { type: 'site', href: 'https://bento-grid-portfolio-beige.vercel.app/' },
@@ -73,7 +74,7 @@ const headings = [
       },
       {
         name: '🐈 Neko Inn',
-        description: 'Inspired by traditional Japanese aesthetics.',
+        description: 'Landing page template inspired by traditional Japanese aesthetics.',
         image: 'cover-nekoInn.png',
         links: [
           { type: 'site', href: 'https://neko-inn.vercel.app/' },
@@ -87,12 +88,12 @@ const headings = [
     ]}
   />
 
-  <h2 id='programs'>Programs</h2>
+  <h2 id='applications'>Applications</h2>
   <ProjectSection
     project={[
       {
         name: '🍭 Notepad App',
-        description: 'A web application for taking notes with an archiving option.',
+        description: 'Web application for taking notes with archiving and persistence.',
         image: 'notepad_01.webp',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/notepad' },
@@ -118,15 +119,17 @@ const headings = [
       },
       {
         name: '🍭 Clon de Linktree Fullstack',
-        description:
-          'Developing a Linktree clone from scratch with Next.js, React, Tailwind CSS, ShadCN, Prisma and ClerkJS and backend',
+        description: 'Fullstack Linktree clone with authentication, database and UI system.',
         image: 'just-me.png',
-        links: [{ type: 'github', href: 'https://github.com/tedevs0/just-me' }],
+        links: [
+          { type: 'github', href: 'https://github.com/tedevs0/just-me' },
+          { type: 'deprecated', href: '' }
+        ],
         skills: ['Next', 'React', 'Tailwind', 'ShadCN', 'Prisma', 'ClerkJS']
       },
       {
         name: '🍭 Valora Prime',
-        description: 'Compare prices and find the best deals.',
+        description: 'Web application to compare prices and find the best deals.',
         image: 'valoraprime.png',
         links: [
           { type: 'github', href: 'https://github.com/tedevs0/valoraprime' },
@@ -135,66 +138,8 @@ const headings = [
         skills: ['React', 'Vite', 'Tailwind', 'Css', 'Html', 'JavaScript']
       },
       {
-        name: '🍭 Fylo dark theme landing page',
-        description:
-          'This design has some nice layout challenges in it. A perfect training ground to practice your Flexbox and/or Grid skills.',
-        image: 'lp-fylo-dark-theme.png',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-fylo-dark-theme' },
-          { type: 'site', href: 'https://lp-fylo-dark-theme.vercel.app/' }
-        ],
-        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
-      },
-      {
-        name: '🍭 Fylo landing page with two column layout',
-        description:
-          'This project is great if you are starting to get confident with slightly more complex layouts. The second section with the testimonial area will provide a nice challenge.',
-        image: 'lp-with-two-column-layout.jpg',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-with-two-column-layout' },
-          { type: 'site', href: 'https://lp-with-two-column-layout.netlify.app/' }
-        ],
-        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
-      },
-      {
-        name: '🍭 Huddle landing page with curved sections',
-        description:
-          'Practice using pseudo-elements for styling extras and the CSS position property for the sections with curved edges.',
-        image: 'lp-with-curved-sections.png',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-with-curved-sections' },
-          { type: 'site', href: 'https://lp-with-curved-sections.netlify.app/' }
-        ],
-        skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
-      },
-      {
-        name: '🍭 Manage landing page',
-        description:
-          'This challenge will be a great test for your responsive skills. There are lots of small details and slight content shifts for different screen sizes.',
-        image: 'lp-manage.jpg',
-        links: [
-          { type: 'github', href: 'https://github.com/tedevs0/lp-manage' },
-          { type: 'site', href: 'https://lp-manage.netlify.app/' }
-        ],
-        skills: ['Css', 'Html', 'TypeScript']
-      },
-      {
-        name: '🍭 Huddle landing page with a single introductory section',
-        description:
-          'A perfect challenge for beginners, this project will get you working with a two column layout.',
-        image: 'lp-with-single-introductory-section.png',
-        links: [
-          {
-            type: 'github',
-            href: 'https://github.com/tedevs0/lp-with-single-introductory-section'
-          },
-          { type: 'site', href: 'https://main--visionary-daffodil-2266fa.netlify.app/' }
-        ],
-        skills: ['Css', 'Html']
-      },
-      {
         name: '🍭 Lytasoft',
-        description: 'Development of a corporate website using Angular for the company Lytasoft.',
+        description: 'Corporate web application built with Angular and PrimeNG.',
         image: 'lytasoft_01.webp',
         links: [
           {
@@ -206,8 +151,7 @@ const headings = [
       },
       {
         name: '🍭 Reservation Management',
-        description:
-          'Designed with a focus on scalability and flexibility through microfrontend architecture and optimizing the user experience.',
+        description: 'Scalable reservation system using microfrontend architecture.',
         image: 'cae_01.jpeg',
         links: [
           {
@@ -230,7 +174,79 @@ const headings = [
       }
     ]}
   />
-  <Collapse title='Some old projects'>
+
+  <h2 id='experiments'>Experiments & Archive</h2>
+  <Collapse title='Learning projects, UI experiments & deprecated work'>
+    <ProjectSection
+      project={[
+        {
+          name: '🍭 Fylo / Huddle / Manage Landing Pages',
+          description: 'Collection of UI challenges and layout experiments from FrontendMentor.',
+          image: 'lp-fylo-dark-theme.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/LCC-1-card' },
+            {
+              type: 'github',
+              href: 'https://github.com/tedevs0/lp-with-single-introductory-section'
+            },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-manage' },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-with-curved-sections' },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-with-two-column-layout' },
+            { type: 'github', href: 'https://github.com/tedevs0/lp-fylo-dark-theme' }
+          ],
+          skills: ['Astro', 'Tailwind', 'Css', 'Html', 'JavaScript']
+        },
+        {
+          name: '🍭 Test microfrontend',
+          description: 'Microfrontend architecture experiment using Angular Module Federation.',
+          image: 'cae_01.jpeg',
+          links: [{ type: 'github', href: 'https://github.com/tedevs0/pooldys' }],
+          skills: ['Angular16', 'Module-Federation', 'Css', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Angular NG Series',
+          description:
+            'Set of Angular learning projects covering bindings, services and components.',
+          image: 'citas.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/spotify-uy' },
+            { type: 'github', href: 'https://github.com/tedevs0/pokeapi' },
+            { type: 'github', href: 'https://github.com/tedevs0/databinding' },
+            { type: 'github', href: 'https://github.com/tedevs0/tareas' },
+            { type: 'github', href: 'https://github.com/tedevs0/convertidor_monedas' },
+            { type: 'github', href: 'https://github.com/tedevs0/bmi_calculator' },
+            { type: 'github', href: 'https://github.com/tedevs0/citas' }
+          ],
+          skills: ['Angular14', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 Ionic Project',
+          description: 'Mobile UI and navigation experiment using Ionic and Angular.',
+          image: 'ionicproject.png',
+          links: [
+            { type: 'github', href: 'https://github.com/tedevs0/ionicproject' },
+            { type: 'site', href: 'https://ionicproject-gray.vercel.app/places' }
+          ],
+          skills: ['Angular14', 'Scss', 'Html', 'TypeScript', 'JavaScript']
+        },
+        {
+          name: '🍭 LearningZone App - Android',
+          description: 'Android learning project focused on onboarding and navigation.',
+          image: 'learning-zone.png',
+          links: [{ type: 'github', href: 'https://github.com/tedevs0/LearningZone' }],
+          skills: ['Android', 'Java']
+        },
+        {
+          name: '🍭 Hello World',
+          description: 'Minimal starter project.',
+          image: '',
+          links: [{ type: 'github', href: 'https://github.com/tedevs0/hello-world' }]
+        }
+      ]}
+    />
+  </Collapse>
+
+  <!-- <Collapse title='Some old projects'>
     <ProjectSection
       project={[
         {
@@ -361,7 +377,7 @@ const headings = [
         }
       ]}
     />
-  </Collapse>
+  </Collapse> -->
 
   <!-- <h2 id='learnings'>Learnings</h2>
   <ProjectSection

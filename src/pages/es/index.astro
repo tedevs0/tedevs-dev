@@ -14,63 +14,65 @@ import avatar from '@/assets/my-avatar.png'
 
 // import config from '@/site-config'
 
-const frontendStack = [
-  'React.js',
-  'Next.js',
+// Lenguajes
+const languages = ['JavaScript (ES6+)', 'TypeScript', 'PHP', 'HTML5', 'CSS3']
+
+// Frontend Frameworks & UI
+const frontendFrameworks = [
+  'Vue',
+  'React',
+  // 'NextJS',
   'Angular',
   'Astro',
-  'TypeScript',
-  'JavaScript',
-  'PHP',
-  'HTML5',
-  'CSS3',
+  'Vite',
   'Tailwind CSS',
   'Bootstrap',
-  'PrimeNG',
-  'Zod',
-  'Zustand',
-  'React Query'
+  'PrimeNG'
 ]
 
-const backendStack = ['Java', 'Node.js', 'NestJS', 'Python', 'Laravel']
+// Backend Frameworks
+const backendFrameworks = ['Laravel (Filament)', 'NestJS', 'Node.js', 'Java', 'Python']
 
-const databases = ['MySQL', 'MongoDB', 'PostgreSQL']
+// Bases de datos
+const databases = ['PostgreSQL', 'MySQL', 'MongoDB']
 
+// DevOps & Tools
 const devOpsAndTools = [
   'Git',
   'GitHub',
-  'GitHub Pages',
+  // 'GitHub Pages',
   'Netlify',
   'Vercel',
-  'Visual Studio Code',
-  'Vite',
+  // 'Vite',
   'ESLint',
-  'PWA',
   'Lighthouse',
-  'Figma',
-  'Photoshop',
-  'Illustrator',
-  'Microsoft Office'
+  'PWA'
 ]
 
+const designTools = ['Figma', 'Photoshop', 'Illustrator']
+
+// Management Tools
 const managementTools = ['Trello', 'Taiga', 'GitHub Projects']
+
+// Agile & Engineering Practices
 const agilePractices = [
   'Scrum',
   'Kanban',
   'Mobile First',
   'Responsive Design',
-  'Modular development',
-  'Microfrontends',
-  'UI/UX best practices'
+  'Modular Development',
+  'Microfrontends'
+  // 'UI/UX Best Practices'
 ]
 
+// Soft Skills
 const softSkills = [
   'Teamwork',
-  'Problem solving',
+  'Problem Solving',
   'Adaptability',
-  'Effective communication',
-  'Time management',
-  'Critical thinking',
+  'Effective Communication',
+  'Time Management',
+  'Critical Thinking',
   'Proactivity',
   'Self-learning'
 ]
@@ -125,13 +127,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       <div class='flex flex-col items-center gap-y-4'>
         <!-- <h1 class='text-3xl font-bold'>{config.author}</h1> -->
         <h1 class='text-3xl font-bold' id='author-name'>Teddy Summers</h1>
-        <button
+        <!-- <button
           title='Un paso más, reclutador ... y estarás donde quería. 🕶️'
           id='toggle-name'
           class='text-xs px-3 rounded-full border border-dashed border-gray-400 hover:bg-muted transition-all'
         >
           Revelar identidad 🎭
-        </button>
+        </button> -->
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
           <Label title='Ecuador'>
             <Icon name='location' class='size-5' slot='icon' />
@@ -144,7 +146,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
       {/* Get template */}
       <a
-        href='https://www.linkedin.com/in/tedevs0'
+        href='https://www.linkedin.com/in/tedevs'
         target='_blank'
         class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
       >
@@ -276,13 +278,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       </Section> -->
 
       <Section title='Habilidades'>
-        <!-- <SkillLayout title='Languages' skills={frontendStack} /> -->
+        <SkillLayout title='Languages' skills={languages} />
         <!-- <SkillLayout title='Frameworks' skills={frameworks} /> -->
-        <SkillLayout title='Frontend Stack' skills={frontendStack} />
-        <SkillLayout title='Backend Stack' skills={backendStack} />
-        <SkillLayout title='Bases de datos' skills={databases} />
-        <SkillLayout title='DevOps & Tools' skills={devOpsAndTools} />
-        <SkillLayout title='Management Tools' skills={managementTools} />
+        <SkillLayout title='Frontend' skills={frontendFrameworks} />
+        <SkillLayout title='Backend' skills={backendFrameworks} />
+        <SkillLayout title='Databases' skills={databases} />
+        <SkillLayout title='DevOps' skills={devOpsAndTools} />
+        <SkillLayout title='Design' skills={designTools} />
+        <SkillLayout title='Management' skills={managementTools} />
         <SkillLayout title='Agile Practices' skills={agilePractices} />
         <SkillLayout title='Soft Skills' skills={softSkills} />
         <!-- <SkillLayout title='Idiomas' skills={languagesSpoken} /> -->
