@@ -13,7 +13,9 @@ interface Props {
     image?: string
     name: string
     description: string
-    links: {
+    collaborations?: boolean
+    status?: string
+    links?: {
       type: string
       href: string
     }[]
@@ -30,6 +32,15 @@ const projectIconSet: Record<string, iconsType> = {
   doc: 'document',
   release: 'package',
   deprecated: 'alert'
+}
+
+const statusColorSet: Record<string, string> = {
+  ongoing: 'bg-yellow-500/10 text-yellow-500',
+  'en progreso': 'bg-yellow-500/10 text-yellow-500',
+  completed: 'bg-green-500/10 text-green-500',
+  completado: 'bg-green-500/10 text-green-500',
+  archived: 'bg-red-500/10 text-red-500',
+  archivado: 'bg-red-500/10 text-red-500'
 }
 ---
 
@@ -64,24 +75,45 @@ const projectIconSet: Record<string, iconsType> = {
                 }}
               />
             )}
+
             <div
               class={cn(
                 'relative z-10 flex flex-col gap-y-2 px-3 py-1.5 sm:px-4 sm:py-3',
                 imagePath && 'me-20'
               )}
             >
-              <a
-                class='line-clamp-1 font-medium text-foreground no-underline transition-colors'
-                href={project.links[0].href}
-                target='_blank'
-              >
-                {project.name}
-              </a>
+              <div class='flex items-center justify-between gap-2'>
+                <a
+                  class='line-clamp-1 font-medium text-foreground no-underline transition-colors'
+                  href={project.links?.[0]?.href || '#'}
+                  target='_blank'
+                >
+                  {project.name}
+                </a>
+              </div>
+
               <div class='line-clamp-2 leading-snug text-muted-foreground sm:h-12'>
                 {project.description}
               </div>
-              <div class='flex flex-row items-center gap-x-2 sm:gap-x-3'>
-                {project.links.map((link) => {
+              <div class='flex flex-row items-center gap-x-2 sm:gap-x-1 flex-wrap'>
+                {project.collaborations && (
+                  <span class='text-xs px-3 rounded-full border border-dashed border-gray-400 hover:bg-muted transition-all whitespace-nowrap'>
+                    Collaborative
+                  </span>
+                )}
+                {project.status && (
+                  <span
+                    class={cn(
+                      'text-xs px-3 rounded-full border border-dashed border-gray-400 hover:bg-muted transition-all whitespace-nowrap',
+                      statusColorSet[project.status.toLowerCase()] ||
+                        'bg-muted text-muted-foreground'
+                    )}
+                  >
+                    {project.status}
+                  </span>
+                )}
+
+                {project.links?.map((link) => {
                   const icon = projectIconSet[link.type]
                   return (
                     <a
@@ -98,7 +130,7 @@ const projectIconSet: Record<string, iconsType> = {
 
               <div class='flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0'>
                 {/* <h3 class='w-1/5 font-medium'>{title}</h3> */}
-                <div class='flex  flex-row flex-wrap gap-x-2 gap-y-2 '>
+                <div class='flex  flex-row flex-wrap gap-x-1 gap-y-1 '>
                   {project.skills &&
                     project.skills.map((skill) => (
                       <Button class='' as='button' title={skill} style='pill' />

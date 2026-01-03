@@ -1,5 +1,5 @@
 ---
-import { Comment } from 'astro-pure/advanced'
+// import { Comment } from 'astro-pure/advanced'
 import { Button, Spoiler } from 'astro-pure/user'
 // import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
@@ -14,7 +14,7 @@ import Youtube from '@/assets/icons/youtube.svg'
 
 const headings = [
   { depth: 2, slug: 'sobre-mi', text: 'Sobre mí' },
-  { depth: 2, slug: 'pasatiempos', text: 'Pasatiempos' },
+  // { depth: 2, slug: 'pasatiempos', text: 'Pasatiempos' },
   { depth: 2, slug: 'herramientas', text: 'Herramientas' },
   { depth: 2, slug: 'redes-sociales', text: 'Redes Sociales' }
   // { depth: 2, slug: 'gossips', text: 'Gossips' }
@@ -33,7 +33,7 @@ const stats = [
     platform: 'LinkedIn',
     icon: Linkedin,
     color: '#0077b5',
-    link: 'https://www.linkedin.com/in/tedevs0/',
+    link: 'https://www.linkedin.com/in/tedevs/',
     count: 678,
     text: 'followers'
   },
@@ -42,7 +42,7 @@ const stats = [
     icon: Instagram,
     color: '#E1306C',
     link: 'https://instagram.com/tedevs_',
-    count: 807,
+    count: 708,
     text: 'followers'
   },
   {
@@ -169,7 +169,7 @@ const stats = [
       target='_blank'
       rel='noopener noreferrer'>Tedevian</a
     >, una iniciativa de colaboración abierta para proyectos que puedan crecer con más manos y menos
-    ego.
+    ego. Tomará tiempo, requiere paciencia y dedicación constante.
   </p>
 
   <p>No solo quiero escribir un buen código, quiero dejar algo que sea realmente útil.</p>
@@ -216,7 +216,7 @@ const stats = [
   </p> -->
 
   {/* general-talk */}
-  <h2 id='pasatiempos'>Pasatiempos</h2>
+  <!-- <h2 id='pasatiempos'>Pasatiempos</h2>
   <ul>
     <li>
       <strong>Juegos clásicos y estrategia:</strong><br />
@@ -280,7 +280,7 @@ const stats = [
         no voy a construir yo.
       </p>
     </li>
-  </ul>
+  </ul> -->
 
   {/* tools */}
   <h2 id='herramientas'>Herramientas</h2>
@@ -467,5 +467,5 @@ const stats = [
       >
     </li> -->
   <!-- </ul> -->
-  <Comment slot='bottom' />
+  <!-- <Comment slot='bottom' /> -->
 </PageLayout>

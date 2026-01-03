@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import type { InferEntrySchema } from 'astro:content'
 
-import { PageInfo } from '../../packages/pure/components/pages'
+// import { PageInfo } from '../../packages/pure/components/pages'
 import { FormattedDate, Icon } from '../../packages/pure/components/user'
 
 interface Props {
@@ -22,7 +22,7 @@ const {
     heroImage,
     publishDate,
     updatedDate,
-    comment: enableComment,
+    // comment: enableComment,
     tags,
     language
   },
@@ -141,7 +141,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 
   <div class='mt-3 italic'>
     <blockquote class='text-sm text-muted-foreground'><q>{description}</q></blockquote>
-    {!draft && enableComment && <PageInfo class='mt-1' />}
+    <!-- {!draft && enableComment && <PageInfo class='mt-1' />} -->
   </div>
 </div>
 
