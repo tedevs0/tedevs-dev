@@ -11,7 +11,7 @@ tags:
 language: 'Español'
 translations:
   en: 'wakatime-wrapped-2025-rhythm-and-learnings'
-heroImage: { src: './thumbnail.png', color: '#fa5e9d' }
+heroImage: { src: 'WakaTime-Wrapped-2025.jpg', color: '#000000' }
 ---
 
 Llevo años usando **WakaTime** casi sin pensarlo demasiado. Lo instalé, lo dejé correr en segundo plano y seguí programando.

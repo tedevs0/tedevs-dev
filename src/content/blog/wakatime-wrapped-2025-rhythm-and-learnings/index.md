@@ -11,7 +11,7 @@ tags:
 language: 'English'
 translations:
   es: 'wakatime-wrapped-2025'
-heroImage: { src: './thumbnail.png', color: '#fa5e9d' }
+heroImage: { src: './WakaTime-Wrapped-2025.jpg', color: '#000000' }
 ---
 
 I’ve been using **WakaTime** for years almost without thinking about it. I installed it, let it run in the background, and kept coding.
